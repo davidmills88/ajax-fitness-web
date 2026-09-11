@@ -49,7 +49,7 @@ export default function HomePage() {
             </article>
             <article className="card">
               <h3>Longevity</h3>
-              <p>Train for decades, not a short season of intensity.</p>
+              <p>Train for decades, not a six-week spike.</p>
             </article>
             <article className="card">
               <h3>Recovery</h3>

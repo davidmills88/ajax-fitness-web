@@ -15,7 +15,6 @@ export default function PricingPage() {
     <section className="section page-hero">
       <div className="container">
         <div className="narrow">
-          <p className="eyebrow">Membership & day pass</p>
           <h1>Membership & day pass</h1>
           <p className="lede">
             Simple pricing. No clutter. Built for Aspen training that sticks.
