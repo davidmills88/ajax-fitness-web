@@ -368,6 +368,11 @@ a:hover {
   gap: 0.9rem;
 }
 
+.stack-form .button,
+.join-form .button {
+  justify-self: start;
+}
+
 .form-row {
   display: grid;
   gap: 0.9rem;

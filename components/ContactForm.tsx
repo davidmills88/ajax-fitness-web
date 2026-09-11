@@ -11,11 +11,10 @@ export function ContactForm() {
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("submitting");
-    setError("");
-
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
+    setStatus("submitting");
+    setError("");
 
     try {
       const res = await fetch("/api/contact", {
@@ -51,7 +50,7 @@ export function ContactForm() {
   }
 
   return (
-    <form className="stack-form" onSubmit={onSubmit}>
+    <form className="stack-form" onSubmit={onSubmit} autoComplete="on">
       <div className="form-row">
         <label>
           First name
