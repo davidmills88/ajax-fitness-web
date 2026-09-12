@@ -9,7 +9,7 @@ import { formatFullAddress, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Ajax Fitness in Aspen about membership, a day pass, or a tour.",
+    "Contact Ajax Fitness in Aspen about membership, a day pass, a tour, or optional coaching.",
 };
 
 export default function ContactPage() {

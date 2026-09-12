@@ -248,6 +248,34 @@ a:hover {
   margin-top: 2.4rem;
 }
 
+.clarify-grid {
+  margin-top: 2.4rem;
+}
+
+.include-list {
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.5rem 0 0;
+  max-width: 40rem;
+}
+
+.include-list li {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.button-outline {
+  background: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.button-outline:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
 .intro-grid,
 .card-grid,
 .split,
@@ -661,7 +689,8 @@ a:focus-visible {
 
   .feature-grid,
   .pricing-grid,
-  .footer-grid {
+  .footer-grid,
+  .clarify-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 

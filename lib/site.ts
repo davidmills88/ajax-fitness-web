@@ -1,9 +1,9 @@
 export const site = {
   name: "Ajax Fitness",
   domain: "ajaxfitness.com",
-  tagline: "Strength, recovery, and longevity in Aspen",
+  tagline: "An access gym in Aspen — train on your own, 6:00 AM–9:00 PM",
   description:
-    "Ajax Fitness is Aspen’s premium gym for strength, recovery, and longevity. Small enough to feel personal. Serious enough that your training actually compounds.",
+    "Ajax Fitness is an open-access gym in Aspen. Members train on their own during open hours, 6:00 AM–9:00 PM daily. Not a CrossFit box. Not a personal-training-only studio.",
   phoneDisplay: "(970) 670-8974",
   phoneHref: "tel:+19706708974",
   email: "hello@ajaxgym.com",
@@ -52,7 +52,14 @@ export const site = {
     },
   },
   ghlLocationId: "9s4QUTb46DnuhaD2NEca",
-  interests: ["Membership", "Day pass", "Tour", "Other"] as const,
+  interests: [
+    "Membership",
+    "Day pass",
+    "Personal training",
+    "Sports performance",
+    "Tour",
+    "Other",
+  ] as const,
 };
 
 export type PlanId = keyof typeof site.plans;
@@ -61,7 +68,13 @@ export const nav = [
   { href: "/", label: "Home" },
   { href: "/hours", label: "Hours" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/personal-training", label: "Training" },
   { href: "/contact", label: "Contact" },
+] as const;
+
+export const trainingNavHrefs = [
+  "/personal-training",
+  "/sports-performance",
 ] as const;
 
 export function formatStreetAddress() {

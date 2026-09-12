@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { nav, site } from "@/lib/site";
+import { nav, site, trainingNavHrefs } from "@/lib/site";
 
 export function Header() {
   const pathname = usePathname();
@@ -31,7 +31,9 @@ export function Header() {
             const active =
               item.href === "/"
                 ? pathname === "/"
-                : pathname.startsWith(item.href);
+                : item.href === "/personal-training"
+                  ? trainingNavHrefs.some((href) => pathname.startsWith(href))
+                  : pathname.startsWith(item.href);
 
             return (
               <Link
