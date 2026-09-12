@@ -33,7 +33,7 @@ export function Footer() {
         <div>
           <p className="footer-label">More</p>
           <p>
-            <Link href="/personal-training">Training</Link>
+            <Link href="/personal-training">Personal training</Link>
           </p>
           <p>
             <Link href="/join">Join</Link>

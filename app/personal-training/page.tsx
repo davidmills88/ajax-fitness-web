@@ -8,53 +8,65 @@ import { trainerLevels, trainingIncludes } from "@/lib/training";
 export const metadata: Metadata = {
   title: "Personal training",
   description:
-    "Optional personal training at Ajax Fitness in Aspen. Membership is open-gym access; coaching is an add-on. Packages are tailored after a conversation — call (970) 670-8974.",
+    "Personal training at Ajax Fitness in Aspen — coaching for strength, longevity, recovery, and performance. Packages are tailored after a conversation. Call (970) 670-8974.",
 };
 
 export default function PersonalTrainingPage() {
   return (
     <>
-      <section className="section page-hero">
-        <div className="container split">
-          <div className="narrow">
-            <p className="eyebrow">Optional coaching</p>
-            <h1>Personal training</h1>
-            <p className="lede">
-              Work with a coach if you want one. Ajax is still an access gym —
-              members train on their own during open hours. Personal training is
-              an add-on, not the product, and we are not a CrossFit box.
-            </p>
-            <p>
-              You and your trainer build a plan around your goals — strength,
-              longevity, recovery, performance, or injury-aware work. Packages
-              are tailored after a conversation. We do not publish rates here;
-              call or write and we will walk you through what fits.
-            </p>
-            <div className="button-row">
-              <Link className="button" href="/contact">
-                Book a consult
-              </Link>
-              <a className="button button-outline" href={site.phoneHref}>
-                Call {site.phoneDisplay}
-              </a>
-            </div>
+      <section className="hero">
+        <PlaceholderMedia
+          src={placeholders.strength}
+          className="hero-media"
+          sizes="100vw"
+          preload
+        />
+        <div className="hero-shade" />
+        <div className="container hero-inner">
+          <p className="eyebrow eyebrow-light">Personal training · Aspen</p>
+          <h1>A coach for work that lasts.</h1>
+          <p className="lede lede-light">
+            One-to-one coaching for strength, longevity, recovery, and
+            performance. A plan, a pair of eyes, and someone in it with you —
+            in and out of season.
+          </p>
+          <div className="button-row">
+            <Link className="button button-inverse" href="/contact">
+              Talk through packages
+            </Link>
+            <a className="button button-ghost" href={site.phoneHref}>
+              Call {site.phoneDisplay}
+            </a>
           </div>
-          <PlaceholderMedia
-            src={placeholders.strength}
-            className="page-aside-media"
-            sizes="(max-width: 720px) 100vw, 40vw"
-          />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container intro-grid">
+          <div>
+            <p className="eyebrow">The relationship</p>
+            <h2>You, a trainer, and a plan that compounds.</h2>
+          </div>
+          <p className="lede">
+            You and your coach build the work around how you actually live here.
+            Membership is open-gym access — you can always train on your own
+            during open hours. Coaching is for people who want a plan and
+            accountability. Packages are set after we talk. We don’t list rates
+            here.
+          </p>
         </div>
       </section>
 
       <section className="section section-tint">
-        <div className="container">
-          <p className="eyebrow">What’s included</p>
-          <h2>Every personal training package</h2>
-          <p className="lede">
-            Standard and Elite paths share the same package bones. The
-            difference is the trainer’s experience and credentials.
-          </p>
+        <div className="container split">
+          <div>
+            <p className="eyebrow">What’s included</p>
+            <h2>Every package.</h2>
+            <p>
+              Personal Training and Elite share the same bones. The difference
+              is the trainer’s hours and credentials.
+            </p>
+          </div>
           <ul className="include-list">
             {trainingIncludes.map((item) => (
               <li key={item}>{item}</li>
@@ -65,8 +77,8 @@ export default function PersonalTrainingPage() {
 
       <section className="section">
         <div className="container">
-          <p className="eyebrow">Trainer levels</p>
-          <h2>Standard and Elite</h2>
+          <p className="eyebrow">Two levels</p>
+          <h2>Personal Training and Elite.</h2>
           <div className="card-grid">
             {trainerLevels.map((level) => (
               <article className="card" key={level.id}>
@@ -76,36 +88,59 @@ export default function PersonalTrainingPage() {
             ))}
           </div>
           <p className="center-note">
-            We’ll match you after a consult — not from a rate card online.
+            We’ll match you on a consult — not from a published rate card.
           </p>
         </div>
       </section>
 
-      <section className="section section-tint">
+      <section className="photo-band">
+        <PlaceholderMedia
+          src={placeholders.recovery}
+          className="photo-band-media"
+          sizes="100vw"
+          label={false}
+        />
+        <div className="photo-band-shade" />
+        <div className="container photo-band-inner">
+          <p className="eyebrow eyebrow-light">Next step</p>
+          <h2>Talk through packages.</h2>
+          <p>
+            Call {site.phoneDisplay} or write {site.email}. Tell us what you
+            want from the work. We’ll follow up.
+          </p>
+          <div className="button-row">
+            <Link className="button button-inverse" href="/contact">
+              Contact us
+            </Link>
+            <a className="button button-ghost" href={site.phoneHref}>
+              Call {site.phoneDisplay}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container split">
           <div>
             <p className="eyebrow">Athletes</p>
-            <h2>Sports performance is available too.</h2>
+            <h2>Sports performance, if that’s the work.</h2>
             <p>
-              Strength, mobility, and injury-aware work for sport — still
-              optional coaching on top of open-gym membership.
+              Strength, mobility, and staying available for sport — same
+              consult, no published rates.
             </p>
-            <Link className="button" href="/sports-performance">
+            <Link className="text-link" href="/sports-performance">
               Sports performance
             </Link>
           </div>
           <div className="panel">
-            <p className="eyebrow">Start with a conversation</p>
+            <p className="eyebrow">Just the floor</p>
             <p>
-              Call <a href={site.phoneHref}>{site.phoneDisplay}</a> or{" "}
-              <Link href="/contact">contact us</Link>. Tell us what you want
-              from training. We’ll follow up from{" "}
-              <a href={`mailto:${site.email}`}>{site.email}</a>.
+              Prefer to train on your own? Membership is open access,{" "}
+              {site.hours.access} daily. Not 24/7.
             </p>
-            <p className="muted">
-              Prefer just the floor? <Link href="/pricing">See membership</Link>{" "}
-              — access {site.hours.access} daily, not 24/7.
-            </p>
+            <Link className="button" href="/pricing">
+              See membership
+            </Link>
           </div>
         </div>
       </section>

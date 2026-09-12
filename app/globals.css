@@ -420,10 +420,11 @@ a:hover {
   text-decoration: none;
   color: var(--ink);
   padding: 0.3rem 0;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .nav-link.is-active {
@@ -705,7 +706,7 @@ a:focus-visible {
     align-items: center;
     width: auto;
     padding: 0;
-    gap: 1.35rem;
+    gap: 1rem;
   }
 
   .footer-grid {
