@@ -13,7 +13,6 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link href="/" className="wordmark" onClick={() => setOpen(false)}>
-          <span className="wordmark-mark" aria-hidden="true" />
           Ajax Fitness
         </Link>
 
@@ -48,6 +47,13 @@ export function Header() {
           <a className="nav-phone" href={site.phoneHref}>
             {site.phoneDisplay}
           </a>
+          <Link
+            className="button button-compact"
+            href="/pricing"
+            onClick={() => setOpen(false)}
+          >
+            Membership
+          </Link>
         </nav>
       </div>
     </header>
