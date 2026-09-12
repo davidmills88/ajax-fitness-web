@@ -574,6 +574,13 @@ a:focus-visible {
   width: 100%;
 }
 
+.media-frame.hero-media,
+.media-frame.photo-band-media {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+}
+
 .card-media,
 .aside-media,
 .page-aside-media {
@@ -618,7 +625,7 @@ a:focus-visible {
 }
 
 .photo-band-shade {
-  background: linear-gradient(90deg, rgba(10, 10, 10, 0.86) 0%, rgba(10, 10, 10, 0.4) 100%);
+  background: linear-gradient(90deg, rgba(10, 10, 10, 0.78) 0%, rgba(10, 10, 10, 0.28) 100%);
 }
 
 .photo-band-inner {
