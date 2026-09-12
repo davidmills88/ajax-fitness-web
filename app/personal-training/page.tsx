@@ -3,12 +3,11 @@ import Link from "next/link";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
 import { site } from "@/lib/site";
-import { trainerLevels, trainingIncludes } from "@/lib/training";
 
 export const metadata: Metadata = {
   title: "Personal training",
   description:
-    "Personal training at Ajax Fitness in Aspen — coaching for strength, longevity, recovery, and performance. Packages are tailored after a conversation. Call (970) 670-8974.",
+    "Personal training at Ajax Fitness in Aspen — a coach for compounding strength, longevity, and performance. Talk through packages or call (970) 670-8974.",
 };
 
 export default function PersonalTrainingPage() {
@@ -23,12 +22,11 @@ export default function PersonalTrainingPage() {
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
-          <p className="eyebrow eyebrow-light">Personal training · Aspen</p>
-          <h1>A coach for work that lasts.</h1>
+          <p className="eyebrow eyebrow-light">Personal training</p>
+          <h1>A coach for the life you actually live here.</h1>
           <p className="lede lede-light">
-            One-to-one coaching for strength, longevity, recovery, and
-            performance. A plan, a pair of eyes, and someone in it with you —
-            in and out of season.
+            Strength, longevity, recovery, and performance — written for Aspen
+            seasons, not a generic program. Someone in the work with you.
           </p>
           <div className="button-row">
             <Link className="button button-inverse" href="/contact">
@@ -42,53 +40,102 @@ export default function PersonalTrainingPage() {
       </section>
 
       <section className="section">
-        <div className="container intro-grid">
-          <div>
-            <p className="eyebrow">The relationship</p>
-            <h2>You, a trainer, and a plan that compounds.</h2>
+        <div className="container">
+          <p className="eyebrow">Why a coach</p>
+          <h2>The floor is enough for some people. Others want a mind on the work.</h2>
+          <div className="card-grid feature-grid">
+            <article className="card">
+              <h3>A plan that fits this place</h3>
+              <p>
+                Travel, altitude, ski season, a quiet May. The work is written
+                around how you live — not a template you abandon in week three.
+              </p>
+            </article>
+            <article className="card">
+              <h3>Someone who sees you</h3>
+              <p>
+                Honest eyes on the bar, the calendar, and the week you actually
+                had. Accountability without the noise.
+              </p>
+            </article>
+            <article className="card">
+              <h3>Recovery that lets it land</h3>
+              <p>
+                Hard sessions only matter if the next one is possible. Your
+                coach keeps the load honest so strength compounds.
+              </p>
+            </article>
           </div>
-          <p className="lede">
-            You and your coach build the work around how you actually live here.
-            Membership is open-gym access — you can always train on your own
-            during open hours. Coaching is for people who want a plan and
-            accountability. Packages are set after we talk. We don’t list rates
-            here.
-          </p>
         </div>
       </section>
 
       <section className="section section-tint">
         <div className="container split">
           <div>
-            <p className="eyebrow">What’s included</p>
-            <h2>Every package.</h2>
-            <p>
-              Personal Training and Elite share the same bones. The difference
-              is the trainer’s hours and credentials.
+            <p className="eyebrow">How it works</p>
+            <h2>A conversation, then the work.</h2>
+            <p className="muted">
+              Packages are tailored after we talk. We don’t publish coaching
+              rates.
             </p>
           </div>
-          <ul className="include-list">
-            {trainingIncludes.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+          <ol className="step-list">
+            <li>
+              <strong>Consult</strong>
+              How you live, what you want, what the year looks like.
+            </li>
+            <li>
+              <strong>Plan</strong>
+              Your coach writes the work — strength, recovery, and the rest.
+            </li>
+            <li>
+              <strong>Sessions</strong>
+              Together on the floor. You leave knowing the next one.
+            </li>
+            <li>
+              <strong>Adjust</strong>
+              The season changes. The plan does too.
+            </li>
+          </ol>
         </div>
       </section>
 
       <section className="section">
-        <div className="container">
-          <p className="eyebrow">Two levels</p>
-          <h2>Personal Training and Elite.</h2>
-          <div className="card-grid">
-            {trainerLevels.map((level) => (
-              <article className="card" key={level.id}>
-                <h3>{level.name}</h3>
-                <p>{level.detail}</p>
-              </article>
-            ))}
+        <div className="container split">
+          <div>
+            <p className="eyebrow">Who it’s for</p>
+            <h2>Members who want a coach — not a class.</h2>
+            <p>
+              People who already take the floor seriously, and want a plan and
+              a pair of eyes so the years add up. Ski, ride, compete, or simply
+              stay capable in town — tell us. The coaching is still one-to-one.
+            </p>
+            <p className="muted">
+              The gym is still yours {site.hours.access}. Coaching is extra, if
+              you want it.
+            </p>
           </div>
-          <p className="center-note">
-            We’ll match you on a consult — not from a published rate card.
+          <div className="panel">
+            <p className="eyebrow">Who it’s not</p>
+            <p>
+              If you want a packed class calendar or a gym that only works when
+              a trainer is booked, this isn’t that. If you want the floor and,
+              some weeks, a coach — we should talk.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-tint">
+        <div className="container intro-grid">
+          <div>
+            <p className="eyebrow">What it should feel like</p>
+            <h2>Stronger in the life you already have.</h2>
+          </div>
+          <p className="lede">
+            More useful on the mountain. Steadier in town. Capable in twenty
+            years. We won’t put words in other people’s mouths — come see the
+            floor and decide if the work fits.
           </p>
         </div>
       </section>
@@ -102,11 +149,11 @@ export default function PersonalTrainingPage() {
         />
         <div className="photo-band-shade" />
         <div className="container photo-band-inner">
-          <p className="eyebrow eyebrow-light">Next step</p>
+          <p className="eyebrow eyebrow-light">Next</p>
           <h2>Talk through packages.</h2>
           <p>
-            Call {site.phoneDisplay} or write {site.email}. Tell us what you
-            want from the work. We’ll follow up.
+            Call {site.phoneDisplay} or write {site.email}. We’ll listen, then
+            outline a fit.
           </p>
           <div className="button-row">
             <Link className="button button-inverse" href="/contact">
@@ -115,32 +162,6 @@ export default function PersonalTrainingPage() {
             <a className="button button-ghost" href={site.phoneHref}>
               Call {site.phoneDisplay}
             </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container split">
-          <div>
-            <p className="eyebrow">Athletes</p>
-            <h2>Sports performance, if that’s the work.</h2>
-            <p>
-              Strength, mobility, and staying available for sport — same
-              consult, no published rates.
-            </p>
-            <Link className="text-link" href="/sports-performance">
-              Sports performance
-            </Link>
-          </div>
-          <div className="panel">
-            <p className="eyebrow">Just the floor</p>
-            <p>
-              Prefer to train on your own? Membership is open access,{" "}
-              {site.hours.access} daily. Not 24/7.
-            </p>
-            <Link className="button" href="/pricing">
-              See membership
-            </Link>
           </div>
         </div>
       </section>

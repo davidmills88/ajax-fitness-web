@@ -9,8 +9,8 @@ export function Footer() {
         <div>
           <p className="footer-brand">Ajax Fitness</p>
           <p className="muted">
-            An access gym in Aspen. Members train on their own during open
-            hours — not CrossFit, not a personal-training-only studio.
+            A focused gym in Aspen for people who want to stay strong, move
+            well, and recover properly.
           </p>
         </div>
         <div>

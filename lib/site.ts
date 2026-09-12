@@ -1,9 +1,9 @@
 export const site = {
   name: "Ajax Fitness",
   domain: "ajaxfitness.com",
-  tagline: "An access gym in Aspen — train on your own, 6:00 AM–9:00 PM",
+  tagline: "Strength, recovery, and longevity in Aspen",
   description:
-    "Ajax Fitness is an open-access gym in Aspen. Members train on their own during open hours, 6:00 AM–9:00 PM daily. Not a CrossFit box. Not a personal-training-only studio.",
+    "Ajax Fitness is Aspen’s premium gym for strength, recovery, and longevity. Members train independently during open hours, 6:00 AM–9:00 PM daily.",
   phoneDisplay: "(970) 670-8974",
   phoneHref: "tel:+19706708974",
   email: "hello@ajaxgym.com",
@@ -56,7 +56,6 @@ export const site = {
     "Membership",
     "Day pass",
     "Personal training",
-    "Sports performance",
     "Tour",
     "Other",
   ] as const,
@@ -72,10 +71,7 @@ export const nav = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
-export const trainingNavHrefs = [
-  "/personal-training",
-  "/sports-performance",
-] as const;
+export const trainingNavHrefs = ["/personal-training"] as const;
 
 export function formatStreetAddress() {
   return `${site.address.line1}, ${site.address.line2}`;

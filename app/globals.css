@@ -255,17 +255,36 @@ a:hover {
   margin-top: 2.4rem;
 }
 
-.include-list {
+.step-list {
   list-style: none;
   display: grid;
-  gap: 0.85rem;
-  margin: 1.5rem 0 0;
-  max-width: 40rem;
+  gap: 1.25rem;
+  margin: 0;
+  counter-reset: step;
 }
 
-.include-list li {
-  padding: 0.85rem 0;
+.step-list li {
+  display: grid;
+  gap: 0.35rem;
+  padding-bottom: 1.15rem;
   border-bottom: 1px solid var(--line);
+  counter-increment: step;
+}
+
+.step-list li::before {
+  content: counter(step, decimal-leading-zero);
+  font-family: var(--font-heading), "Inter Tight", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.step-list strong {
+  display: block;
+  font-family: var(--font-heading), "Inter Tight", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 .button-outline {

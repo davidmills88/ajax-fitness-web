@@ -16,12 +16,11 @@ export default function HomePage() {
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
-          <p className="eyebrow eyebrow-light">Access gym · Aspen</p>
-          <h1>Come train on your own.</h1>
+          <p className="eyebrow eyebrow-light">Aspen</p>
+          <h1>Strength training for life in Aspen</h1>
           <p className="lede lede-light">
-            Ajax Fitness is an open-access gym. Members walk in, use the floor,
-            and train independently — {site.hours.access}, every day. Not 24/7.
-            Not a CrossFit box. Not a personal-training-only studio.
+            A focused gym for people who want to stay strong, move well, and
+            recover properly — in and out of season.
           </p>
           <div className="button-row">
             <Link className="button button-inverse" href="/pricing">
@@ -42,44 +41,25 @@ export default function HomePage() {
       <section className="section">
         <div className="container intro-grid">
           <div>
-            <p className="eyebrow">What this is</p>
-            <h2>An access gym. You train independently.</h2>
+            <p className="eyebrow">What Ajax is</p>
+            <h2>Small enough to feel personal. Serious enough that your training compounds.</h2>
           </div>
-          <p className="lede">
-            Membership is open-gym access — not a class pack, and not a coaching
-            contract. Come during member hours and train your way. We care about
-            strength, longevity, recovery, and performance that compounds — not
-            a six-week spike.
-          </p>
-        </div>
-        <div className="container card-grid feature-grid clarify-grid">
-          <article className="card">
-            <h3>Open access</h3>
-            <p>
-              Members train on their own, {site.hours.access} daily, year-round.
+          <div>
+            <p className="lede">
+              We train for strength, longevity, and recovery — not a six-week
+              spike, and not a crowded afterthought.
             </p>
-          </article>
-          <article className="card">
-            <h3>Not CrossFit</h3>
-            <p>
-              We are not a CrossFit box. No class-required programming. Use the
-              floor as an independent gym.
+            <p className="muted">
+              Members use the floor on their own, {site.hours.access} daily.
+              Not CrossFit. Not a personal-training-only studio. Coaching is
+              here if you want it.
             </p>
-          </article>
-          <article className="card">
-            <h3>Coaching is optional</h3>
-            <p>
-              Personal training is available as an add-on if you want a coach.
-              It is not the product — and you do not need it to belong here.
-            </p>
-          </article>
+          </div>
         </div>
       </section>
 
       <section className="section section-tint">
         <div className="container">
-          <p className="eyebrow">What the work is for</p>
-          <h2>Strength. Longevity. Recovery. Performance.</h2>
           <div className="card-grid feature-grid">
             <article className="card feature-card">
               <PlaceholderMedia
@@ -111,15 +91,10 @@ export default function HomePage() {
               />
               <div className="card-body">
                 <h3>Recovery</h3>
-                <p>Space so hard work lands clean — on your own schedule.</p>
+                <p>Space so hard work lands clean.</p>
               </div>
             </article>
           </div>
-          <p className="center-note">
-            Want a coach beside the open floor?{" "}
-            <Link href="/personal-training">See personal training</Link>
-            .
-          </p>
         </div>
       </section>
 
@@ -133,7 +108,7 @@ export default function HomePage() {
         <div className="photo-band-shade" />
         <div className="container photo-band-inner">
           <p className="eyebrow eyebrow-light">Membership</p>
-          <h2>Access, priced simply.</h2>
+          <h2>Simple pricing. Year-round floor.</h2>
           <p>
             Monthly {site.plans.monthly.price} · Annual {site.plans.annual.price} ·
             Day pass {site.plans.day.price}
