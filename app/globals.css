@@ -130,7 +130,7 @@ a:hover {
 
 .hero-shade {
   background:
-    linear-gradient(180deg, rgba(10, 10, 10, 0.2) 0%, rgba(10, 10, 10, 0.78) 100%);
+    linear-gradient(180deg, rgba(10, 10, 10, 0.08) 0%, rgba(10, 10, 10, 0.28) 42%, rgba(10, 10, 10, 0.78) 100%);
 }
 
 .hero-inner {
@@ -558,7 +558,11 @@ a:focus-visible {
 
 .media-frame img {
   object-fit: cover;
-  filter: saturate(0.55) contrast(1.08);
+  filter: saturate(0.62) contrast(1.04);
+}
+
+.hero-media img {
+  filter: saturate(0.35) contrast(1.06) brightness(1.08);
 }
 
 .hero-media,

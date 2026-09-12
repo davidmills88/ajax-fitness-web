@@ -13,7 +13,6 @@ export default function HomePage() {
           className="hero-media"
           sizes="100vw"
           preload
-          label={false}
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
