@@ -74,7 +74,7 @@ export default function HomePage() {
               />
               <div className="card-body">
                 <h3>Longevity</h3>
-                <p>Train for decades, not a six-week spike.</p>
+                <p>Training that still matters in twenty years.</p>
               </div>
             </article>
             <article className="card feature-card">
