@@ -114,8 +114,9 @@ export default function HomePage() {
             Day pass {site.plans.day.price}
           </p>
           <p>
-            {site.plans.monthly.detail} Members train {site.hours.access}, every
-            day of the year. Not 24/7.
+            {site.plans.monthly.detail} Week, two-week, and one-month passes
+            live on Pricing. Members train {site.hours.access}, every day of
+            the year. Not 24/7.
           </p>
           <Link className="button button-inverse" href="/pricing">
             View pricing

@@ -9,7 +9,7 @@ import { formatFullAddress, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Ajax Fitness in Aspen about membership, a day pass, a tour, or optional coaching.",
+    "Contact Ajax Fitness in Aspen about membership, a temporary pass, a tour, or optional coaching.",
 };
 
 export default function ContactPage() {
@@ -20,7 +20,7 @@ export default function ContactPage() {
           <p className="eyebrow">Get in touch</p>
           <h1>Contact Ajax Fitness</h1>
           <p className="lede">
-            Tell us what you’re looking for — membership, day pass, or a tour.
+            Tell us what you’re looking for — membership, a temporary pass, or a tour.
             We’ll follow up from this inbox.
           </p>
           <ContactForm />

@@ -81,7 +81,7 @@ export function ContactForm() {
       </label>
       <label>
         Message
-        <textarea name="message" rows={5} placeholder="Membership, day pass, or a tour — tell us what you need." />
+        <textarea name="message" rows={5} placeholder="Membership, a temporary pass, or a tour — tell us what you need." />
       </label>
       {status === "error" ? (
         <p className="form-error" role="alert">

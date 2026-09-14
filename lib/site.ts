@@ -31,6 +31,7 @@ export const site = {
   plans: {
     monthly: {
       id: "monthly" as const,
+      kind: "membership" as const,
       name: "Monthly membership",
       price: "$229",
       cadence: "/month",
@@ -38,6 +39,7 @@ export const site = {
     },
     annual: {
       id: "annual" as const,
+      kind: "membership" as const,
       name: "Annual membership",
       price: "$2100",
       cadence: "/year",
@@ -45,16 +47,41 @@ export const site = {
     },
     day: {
       id: "day" as const,
+      kind: "temporary" as const,
       name: "Day pass",
       price: "$49",
       cadence: "",
-      detail: "One-day access. Call or stop by to arrange.",
+      detail: "One day of gym-hour access.",
+    },
+    week: {
+      id: "week" as const,
+      kind: "temporary" as const,
+      name: "Week pass",
+      price: "$150",
+      cadence: "",
+      detail: "One week of gym-hour access.",
+    },
+    twoWeek: {
+      id: "twoWeek" as const,
+      kind: "temporary" as const,
+      name: "2 Week pass",
+      price: "$225",
+      cadence: "",
+      detail: "Two weeks of gym-hour access.",
+    },
+    oneMonth: {
+      id: "oneMonth" as const,
+      kind: "temporary" as const,
+      name: "1 Month pass",
+      price: "$295",
+      cadence: "",
+      detail: "One month of gym-hour access.",
     },
   },
   ghlLocationId: "9s4QUTb46DnuhaD2NEca",
   interests: [
     "Membership",
-    "Day pass",
+    "Temporary pass",
     "Personal training",
     "Tour",
     "Other",
@@ -62,6 +89,23 @@ export const site = {
 };
 
 export type PlanId = keyof typeof site.plans;
+export type Plan = (typeof site.plans)[PlanId];
+
+export const membershipPlanIds = ["monthly", "annual"] as const;
+export const temporaryPassIds = [
+  "day",
+  "week",
+  "twoWeek",
+  "oneMonth",
+] as const;
+export const allPlanIds = [
+  ...membershipPlanIds,
+  ...temporaryPassIds,
+] as const;
+
+export const membershipPlans = membershipPlanIds.map((id) => site.plans[id]);
+export const temporaryPasses = temporaryPassIds.map((id) => site.plans[id]);
+export const allPlans = allPlanIds.map((id) => site.plans[id]);
 
 export const nav = [
   { href: "/", label: "Home" },

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { JoinCheckout } from "@/components/JoinCheckout";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
-import { site, type PlanId } from "@/lib/site";
+import { allPlanIds, site, type PlanId } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Join",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Choose an Ajax Fitness plan. Online checkout is coming; call (970) 670-8974 to join today.",
 };
 
-const plans = new Set<PlanId>(["monthly", "annual", "day"]);
+const plans = new Set<PlanId>(allPlanIds);
 
 export default async function JoinPage({
   searchParams,
