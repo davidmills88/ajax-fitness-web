@@ -12,7 +12,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: `Ajax Fitness memberships: ${site.plans.monthly.price} monthly, ${site.plans.annual.price} annual. Temporary passes: day ${site.plans.day.price}, week ${site.plans.week.price}, 2 week ${site.plans.twoWeek.price}, 1 month ${site.plans.oneMonth.price}. Call ${site.phoneDisplay} to join.`,
+  description: `Ajax Fitness memberships: ${site.plans.monthly.price} monthly, ${site.plans.annual.price} annual. Temporary passes: day ${site.plans.day.price}, week ${site.plans.week.price}, 2-week ${site.plans.twoWeek.price}, 1-month ${site.plans.oneMonth.price}. Call ${site.phoneDisplay} to join.`,
 };
 
 function PlanCard({ plan }: { plan: Plan }) {

@@ -64,7 +64,7 @@ export const site = {
     twoWeek: {
       id: "twoWeek" as const,
       kind: "temporary" as const,
-      name: "2 Week pass",
+      name: "2-week pass",
       price: "$225",
       cadence: "",
       detail: "Two weeks of gym-hour access.",
@@ -72,7 +72,7 @@ export const site = {
     oneMonth: {
       id: "oneMonth" as const,
       kind: "temporary" as const,
-      name: "1 Month pass",
+      name: "1-month pass",
       price: "$295",
       cadence: "",
       detail: "One month of gym-hour access.",
