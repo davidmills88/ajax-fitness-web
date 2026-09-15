@@ -1,7 +1,7 @@
 import { localBusinessJsonLd } from "@/lib/schema";
 
-export function JsonLd() {
-  const jsonLd = localBusinessJsonLd();
+export function JsonLd({ data }: { data?: object }) {
+  const jsonLd = data ?? localBusinessJsonLd();
 
   return (
     <script

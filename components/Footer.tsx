@@ -27,11 +27,14 @@ export function Footer() {
         </div>
         <div>
           <p className="footer-label">Hours</p>
-          <p>Member access {site.hours.access}, every day of the year.</p>
+          <p>Member access {site.hours.access}, 365 days a year.</p>
           <p className="muted">Not 24/7. Desk hours may differ.</p>
         </div>
         <div>
           <p className="footer-label">More</p>
+          <p>
+            <Link href="/hours">Hours</Link>
+          </p>
           <p>
             <Link href="/personal-training">Personal training</Link>
           </p>

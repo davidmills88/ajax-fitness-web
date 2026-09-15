@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AddressBlock } from "@/components/AddressBlock";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
-import { site } from "@/lib/site";
+import { formatNapShort, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Hours",
-  description:
-    "Ajax Fitness member access is 6:00 AM–9:00 PM daily, year-round. Not 24/7. Front desk hours may differ.",
+  description: `Ajax Fitness at ${formatNapShort()} is open ${site.hours.access} daily, 365 days a year. Not 24/7. Front desk hours may differ.`,
 };
 
 export default function HoursPage() {
@@ -18,13 +18,16 @@ export default function HoursPage() {
           <p className="eyebrow">Member access</p>
           <h1>Gym hours</h1>
           <p className="lede">
-            Members can train from 6:00 AM to 9:00 PM, every day — 365 days a
-            year.
+            {formatNapShort()}. Members train from 6:00 AM to 9:00 PM, every
+            day — 365 days a year.
           </p>
-          <p className="callout">Ajax Fitness is not open 24 hours.</p>
+          <p className="callout">
+            Ajax Fitness is not open 24 hours. Access is 6:00 AM–9:00 PM
+            daily. Not 24/7.
+          </p>
           <p>
-            Access is 6:00 AM–9:00 PM daily. Front desk hours vary; members can
-            enter during open gym hours even when the desk isn’t staffed.
+            Front desk hours vary; members can enter during open gym hours even
+            when the desk isn’t staffed.
           </p>
           <p>
             Questions? Call <a href={site.phoneHref}>{site.phoneDisplay}</a> or{" "}
@@ -49,8 +52,14 @@ export default function HoursPage() {
                 <dd>{site.hours.days}</dd>
               </div>
               <div>
-                <dt>Always open?</dt>
-                <dd>No — not 24/7</dd>
+                <dt>24/7</dt>
+                <dd>No — the gym closes at 9:00 PM</dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>
+                  <AddressBlock inline />
+                </dd>
               </div>
             </dl>
           </aside>
