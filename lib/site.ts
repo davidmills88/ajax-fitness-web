@@ -79,7 +79,7 @@ export const site = {
     },
   },
   offer: {
-    eyebrow: "Membership offer",
+    eyebrow: "With membership",
     headline: "Free 6-week custom training program with membership",
     sub: "Included with every membership signup.",
     exclusion: "Not included with a day pass.",
@@ -95,7 +95,7 @@ export const site = {
       },
       {
         name: "Julia Clark Russo",
-        text: "Awesome gym!!! New equipment, great personal trainers and space. Love the infrared sauna and cold plunge the most!!!",
+        text: "New equipment, great personal trainers and space. Love the infrared sauna and cold plunge the most.",
       },
       {
         name: "Taine de Buys",

@@ -4,7 +4,7 @@ import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { placeholders } from "@/lib/placeholders";
-import { site } from "@/lib/site";
+import { offerPriceLine, site } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -23,8 +23,6 @@ export default function HomePage() {
             <Link href="/hours">See hours</Link>
             <span aria-hidden="true"> · </span>
             <a href={site.phoneHref}>{site.phoneDisplay}</a>
-            <span aria-hidden="true"> · </span>
-            {site.offer.exclusion}
           </p>
         </div>
       </section>
@@ -103,9 +101,7 @@ export default function HomePage() {
           <p className="eyebrow eyebrow-light">Membership</p>
           <h2>Simple pricing. Year-round floor.</h2>
           <p>
-            {site.offer.headline}. {site.offer.sub} Monthly{" "}
-            {site.plans.monthly.price} · Annual {site.plans.annual.price} · Day
-            pass {site.plans.day.price}
+            {site.offer.headline}. {site.offer.sub} {offerPriceLine()}
           </p>
           <p>
             {site.plans.monthly.detail} Week, two-week, and one-month passes
