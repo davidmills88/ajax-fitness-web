@@ -78,6 +78,35 @@ export const site = {
       detail: "One month of gym-hour access.",
     },
   },
+  offer: {
+    eyebrow: "With membership",
+    headline: "Free 6-week custom training program with membership",
+    sub: "Included with every membership signup.",
+    exclusion: "Not included with a day pass.",
+  },
+  reviews: {
+    rating: "4.9",
+    count: 71,
+    label: "Google reviews",
+    quotes: [
+      {
+        name: "Paradise",
+        text: "Great atmosphere. Most weights in aspen. Never have to wait for equipment even when it gets busy",
+      },
+      {
+        name: "Julia Clark Russo",
+        text: "New equipment, great personal trainers and space. Love the infrared sauna and cold plunge the most.",
+      },
+      {
+        name: "Taine de Buys",
+        text: "Great gym with a strong community around it. Love the range of equipment here, certainly the best facilities in aspen.",
+      },
+      {
+        name: "Hana Bowers",
+        text: "Best gym in Aspen, hands down! The space is super open and not crowded with machines… The personal trainers here are top-notch, especially Roman…",
+      },
+    ],
+  },
   ghlLocationId: "9s4QUTb46DnuhaD2NEca",
   interests: [
     "Membership",
@@ -106,6 +135,10 @@ export const allPlanIds = [
 export const membershipPlans = membershipPlanIds.map((id) => site.plans[id]);
 export const temporaryPasses = temporaryPassIds.map((id) => site.plans[id]);
 export const allPlans = allPlanIds.map((id) => site.plans[id]);
+
+export function offerPriceLine() {
+  return `Monthly ${site.plans.monthly.price} · Annual ${site.plans.annual.price}`;
+}
 
 export const nav = [
   { href: "/", label: "Home" },

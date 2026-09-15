@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { AddressBlock } from "@/components/AddressBlock";
+import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { placeholders } from "@/lib/placeholders";
-import { site } from "@/lib/site";
+import { offerPriceLine, site } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -16,20 +18,7 @@ export default function HomePage() {
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
-          <p className="eyebrow eyebrow-light">Aspen</p>
-          <h1>Strength training for life in Aspen</h1>
-          <p className="lede lede-light">
-            A focused gym for people who want to stay strong, move well, and
-            recover properly — in and out of season.
-          </p>
-          <div className="button-row">
-            <Link className="button button-inverse" href="/pricing">
-              Get a membership
-            </Link>
-            <Link className="button button-ghost" href="/contact">
-              Contact us
-            </Link>
-          </div>
+          <MembershipOffer variant="hero" />
           <p className="hero-meta">
             <Link href="/hours">See hours</Link>
             <span aria-hidden="true"> · </span>
@@ -46,7 +35,7 @@ export default function HomePage() {
           </div>
           <div>
             <p className="lede">
-              We train for strength, longevity, and recovery — not a six-week
+              We train for strength, longevity, and recovery — not a short-term
               spike, and not a crowded afterthought.
             </p>
             <p className="muted">
@@ -98,6 +87,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <ReviewsSection />
+
       <section className="photo-band">
         <PlaceholderMedia
           src={placeholders.pricing}
@@ -110,8 +101,7 @@ export default function HomePage() {
           <p className="eyebrow eyebrow-light">Membership</p>
           <h2>Simple pricing. Year-round floor.</h2>
           <p>
-            Monthly {site.plans.monthly.price} · Annual {site.plans.annual.price} ·
-            Day pass {site.plans.day.price}
+            {site.offer.headline}. {site.offer.sub} {offerPriceLine()}
           </p>
           <p>
             {site.plans.monthly.detail} Week, two-week, and one-month passes

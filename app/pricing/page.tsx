@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AddressBlock } from "@/components/AddressBlock";
+import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
 import {
   membershipPlans,
+  offerPriceLine,
   site,
   temporaryPasses,
   type Plan,
@@ -12,7 +14,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: `Ajax Fitness memberships: ${site.plans.monthly.price} monthly, ${site.plans.annual.price} annual. Temporary passes: day ${site.plans.day.price}, week ${site.plans.week.price}, 2-week ${site.plans.twoWeek.price}, 1-month ${site.plans.oneMonth.price}. Call ${site.phoneDisplay} to join.`,
+  description: `${site.offer.headline}. ${site.offer.sub} ${offerPriceLine()}. Temporary passes: day ${site.plans.day.price}, week ${site.plans.week.price}, 2-week ${site.plans.twoWeek.price}, 1-month ${site.plans.oneMonth.price}. Call ${site.phoneDisplay} to join.`,
 };
 
 function PlanCard({ plan }: { plan: Plan }) {
@@ -46,9 +48,11 @@ export default function PricingPage() {
     <>
       <section className="section page-hero">
         <div className="container">
+          <MembershipOffer variant="page" />
+
           <div className="narrow">
             <p className="eyebrow">Pricing</p>
-            <h1>Membership & temporary passes</h1>
+            <h2>Membership & temporary passes</h2>
             <p className="lede">
               Simple pricing. No clutter. Built for Aspen training that sticks.
             </p>
