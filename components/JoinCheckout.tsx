@@ -1,9 +1,13 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { site, type PlanId } from "@/lib/site";
-
-const plans = [site.plans.monthly, site.plans.annual, site.plans.day];
+import {
+  membershipPlans,
+  site,
+  temporaryPasses,
+  type Plan,
+  type PlanId,
+} from "@/lib/site";
 
 export function JoinCheckout({ initialPlan }: { initialPlan?: PlanId }) {
   const [plan, setPlan] = useState<PlanId>(initialPlan ?? "monthly");
@@ -27,31 +31,18 @@ export function JoinCheckout({ initialPlan }: { initialPlan?: PlanId }) {
 
   return (
     <form className="join-form" onSubmit={onSubmit}>
-      <fieldset className="plan-picker">
-        <legend className="sr-only">Choose a plan</legend>
-        {plans.map((item) => (
-          <label
-            key={item.id}
-            className={plan === item.id ? "plan-option is-selected" : "plan-option"}
-          >
-            <input
-              type="radio"
-              name="plan"
-              value={item.id}
-              checked={plan === item.id}
-              onChange={() => setPlan(item.id)}
-            />
-            <span>
-              <strong>{item.name}</strong>
-              <span className="plan-price">
-                {item.price}
-                <span>{item.cadence}</span>
-              </span>
-              <span className="muted">{item.detail}</span>
-            </span>
-          </label>
-        ))}
-      </fieldset>
+      <PlanGroup
+        legend="Membership"
+        plans={membershipPlans}
+        selected={plan}
+        onSelect={setPlan}
+      />
+      <PlanGroup
+        legend="Temporary passes"
+        plans={temporaryPasses}
+        selected={plan}
+        onSelect={setPlan}
+      />
       <button className="button" type="submit">
         Continue to Stripe Checkout
       </button>
@@ -65,5 +56,45 @@ export function JoinCheckout({ initialPlan }: { initialPlan?: PlanId }) {
         </p>
       ) : null}
     </form>
+  );
+}
+
+function PlanGroup({
+  legend,
+  plans,
+  selected,
+  onSelect,
+}: {
+  legend: string;
+  plans: Plan[];
+  selected: PlanId;
+  onSelect: (id: PlanId) => void;
+}) {
+  return (
+    <fieldset className="plan-picker">
+      <legend className="plan-picker-legend">{legend}</legend>
+      {plans.map((item) => (
+        <label
+          key={item.id}
+          className={selected === item.id ? "plan-option is-selected" : "plan-option"}
+        >
+          <input
+            type="radio"
+            name="plan"
+            value={item.id}
+            checked={selected === item.id}
+            onChange={() => onSelect(item.id)}
+          />
+          <span>
+            <strong>{item.name}</strong>
+            <span className="plan-price">
+              {item.price}
+              {item.cadence ? <span>{item.cadence}</span> : null}
+            </span>
+            <span className="muted">{item.detail}</span>
+          </span>
+        </label>
+      ))}
+    </fieldset>
   );
 }

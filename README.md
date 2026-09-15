@@ -6,7 +6,7 @@ Premium Aspen gym site for [ajaxfitness.com](https://ajaxfitness.com). Code-owne
 
 - `/` — Home
 - `/hours` — Member access 6:00 AM–9:00 PM, not 24/7
-- `/pricing` — Monthly $229 · Annual $2100 · Day pass $49
+- `/pricing` — Membership $229 / $2100 · Temporary: Day $49 · Week $150 · 2-week $225 · 1-month $295
 - `/contact` — Lead form → `POST /api/contact` (GHL stub)
 - `/join` — Plan picker + placeholder Stripe Checkout
 - `/tour` — Tour request stub

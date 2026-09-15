@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { site, type PlanId } from "@/lib/site";
+import { allPlanIds, site, type PlanId } from "@/lib/site";
 
-const plans = new Set<PlanId>(["monthly", "annual", "day"]);
+const plans = new Set<PlanId>(allPlanIds);
 
 export async function POST(request: Request) {
   let plan: string | undefined;
