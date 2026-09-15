@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { offerPriceLine, site } from "@/lib/site";
+import { AddressBlock } from "@/components/AddressBlock";
+import { lockedPriceLine, site } from "@/lib/site";
 
 type OfferVariant = "hero" | "page";
 
@@ -21,9 +22,16 @@ export function MembershipOffer({
       </p>
       <Heading>{offer.headline}</Heading>
       <p className={isHero ? "lede lede-light" : "lede"}>
-        {offer.sub} {offerPriceLine()}
+        {offer.sub} {lockedPriceLine()}
       </p>
-      {isHero ? null : <p className="muted">{offer.exclusion}</p>}
+      {isHero ? null : (
+        <>
+          <p className="muted">
+            <AddressBlock inline />
+          </p>
+          <p className="muted">{offer.exclusion}</p>
+        </>
+      )}
       <div className="button-row">
         <a
           className={isHero ? "button button-inverse" : "button"}

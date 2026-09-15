@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CallToJoin } from "@/components/CallToJoin";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
+import { TrainerRoster } from "@/components/TrainerRoster";
 import { placeholders } from "@/lib/placeholders";
-import { site } from "@/lib/site";
+import { formatNapShort, site } from "@/lib/site";
+import { trainerNamesLine } from "@/lib/trainers";
 
 export const metadata: Metadata = {
   title: "Personal training",
-  description:
-    "Personal training at Ajax Fitness in Aspen — a coach for compounding strength, longevity, and performance. Talk through packages or call (970) 670-8974.",
+  description: `Personal training at Ajax Fitness, ${formatNapShort()}, with ${trainerNamesLine()}. Packages after a conversation — we don’t publish rates. Call ${site.phoneDisplay}.`,
 };
 
 export default function PersonalTrainingPage() {
@@ -25,21 +27,30 @@ export default function PersonalTrainingPage() {
           <p className="eyebrow eyebrow-light">Personal training</p>
           <h1>A coach for the life you actually live here.</h1>
           <p className="lede lede-light">
-            Strength, longevity, recovery, and performance — written for Aspen
-            seasons, not a generic program. Someone in the work with you.
+            {trainerNamesLine()} — strength, longevity, recovery, and
+            performance, written for Aspen seasons. Someone in the work with
+            you.
           </p>
-          <div className="button-row">
-            <Link className="button button-inverse" href="/contact">
-              Talk through packages
-            </Link>
-            <a className="button button-ghost" href={site.phoneHref}>
-              Call {site.phoneDisplay}
-            </a>
-          </div>
+          <CallToJoin inverse />
         </div>
       </section>
 
       <section className="section">
+        <div className="container">
+          <div className="narrow">
+            <p className="eyebrow">The coaches</p>
+            <h2>Three trainers. One floor.</h2>
+            <p className="lede">
+              Roman Garcia leads training and the gym. Erin Young and Alie
+              James coach one-to-one. Call {site.phoneDisplay} to talk through
+              packages.
+            </p>
+          </div>
+          <TrainerRoster />
+        </div>
+      </section>
+
+      <section className="section section-tint">
         <div className="container">
           <p className="eyebrow">Why a coach</p>
           <h2>The floor is enough for some people. Others want a mind on the work.</h2>
@@ -69,7 +80,7 @@ export default function PersonalTrainingPage() {
         </div>
       </section>
 
-      <section className="section section-tint">
+      <section className="section">
         <div className="container split">
           <div>
             <p className="eyebrow">How it works</p>
@@ -100,7 +111,7 @@ export default function PersonalTrainingPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section-tint">
         <div className="container split">
           <div>
             <p className="eyebrow">Who it’s for</p>
@@ -126,20 +137,6 @@ export default function PersonalTrainingPage() {
         </div>
       </section>
 
-      <section className="section section-tint">
-        <div className="container intro-grid">
-          <div>
-            <p className="eyebrow">What it should feel like</p>
-            <h2>Stronger in the life you already have.</h2>
-          </div>
-          <p className="lede">
-            More useful on the mountain. Steadier in town. Capable in twenty
-            years. We won’t put words in other people’s mouths — come see the
-            floor and decide if the work fits.
-          </p>
-        </div>
-      </section>
-
       <section className="photo-band">
         <PlaceholderMedia
           src={placeholders.recovery}
@@ -155,14 +152,10 @@ export default function PersonalTrainingPage() {
             Call {site.phoneDisplay} or write {site.email}. We’ll listen, then
             outline a fit.
           </p>
-          <div className="button-row">
-            <Link className="button button-inverse" href="/contact">
-              Contact us
-            </Link>
-            <a className="button button-ghost" href={site.phoneHref}>
-              Call {site.phoneDisplay}
-            </a>
-          </div>
+          <CallToJoin inverse />
+          <p>
+            <Link href="/contact">Or write us</Link>
+          </p>
         </div>
       </section>
     </>

@@ -5,8 +5,9 @@ import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
 import {
+  formatNapShort,
+  lockedPriceLine,
   membershipPlans,
-  offerPriceLine,
   site,
   temporaryPasses,
   type Plan,
@@ -14,7 +15,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: `${site.offer.headline}. ${site.offer.sub} ${offerPriceLine()}. Temporary passes: day ${site.plans.day.price}, week ${site.plans.week.price}, 2-week ${site.plans.twoWeek.price}, 1-month ${site.plans.oneMonth.price}. Call ${site.phoneDisplay} to join.`,
+  description: `${site.offer.headline}. ${formatNapShort()}. ${lockedPriceLine()}. Member access ${site.hours.access} daily, 365 days a year — not 24/7. Call ${site.phoneDisplay} to join.`,
 };
 
 function PlanCard({ plan }: { plan: Plan }) {
@@ -54,7 +55,12 @@ export default function PricingPage() {
             <p className="eyebrow">Pricing</p>
             <h2>Membership & temporary passes</h2>
             <p className="lede">
+              {formatNapShort()}. {lockedPriceLine()}.
+            </p>
+            <p className="muted">
               Simple pricing. No clutter. Built for Aspen training that sticks.
+              Member access {site.hours.access} daily, 365 days a year. Not
+              24/7.
             </p>
           </div>
 

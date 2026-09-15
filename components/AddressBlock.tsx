@@ -1,6 +1,17 @@
-import { formatLocality, formatStreetAddress, site } from "@/lib/site";
+import {
+  formatLocality,
+  formatNapShort,
+  formatStreetAddress,
+  site,
+} from "@/lib/site";
 
-export function AddressBlock({ className }: { className?: string }) {
+export function AddressBlock({
+  className,
+  inline = false,
+}: {
+  className?: string;
+  inline?: boolean;
+}) {
   return (
     <a
       href={site.address.mapsUrl}
@@ -8,9 +19,15 @@ export function AddressBlock({ className }: { className?: string }) {
       rel="noreferrer"
       className={className}
     >
-      {formatStreetAddress()}
-      <br />
-      {formatLocality()}
+      {inline ? (
+        formatNapShort()
+      ) : (
+        <>
+          {formatStreetAddress()}
+          <br />
+          {formatLocality()}
+        </>
+      )}
     </a>
   );
 }

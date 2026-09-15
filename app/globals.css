@@ -387,6 +387,19 @@ a:hover {
   margin: 1.2rem 0 0;
 }
 
+.trainer-grid {
+  margin-top: 2.2rem;
+}
+
+.trainer-card .eyebrow {
+  margin-bottom: 0.45rem;
+}
+
+.trainer-card .text-link {
+  display: inline-block;
+  margin-top: 0.35rem;
+}
+
 .reviews-intro {
   max-width: 36rem;
   margin-bottom: 2.2rem;
@@ -820,6 +833,10 @@ a:focus-visible {
   .footer-grid,
   .clarify-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .trainer-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .membership-grid,

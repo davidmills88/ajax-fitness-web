@@ -20,8 +20,9 @@ export default function ContactPage() {
           <p className="eyebrow">Get in touch</p>
           <h1>Contact Ajax Fitness</h1>
           <p className="lede">
-            Tell us what you’re looking for — membership, a temporary pass, or a tour.
-            We’ll follow up from this inbox.
+            Tell us what you’re looking for — membership, a temporary pass, a
+            tour, or coaching with Roman, Erin, or Alie. We’ll follow up from
+            this inbox.
           </p>
           <ContactForm />
         </div>

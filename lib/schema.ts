@@ -3,6 +3,7 @@ import {
   formatStreetAddress,
   site,
 } from "@/lib/site";
+import { trainerHref, trainers } from "@/lib/trainers";
 
 export function localBusinessJsonLd() {
   return {
@@ -42,6 +43,44 @@ export function localBusinessJsonLd() {
     slogan: site.tagline,
     hasMap: site.address.mapsUrl,
     identifier: formatFullAddress(),
+    employee: trainers.map((trainer) => ({
+      "@type": "Person",
+      name: trainer.name,
+      jobTitle: trainer.role,
+      url: `https://${site.domain}${trainerHref(trainer.slug)}`,
+      telephone: site.phoneHref.replace("tel:", ""),
+      worksFor: {
+        "@type": "HealthClub",
+        name: site.name,
+      },
+    })),
+  };
+}
+
+export function personJsonLd(slug: string) {
+  const trainer = trainers.find((item) => item.slug === slug);
+  if (!trainer) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: trainer.name,
+    jobTitle: trainer.role,
+    description: trainer.bio,
+    url: `https://${site.domain}${trainerHref(trainer.slug)}`,
+    telephone: site.phoneHref.replace("tel:", ""),
+    worksFor: {
+      "@type": "HealthClub",
+      name: site.name,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: formatStreetAddress(),
+        addressLocality: site.address.city,
+        addressRegion: site.address.region,
+        postalCode: site.address.postalCode,
+        addressCountry: site.address.country,
+      },
+    },
   };
 }
 
