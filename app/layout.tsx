@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
-import { Newsreader, Source_Sans_3 } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const serif = Newsreader({
+const heading = Inter_Tight({
   subsets: ["latin"],
-  variable: "--font-serif",
+  weight: ["400", "500", "600"],
+  variable: "--font-heading",
   display: "swap",
 });
 
-const sans = Source_Sans_3({
+const body = Inter({
   subsets: ["latin"],
+  weight: ["400", "500"],
   variable: "--font-sans",
   display: "swap",
 });
@@ -34,8 +37,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="en" className={`${heading.variable} ${body.variable}`}>
       <body>
+        <JsonLd />
         <a className="skip-link" href="#main">
           Skip to content
         </a>

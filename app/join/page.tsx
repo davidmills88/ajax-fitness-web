@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JoinCheckout } from "@/components/JoinCheckout";
+import { PlaceholderMedia } from "@/components/PlaceholderMedia";
+import { placeholders } from "@/lib/placeholders";
 import { site, type PlanId } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -22,18 +24,25 @@ export default async function JoinPage({
 
   return (
     <section className="section page-hero">
-      <div className="container narrow">
-        <p className="eyebrow">Join Ajax Fitness</p>
-        <h1>Choose a plan</h1>
-        <p className="lede">
-          Online checkout is a placeholder until we move off Wellyx. To join
-          now, call <a href={site.phoneHref}>{site.phoneDisplay}</a>.
-        </p>
-        <JoinCheckout initialPlan={initialPlan} />
-        <p>
-          Questions? <Link href="/contact">Contact us</Link> or{" "}
-          <Link href="/tour">book a tour</Link>.
-        </p>
+      <div className="container split">
+        <div className="narrow">
+          <p className="eyebrow">Join Ajax Fitness</p>
+          <h1>Choose a plan</h1>
+          <p className="lede">
+            Online checkout is a placeholder until we move off Wellyx. To join
+            now, call <a href={site.phoneHref}>{site.phoneDisplay}</a>.
+          </p>
+          <JoinCheckout initialPlan={initialPlan} />
+          <p>
+            Questions? <Link href="/contact">Contact us</Link> or{" "}
+            <Link href="/tour">book a tour</Link>.
+          </p>
+        </div>
+        <PlaceholderMedia
+          src={placeholders.strength}
+          className="page-aside-media"
+          sizes="(max-width: 720px) 100vw, 40vw"
+        />
       </div>
     </section>
   );

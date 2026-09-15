@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { nav, site } from "@/lib/site";
+import { nav, site, trainingNavHrefs } from "@/lib/site";
 
 export function Header() {
   const pathname = usePathname();
@@ -13,7 +13,6 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link href="/" className="wordmark" onClick={() => setOpen(false)}>
-          <span className="wordmark-mark" aria-hidden="true" />
           Ajax Fitness
         </Link>
 
@@ -32,7 +31,9 @@ export function Header() {
             const active =
               item.href === "/"
                 ? pathname === "/"
-                : pathname.startsWith(item.href);
+                : item.href === "/personal-training"
+                  ? trainingNavHrefs.some((href) => pathname.startsWith(href))
+                  : pathname.startsWith(item.href);
 
             return (
               <Link
@@ -48,6 +49,13 @@ export function Header() {
           <a className="nav-phone" href={site.phoneHref}>
             {site.phoneDisplay}
           </a>
+          <Link
+            className="button button-compact"
+            href="/pricing"
+            onClick={() => setOpen(false)}
+          >
+            Membership
+          </Link>
         </nav>
       </div>
     </header>

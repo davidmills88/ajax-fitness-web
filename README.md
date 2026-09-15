@@ -11,7 +11,7 @@ Premium Aspen gym site for [ajaxfitness.com](https://ajaxfitness.com). Code-owne
 - `/join` — Plan picker + placeholder Stripe Checkout
 - `/tour` — Tour request stub
 
-Phone everywhere: `(970) 670-8974`. Address: `65 Paepcke Dr, Aspen, CO`.
+Phone everywhere: `(970) 670-8974`. Public email: `hello@ajaxgym.com`. Address: `100 Obermeyer Place, Unit 105, Aspen, CO 81611`.
 
 ## Local
 
@@ -47,6 +47,8 @@ Do not invent or commit secrets.
 
 ## Notes
 
-- Light theme only. Voice is premium, approachable, and confident — not gym-bro, not discount-y.
+- Light editorial theme: off-white grounds (`#F6F5F2`), near-black type and CTAs (`#111`), dark cinematic hero bands. Fonts: Inter Tight + Inter. Quiet luxury, Equinox-adjacent — not the WordPress blue/peach palette.
+- Voice is premium, confident, and warm — not gym-bro, not discount-y.
+- Home, hours, pricing, contact, join, and tour use local `/public/placeholders` photos until Ajax gym photography is ready.
 - `/join` and `/tour` are placeholders for the future Wellyx-out / Stripe path.
 - Locked Phase 1 copy: [Mac build copy](https://docs.google.com/document/d/1LQOIBeNFVQfcooal0SRu6C5nr9OPagHseZmWahmvU28/edit).

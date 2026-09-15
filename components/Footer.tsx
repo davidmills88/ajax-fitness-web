@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AddressBlock } from "@/components/AddressBlock";
 import { site } from "@/lib/site";
 
 export function Footer() {
@@ -15,11 +16,7 @@ export function Footer() {
         <div>
           <p className="footer-label">Visit</p>
           <p>
-            <a href={site.address.mapsUrl} target="_blank" rel="noreferrer">
-              {site.address.line1}
-              <br />
-              {site.address.city}
-            </a>
+            <AddressBlock />
           </p>
           <p>
             <a href={site.phoneHref}>{site.phoneDisplay}</a>
@@ -35,6 +32,9 @@ export function Footer() {
         </div>
         <div>
           <p className="footer-label">More</p>
+          <p>
+            <Link href="/personal-training">Personal training</Link>
+          </p>
           <p>
             <Link href="/join">Join</Link>
           </p>

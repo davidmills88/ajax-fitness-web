@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PlaceholderMedia } from "@/components/PlaceholderMedia";
+import { placeholders } from "@/lib/placeholders";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -29,23 +31,30 @@ export default function HoursPage() {
             <Link href="/contact">contact us</Link>.
           </p>
         </div>
-        <aside className="panel hours-card">
-          <p className="eyebrow">At a glance</p>
-          <dl>
-            <div>
-              <dt>Member access</dt>
-              <dd>{site.hours.access}</dd>
-            </div>
-            <div>
-              <dt>Days</dt>
-              <dd>{site.hours.days}</dd>
-            </div>
-            <div>
-              <dt>Always open?</dt>
-              <dd>No — not 24/7</dd>
-            </div>
-          </dl>
-        </aside>
+        <div className="visit-stack">
+          <PlaceholderMedia
+            src={placeholders.hero}
+            className="aside-media"
+            sizes="(max-width: 720px) 100vw, 50vw"
+          />
+          <aside className="panel hours-card">
+            <p className="eyebrow">At a glance</p>
+            <dl>
+              <div>
+                <dt>Member access</dt>
+                <dd>{site.hours.access}</dd>
+              </div>
+              <div>
+                <dt>Days</dt>
+                <dd>{site.hours.days}</dd>
+              </div>
+              <div>
+                <dt>Always open?</dt>
+                <dd>No — not 24/7</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
       </div>
     </section>
   );
