@@ -43,7 +43,7 @@ export const site = {
       name: "Annual membership",
       price: "$2100",
       cadence: "/year",
-      detail: "Best value for year-round training.",
+      detail: "Paid once. Year-round floor.",
     },
     day: {
       id: "day" as const,
