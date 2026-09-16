@@ -4,7 +4,6 @@ import { AddressBlock } from "@/components/AddressBlock";
 import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { ReviewsSection } from "@/components/ReviewsSection";
-import { TrainerRoster } from "@/components/TrainerRoster";
 import { placeholders } from "@/lib/placeholders";
 import {
   formatNapShort,
@@ -12,7 +11,6 @@ import {
   offerPriceLine,
   site,
 } from "@/lib/site";
-import { trainerNamesLine } from "@/lib/trainers";
 
 export const metadata: Metadata = {
   title: {
@@ -106,23 +104,6 @@ export default function HomePage() {
       </section>
 
       <ReviewsSection />
-
-      <section className="section section-tint">
-        <div className="container">
-          <div className="narrow">
-            <p className="eyebrow">Personal training</p>
-            <h2>A coach, if you want one.</h2>
-            <p className="lede">
-              {trainerNamesLine()} — one-to-one coaching on the same Aspen
-              floor. Packages after a conversation. We don’t publish rates.
-            </p>
-          </div>
-          <TrainerRoster />
-          <p className="center-note">
-            <Link href="/personal-training">All personal training</Link>
-          </p>
-        </div>
-      </section>
 
       <section className="photo-band">
         <PlaceholderMedia

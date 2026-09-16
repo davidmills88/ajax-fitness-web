@@ -156,8 +156,6 @@ export const nav = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
-export const trainingNavHrefs = ["/personal-training"] as const;
-
 export function formatStreetAddress() {
   return `${site.address.line1}, ${site.address.line2}`;
 }

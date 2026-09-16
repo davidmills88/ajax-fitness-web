@@ -387,17 +387,31 @@ a:hover {
   margin: 1.2rem 0 0;
 }
 
-.trainer-grid {
-  margin-top: 2.2rem;
+.trainer-notes {
+  list-style: none;
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.6rem 0 0;
 }
 
-.trainer-card .eyebrow {
-  margin-bottom: 0.45rem;
+.trainer-notes li {
+  display: grid;
+  gap: 0.2rem;
+  padding-bottom: 1.35rem;
+  border-bottom: 1px solid var(--line);
 }
 
-.trainer-card .text-link {
-  display: inline-block;
-  margin-top: 0.35rem;
+.trainer-notes li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.trainer-notes strong {
+  display: block;
+  font-family: var(--font-heading), "Inter Tight", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 .reviews-intro {
@@ -833,10 +847,6 @@ a:focus-visible {
   .footer-grid,
   .clarify-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .trainer-pair {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .membership-grid,
