@@ -3,6 +3,7 @@ import {
   formatStreetAddress,
   site,
 } from "@/lib/site";
+import { trainers } from "@/lib/trainers";
 
 export function localBusinessJsonLd() {
   return {
@@ -42,6 +43,17 @@ export function localBusinessJsonLd() {
     slogan: site.tagline,
     hasMap: site.address.mapsUrl,
     identifier: formatFullAddress(),
+    employee: trainers.map((trainer) => ({
+      "@type": "Person",
+      name: trainer.name,
+      jobTitle: trainer.role,
+      url: `https://${site.domain}/personal-training`,
+      telephone: site.phoneHref.replace("tel:", ""),
+      worksFor: {
+        "@type": "HealthClub",
+        name: site.name,
+      },
+    })),
   };
 }
 

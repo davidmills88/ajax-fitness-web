@@ -3,7 +3,7 @@ export const site = {
   domain: "ajaxfitness.com",
   tagline: "Strength, recovery, and longevity in Aspen",
   description:
-    "Ajax Fitness is Aspen’s premium gym for strength, recovery, and longevity. Members train independently during open hours, 6:00 AM–9:00 PM daily.",
+    "Ajax Fitness is Aspen’s premium gym at 100 Obermeyer Place, Unit 105, Aspen, CO. Members train 6:00 AM–9:00 PM daily, 365 days a year — not 24/7.",
   phoneDisplay: "(970) 670-8974",
   phoneHref: "tel:+19706708974",
   email: "hello@ajaxgym.com",
@@ -21,7 +21,7 @@ export const site = {
   },
   hours: {
     access: "6:00 AM–9:00 PM",
-    days: "Daily / year-round",
+    days: "Daily, 365 days a year",
     note: "Ajax Fitness is not open 24 hours. Front desk hours may differ from member access.",
     schema: {
       opens: "06:00",
@@ -43,7 +43,7 @@ export const site = {
       name: "Annual membership",
       price: "$2100",
       cadence: "/year",
-      detail: "Best value for year-round training.",
+      detail: "Paid once. Year-round floor.",
     },
     day: {
       id: "day" as const,
@@ -140,6 +140,14 @@ export function offerPriceLine() {
   return `Monthly ${site.plans.monthly.price} · Annual ${site.plans.annual.price}`;
 }
 
+export function lockedPriceLine() {
+  return `Monthly ${site.plans.monthly.price} (min 3 mo, billed bi-weekly) · Annual ${site.plans.annual.price} · Day ${site.plans.day.price} · Week ${site.plans.week.price} · 2-week ${site.plans.twoWeek.price} · 1-month ${site.plans.oneMonth.price}`;
+}
+
+export function formatNapShort() {
+  return `${formatStreetAddress()}, ${site.address.city}, ${site.address.region}`;
+}
+
 export const nav = [
   { href: "/", label: "Home" },
   { href: "/hours", label: "Hours" },
@@ -147,8 +155,6 @@ export const nav = [
   { href: "/personal-training", label: "Personal Training" },
   { href: "/contact", label: "Contact" },
 ] as const;
-
-export const trainingNavHrefs = ["/personal-training"] as const;
 
 export function formatStreetAddress() {
   return `${site.address.line1}, ${site.address.line2}`;

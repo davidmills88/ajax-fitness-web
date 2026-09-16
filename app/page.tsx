@@ -1,10 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { AddressBlock } from "@/components/AddressBlock";
 import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { placeholders } from "@/lib/placeholders";
-import { offerPriceLine, site } from "@/lib/site";
+import {
+  formatNapShort,
+  lockedPriceLine,
+  offerPriceLine,
+  site,
+} from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Ajax Fitness | Aspen, CO",
+  },
+  description: `${site.offer.headline}. ${formatNapShort()}. Member access ${site.hours.access} daily, 365 days a year — not 24/7. ${lockedPriceLine()}. Call ${site.phoneDisplay}.`,
+};
 
 export default function HomePage() {
   return (
@@ -20,6 +33,8 @@ export default function HomePage() {
         <div className="container hero-inner">
           <MembershipOffer variant="hero" />
           <p className="hero-meta">
+            <AddressBlock inline />
+            <span aria-hidden="true"> · </span>
             <Link href="/hours">See hours</Link>
             <span aria-hidden="true"> · </span>
             <a href={site.phoneHref}>{site.phoneDisplay}</a>
@@ -35,13 +50,14 @@ export default function HomePage() {
           </div>
           <div>
             <p className="lede">
-              We train for strength, longevity, and recovery — not a short-term
-              spike, and not a crowded afterthought.
+              A premium gym at {formatNapShort()}. We train for strength,
+              longevity, and recovery — not a short-term spike, and not a
+              crowded afterthought.
             </p>
             <p className="muted">
-              Members use the floor on their own, {site.hours.access} daily.
-              Not CrossFit. Not a personal-training-only studio. Coaching is
-              here if you want it.
+              Members use the floor on their own, {site.hours.access} daily,
+              365 days a year. Not 24/7. Not CrossFit. Not a
+              personal-training-only studio. Coaching is here if you want it.
             </p>
           </div>
         </div>

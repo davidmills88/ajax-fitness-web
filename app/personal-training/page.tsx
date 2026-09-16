@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CallToJoin } from "@/components/CallToJoin";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
-import { site } from "@/lib/site";
+import { formatNapShort, site } from "@/lib/site";
+import { trainers } from "@/lib/trainers";
 
 export const metadata: Metadata = {
   title: "Personal training",
-  description:
-    "Personal training at Ajax Fitness in Aspen — a coach for compounding strength, longevity, and performance. Talk through packages or call (970) 670-8974.",
+  description: `Personal training at Ajax Fitness, ${formatNapShort()}. Strength, longevity, and performance — written for Aspen seasons. Call ${site.phoneDisplay} to join.`,
 };
 
 export default function PersonalTrainingPage() {
@@ -28,21 +29,14 @@ export default function PersonalTrainingPage() {
             Strength, longevity, recovery, and performance — written for Aspen
             seasons, not a generic program. Someone in the work with you.
           </p>
-          <div className="button-row">
-            <Link className="button button-inverse" href="/contact">
-              Talk through packages
-            </Link>
-            <a className="button button-ghost" href={site.phoneHref}>
-              Call {site.phoneDisplay}
-            </a>
-          </div>
+          <CallToJoin inverse />
         </div>
       </section>
 
       <section className="section">
         <div className="container">
-          <p className="eyebrow">Why a coach</p>
-          <h2>The floor is enough for some people. Others want a mind on the work.</h2>
+          <p className="eyebrow">What it is</p>
+          <h2>One-to-one coaching on the same Aspen floor.</h2>
           <div className="card-grid feature-grid">
             <article className="card">
               <h3>A plan that fits this place</h3>
@@ -155,14 +149,29 @@ export default function PersonalTrainingPage() {
             Call {site.phoneDisplay} or write {site.email}. We’ll listen, then
             outline a fit.
           </p>
-          <div className="button-row">
-            <Link className="button button-inverse" href="/contact">
-              Contact us
-            </Link>
-            <a className="button button-ghost" href={site.phoneHref}>
-              Call {site.phoneDisplay}
-            </a>
-          </div>
+          <CallToJoin inverse />
+          <p>
+            <Link href="/contact">Or write us</Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container narrow">
+          <p className="eyebrow">The trainers</p>
+          <h2>Who you’ll work with.</h2>
+          <ul className="trainer-notes">
+            {trainers.map((trainer) => (
+              <li key={trainer.name}>
+                <strong>{trainer.name}</strong>
+                <span className="muted">{trainer.role}</span>
+                {trainer.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </li>
+            ))}
+          </ul>
+          <CallToJoin />
         </div>
       </section>
     </>
