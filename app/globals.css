@@ -390,14 +390,14 @@ a:hover {
 .trainer-notes {
   list-style: none;
   display: grid;
-  gap: 1.5rem;
-  margin: 1.6rem 0 0;
+  gap: 2.4rem;
+  margin: 1.8rem 0 0;
 }
 
 .trainer-notes li {
   display: grid;
   gap: 0.2rem;
-  padding-bottom: 1.35rem;
+  padding-bottom: 2.2rem;
   border-bottom: 1px solid var(--line);
 }
 
@@ -409,9 +409,22 @@ a:hover {
 .trainer-notes strong {
   display: block;
   font-family: var(--font-heading), "Inter Tight", sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 500;
   letter-spacing: -0.03em;
+}
+
+.trainer-notes p {
+  margin: 0.75rem 0 0;
+  color: var(--secondary);
+}
+
+.trainer-notes p:first-of-type {
+  margin-top: 0.9rem;
+}
+
+.trainer-notes + .button-row {
+  margin-top: 2.2rem;
 }
 
 .reviews-intro {

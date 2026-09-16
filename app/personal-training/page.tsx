@@ -165,10 +165,13 @@ export default function PersonalTrainingPage() {
               <li key={trainer.name}>
                 <strong>{trainer.name}</strong>
                 <span className="muted">{trainer.role}</span>
-                <p>{trainer.line}</p>
+                {trainer.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </li>
             ))}
           </ul>
+          <CallToJoin />
         </div>
       </section>
     </>
