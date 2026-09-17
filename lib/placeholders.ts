@@ -1,10 +1,10 @@
 export const placeholders = {
-  hero: "/placeholders/hero-training.jpg",
+  hero: "/placeholders/hero-aisle.jpg",
   strength: "/placeholders/strength.jpg",
   recovery: "/placeholders/recovery.jpg",
   longevity: "/placeholders/longevity.jpg",
   pricing: "/placeholders/pricing-band.jpg",
-  visit: "/placeholders/visit-exterior.jpg",
+  visit: "/placeholders/visit-runner.jpg",
 } as const;
 
 export type PlaceholderSlot = keyof typeof placeholders;
