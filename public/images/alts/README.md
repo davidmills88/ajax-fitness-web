@@ -1,10 +1,10 @@
-# Easy image swaps
+# Rejected v1 primaries
 
-Not wired on the site. Change one path in `lib/placeholders.ts` to try them.
+Not wired. David rejected these on the PR #6 preview.
 
-| Role | File | Swap `placeholders.*` to |
-|------|------|--------------------------|
-| hero-alt | `hero-alt.jpg` | `placeholderSwaps.hero` (`/images/alts/hero-alt.jpg`) |
-| visit-alt | `visit-alt.jpg` | `placeholderSwaps.visit` (`/images/alts/visit-alt.jpg`) |
+| File | Why it is here |
+|------|----------------|
+| `rejected-hero.jpg` | AjaxFit1_1 mural + red resistance band — do not restore as hero |
+| `rejected-visit.jpg` | DSC00151 casual cardio bay (coffee/vest) — do not restore as visit |
 
-Primary mural hero and cleaned cardio visit stay the defaults.
+v2 primaries are the empty strength aisle (hero) and Precor runner (visit).

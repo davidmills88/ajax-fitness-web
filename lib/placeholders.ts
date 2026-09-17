@@ -10,19 +10,13 @@ export const placeholders = {
 export type PlaceholderSlot = keyof typeof placeholders;
 
 export const placeholderAlts: Record<PlaceholderSlot, string> = {
-  hero: "Member training with a resistance band in front of Ajax Fitness’s snowy mountain wall mural",
+  hero: "Empty strength aisle toward the windows, with Matrix machines and Rogue racks",
   strength: "Member pressing hex dumbbells on an incline bench while a coach spots",
   recovery: "Blue-lit cold plunge beside a glowing infrared sauna in the Ajax recovery suite",
   longevity: "Older member performing an ab-wheel rollout with a trainer guiding form",
   pricing: "Strength floor with Rogue plates, Matrix machines, and drink fridge toward the windows",
-  visit: "Members on treadmills and elliptical by large windows onto the outdoor plaza",
+  visit: "Member running on a Precor treadmill by large windows",
 };
-
-/** Committed for a one-line swap — change `placeholders.hero` or `.visit` to these paths. */
-export const placeholderSwaps = {
-  hero: "/images/alts/hero-alt.jpg",
-  visit: "/images/alts/visit-alt.jpg",
-} as const;
 
 export const placeholderAlt = placeholderAlts.hero;
 
