@@ -50,6 +50,6 @@ Do not invent or commit secrets.
 
 - Light editorial theme: off-white grounds (`#F6F5F2`), near-black type and CTAs (`#111`), dark cinematic hero bands. Fonts: Inter Tight + Inter. Quiet luxury, Equinox-adjacent — not the WordPress blue/peach palette.
 - Voice is premium, confident, and warm — not gym-bro, not discount-y.
-- Home, hours, pricing, contact, join, and tour use local `/public/placeholders` photos until Ajax gym photography is ready.
+- Home, hours, pricing, contact, join, and tour use local `/public/placeholders` gym photos (Wes’s Gym Main / Select picks). Hero and visit alts live in `/public/images/alts/` for a one-line path swap.
 - `/join` and `/tour` are placeholders for the future Wellyx-out / Stripe path.
 - Locked Phase 1 copy: [Mac build copy](https://docs.google.com/document/d/1LQOIBeNFVQfcooal0SRu6C5nr9OPagHseZmWahmvU28/edit).
