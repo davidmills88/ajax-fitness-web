@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JoinCheckout } from "@/components/JoinCheckout";
-import { PlaceholderMedia } from "@/components/PlaceholderMedia";
-import { placeholders } from "@/lib/placeholders";
 import { allPlanIds, site, type PlanId } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -24,7 +22,7 @@ export default async function JoinPage({
 
   return (
     <section className="section page-hero">
-      <div className="container split">
+      <div className="container">
         <div className="narrow">
           <p className="eyebrow">Join Ajax Fitness</p>
           <h1>Choose a plan</h1>
@@ -38,11 +36,6 @@ export default async function JoinPage({
             <Link href="/tour">book a tour</Link>.
           </p>
         </div>
-        <PlaceholderMedia
-          src={placeholders.strength}
-          className="page-aside-media"
-          sizes="(max-width: 720px) 100vw, 40vw"
-        />
       </div>
     </section>
   );

@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AddressBlock } from "@/components/AddressBlock";
-import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { TourForm } from "@/components/TourForm";
-import { placeholders } from "@/lib/placeholders";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -32,11 +30,6 @@ export default function TourPage() {
           </p>
         </div>
         <aside className="visit-stack">
-          <PlaceholderMedia
-            src={placeholders.visit}
-            className="aside-media"
-            sizes="(max-width: 720px) 100vw, 40vw"
-          />
           <div className="panel">
             <p className="eyebrow">Find us</p>
             <p>

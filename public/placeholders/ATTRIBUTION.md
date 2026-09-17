@@ -1,17 +1,19 @@
 # Gym photography
 
-Wes’s Gym Main / Select picks, v2 after David’s 17 Sep 2026 preview review. EXIF stripped; max edge ≤2000.
+v3 after David’s 17 Sep 2026 preview review. Each wired path is unique — no image is reused across pages.
 
-Primary slots (paths stay in `lib/placeholders.ts`):
+| Slot | File | Used on |
+|------|------|---------|
+| hero | `hero-functional.jpg` (DSC00157) | Home hero only |
+| strength | `strength.jpg` (AjaxFit1_14) | Home Strength card only |
+| longevity | `longevity.jpg` (AjaxFit2_6) | Home Longevity card only |
+| recovery | `recovery.jpg` (IMG_0999_2) | Home Recovery card only |
+| photoBand | `photo-band.jpg` (AjaxFit1_15) | Home membership photo-band only |
+| floor | `hero-aisle.jpg` (DSC00149) | Home visit split only |
+| pricing | `pricing-spacious.jpg` (DSC00159) | Pricing page only |
+| hours | `hours.jpg` (DSC00008) | Hours page only |
+| visit | `visit-runner.jpg` (AjaxFit1_10) | Contact only |
+| training | `talk-strength-alt.jpg` (AjaxFit1_4) | Personal training hero only |
+| trainingBand | `pricing-band.jpg` (DSC00148) | Personal training photo-band only |
 
-- `hero-aisle.jpg` — hero-v2 / DSC00149 (empty strength aisle toward windows)
-- `strength.jpg` — AjaxFit1_14_of_17 (hex DB incline + coach)
-- `recovery.jpg` — IMG_0999_2 (cold plunge + infrared sauna)
-- `longevity.jpg` — AjaxFit2_6_of_11 (ab-wheel + trainer)
-- `pricing-band.jpg` — DSC00148 (weights aisle + drink fridge)
-- `visit-runner.jpg` — visit-v2 / AjaxFit1_10_of_17 (Precor runner by windows)
-
-Rejected v1 primaries (not wired) in `/public/images/alts/`:
-
-- `rejected-hero.jpg` — AjaxFit1_1 mural + resistance band
-- `rejected-visit.jpg` — DSC00151 cleaned casual cardio bay
+Rejected v1 frames stay unwired in `/public/images/alts/`.

@@ -36,7 +36,7 @@ export default function HoursPage() {
         </div>
         <div className="visit-stack">
           <PlaceholderMedia
-            src={placeholders.hero}
+            src={placeholders.hours}
             className="aside-media"
             sizes="(max-width: 720px) 100vw, 50vw"
           />

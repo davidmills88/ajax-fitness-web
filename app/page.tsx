@@ -31,7 +31,20 @@ export default function HomePage() {
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
-          <MembershipOffer variant="hero" />
+          <p className="eyebrow eyebrow-light">Aspen</p>
+          <h1>Strength training for life in Aspen</h1>
+          <p className="lede lede-light">
+            A focused gym for people who want to stay strong, move well, and
+            recover properly — in and out of season.
+          </p>
+          <div className="button-row">
+            <a className="button button-inverse" href={site.phoneHref}>
+              Call to join
+            </a>
+            <Link className="button button-ghost" href="/pricing">
+              View pricing
+            </Link>
+          </div>
           <p className="hero-meta">
             <AddressBlock inline />
             <span aria-hidden="true"> · </span>
@@ -103,11 +116,17 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section">
+        <div className="container">
+          <MembershipOffer variant="page" headingLevel="h2" />
+        </div>
+      </section>
+
       <ReviewsSection />
 
       <section className="photo-band">
         <PlaceholderMedia
-          src={placeholders.pricing}
+          src={placeholders.photoBand}
           className="photo-band-media"
           sizes="100vw"
           label={false}
@@ -133,7 +152,7 @@ export default function HomePage() {
       <section className="section">
         <div className="container split visit-split">
           <PlaceholderMedia
-            src={placeholders.visit}
+            src={placeholders.floor}
             className="visit-media"
             sizes="(max-width: 720px) 100vw, 50vw"
           />

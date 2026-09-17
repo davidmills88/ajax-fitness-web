@@ -16,7 +16,7 @@ export default function PersonalTrainingPage() {
     <>
       <section className="hero">
         <PlaceholderMedia
-          src={placeholders.strength}
+          src={placeholders.training}
           className="hero-media"
           sizes="100vw"
           preload
@@ -136,7 +136,7 @@ export default function PersonalTrainingPage() {
 
       <section className="photo-band">
         <PlaceholderMedia
-          src={placeholders.recovery}
+          src={placeholders.trainingBand}
           className="photo-band-media"
           sizes="100vw"
           label={false}
