@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CallToJoin } from "@/components/CallToJoin";
 import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { ReviewsSection } from "@/components/ReviewsSection";
@@ -27,18 +28,33 @@ export default function HomePage() {
         <div className="hero-shade" />
         <div className="container hero-inner">
           <p className="eyebrow eyebrow-light">Ajax Aspen</p>
-          <h1>Strength. Recovery. Longevity.</h1>
+          <h1>Stay strong for the mountain.</h1>
           <p className="lede lede-light">
-            A focused gym. Members train {site.hours.access} daily — not 24/7.
+            Strength, recovery, and longevity. Members train{" "}
+            {site.hours.access} daily — not 24/7.
           </p>
-          <div className="button-row">
-            <a className="button button-inverse" href={site.phoneHref}>
-              Call to join
-            </a>
-            <Link className="button button-ghost" href="/pricing">
-              View pricing
-            </Link>
+          <p
+            className="hero-proof"
+            aria-label={`${site.reviews.rating} out of 5 from ${site.reviews.count} ${site.reviews.label}`}
+          >
+            {site.reviews.rating} ★ · {site.reviews.count} {site.reviews.label}
+          </p>
+          <CallToJoin inverse />
+          <p className="hero-meta">Call during the day. We pick up.</p>
+        </div>
+      </section>
+
+      <section className="section section-ink">
+        <div className="container split ink-split">
+          <div>
+            <p className="eyebrow eyebrow-light">Why Ajax</p>
+            <h2>Hotel floors and class mills don’t compound.</h2>
           </div>
+          <p className="lede lede-light">
+            Aspen doesn’t need another crowded rec center. It needs a serious
+            floor — open, equipped, and quiet enough to work. Stay capable for
+            the mountain. And for the next twenty years.
+          </p>
         </div>
       </section>
 
@@ -69,7 +85,7 @@ export default function HomePage() {
                 <p>Training that still matters in twenty years.</p>
               </div>
             </article>
-            <article className="card feature-card pillar-card">
+            <Link href="/recovery" className="card feature-card pillar-card pillar-link">
               <PlaceholderMedia
                 src={placeholders.recovery}
                 className="card-media pillar-media"
@@ -79,12 +95,39 @@ export default function HomePage() {
               <div className="card-body">
                 <h3>Recovery</h3>
                 <p>Private cold plunge and infrared sauna.</p>
-                <Link className="text-link" href="/recovery">
-                  See recovery
-                </Link>
               </div>
-            </article>
+            </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="section section-tint">
+        <div className="container split">
+          <div>
+            <p className="eyebrow">How to join</p>
+            <h2>Call. See the floor. Start.</h2>
+            <ol className="step-list">
+              <li>
+                <strong>Call</strong>
+                {site.phoneDisplay}. Tell us Monthly, Annual, or a pass.
+              </li>
+              <li>
+                <strong>See the floor</strong>
+                Come during gym hours. Decide if the room fits.
+              </li>
+              <li>
+                <strong>Start</strong>
+                Join. Train {site.hours.access} daily. Not 24/7.
+              </li>
+            </ol>
+            <CallToJoin />
+          </div>
+          <PlaceholderMedia
+            src={placeholders.pricing}
+            className="visit-media"
+            sizes="(max-width: 720px) 100vw, 50vw"
+            label={false}
+          />
         </div>
       </section>
 
@@ -94,50 +137,39 @@ export default function HomePage() {
         </div>
       </section>
 
+      <ReviewsSection />
+
       <section className="photo-band photo-band-tall">
         <PlaceholderMedia
-          src={placeholders.pricing}
+          src={placeholders.visit}
           className="photo-band-media"
           sizes="100vw"
           label={false}
         />
         <div className="photo-band-shade" />
         <div className="container photo-band-inner">
-          <p className="eyebrow eyebrow-light">Membership</p>
-          <h2>The floor, year-round.</h2>
-          <p>Monthly or annual. Same gym, every day of the year.</p>
+          <p className="eyebrow eyebrow-light">Visiting</p>
+          <h2>In Aspen for a week?</h2>
+          <p>
+            Day {site.plans.day.price}. Week {site.plans.week.price}. 2-week{" "}
+            {site.plans.twoWeek.price}. 1-month {site.plans.oneMonth.price}.
+            Same floor. Same hours.
+          </p>
           <Link className="button button-inverse" href="/pricing">
             View pricing
           </Link>
         </div>
       </section>
 
-      <ReviewsSection />
-
-      <section className="section section-tint">
-        <div className="container split visit-split">
-          <PlaceholderMedia
-            src={placeholders.visit}
-            className="visit-media"
-            sizes="(max-width: 720px) 100vw, 50vw"
-            label={false}
-          />
-          <div className="panel visit-panel">
-            <p className="eyebrow">Join</p>
-            <h2>Call. Come in. Start.</h2>
-            <p>
-              Ready to train here? Call{" "}
-              <a href={site.phoneHref}>{site.phoneDisplay}</a> or write us.
-            </p>
-            <div className="button-row">
-              <a className="button" href={site.phoneHref}>
-                Call to join
-              </a>
-              <Link className="button button-outline" href="/contact">
-                Contact us
-              </Link>
-            </div>
-          </div>
+      <section className="section">
+        <div className="container narrow final-cta">
+          <p className="eyebrow">Join</p>
+          <h2>Call. Come in. Start.</h2>
+          <p className="lede">
+            Ready to train here? Call {site.phoneDisplay}. View pricing if you
+            want the numbers first.
+          </p>
+          <CallToJoin secondary="contact" />
         </div>
       </section>
     </>

@@ -44,16 +44,13 @@ export function Header() {
               </Link>
             );
           })}
-          <a className="nav-phone" href={site.phoneHref}>
-            {site.phoneDisplay}
-          </a>
-          <Link
+          <a
             className="button button-compact"
-            href="/pricing"
+            href={site.phoneHref}
             onClick={() => setOpen(false)}
           >
-            Membership
-          </Link>
+            Call {site.phoneDisplay}
+          </a>
         </nav>
       </div>
     </header>

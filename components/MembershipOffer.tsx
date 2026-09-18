@@ -45,7 +45,7 @@ export function MembershipOffer({
           className={isHero ? "button button-inverse" : "button"}
           href={site.phoneHref}
         >
-          Call to join
+          Call {site.phoneDisplay}
         </a>
         {isHero || isBand ? (
           <Link

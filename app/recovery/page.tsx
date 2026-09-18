@@ -30,7 +30,7 @@ export default function RecoveryPage() {
           </p>
           <div className="button-row">
             <a className="button button-inverse" href={site.phoneHref}>
-              Call to join
+              Call {site.phoneDisplay}
             </a>
             <Link className="button button-ghost" href="/pricing">
               View pricing
@@ -88,7 +88,7 @@ export default function RecoveryPage() {
           </p>
           <div className="button-row">
             <a className="button button-inverse" href={site.phoneHref}>
-              Call to join
+              Call {site.phoneDisplay}
             </a>
             <Link className="button button-ghost" href="/contact">
               Contact us
