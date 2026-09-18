@@ -20,14 +20,15 @@ export default function PersonalTrainingPage() {
           className="hero-media"
           sizes="100vw"
           preload
+          label={false}
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
           <p className="eyebrow eyebrow-light">Personal training</p>
-          <h1>A coach for the life you actually live here.</h1>
+          <h1>A coach for this life.</h1>
           <p className="lede lede-light">
-            Strength, longevity, recovery, and performance — written for Aspen
-            seasons, not a generic program. Someone in the work with you.
+            One-to-one coaching on the same Aspen floor. Strength, recovery,
+            and longevity — written for how you actually live here.
           </p>
           <CallToJoin inverse />
         </div>
@@ -96,6 +97,12 @@ export default function PersonalTrainingPage() {
 
       <section className="section">
         <div className="container split">
+          <PlaceholderMedia
+            src={placeholders.longevity}
+            className="visit-media"
+            sizes="(max-width: 720px) 100vw, 50vw"
+            label={false}
+          />
           <div>
             <p className="eyebrow">Who it’s for</p>
             <h2>Members who want a coach — not a class.</h2>
@@ -108,14 +115,14 @@ export default function PersonalTrainingPage() {
               The gym is still yours {site.hours.access}. Coaching is extra, if
               you want it.
             </p>
-          </div>
-          <div className="panel">
-            <p className="eyebrow">Who it’s not</p>
-            <p>
-              If you want a packed class calendar or a gym that only works when
-              a trainer is booked, this isn’t that. If you want the floor and,
-              some weeks, a coach — we should talk.
-            </p>
+            <div className="panel">
+              <p className="eyebrow">Who it’s not</p>
+              <p>
+                If you want a packed class calendar or a gym that only works
+                when a trainer is booked, this isn’t that. If you want the
+                floor and, some weeks, a coach — we should talk.
+              </p>
+            </div>
           </div>
         </div>
       </section>

@@ -47,8 +47,8 @@ export function JoinCheckout({ initialPlan }: { initialPlan?: PlanId }) {
         Continue to Stripe Checkout
       </button>
       <p className="muted">
-        Checkout is a placeholder until Wellyx-out / Stripe is wired. To join
-        now, call <a href={site.phoneHref}>{site.phoneDisplay}</a>.
+        Online checkout is coming soon. To join now, call{" "}
+        <a href={site.phoneHref}>{site.phoneDisplay}</a>.
       </p>
       {message ? (
         <p className="form-note" role="status">

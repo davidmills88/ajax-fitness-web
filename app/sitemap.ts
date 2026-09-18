@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/hours",
     "/pricing",
+    "/recovery",
     "/personal-training",
     "/contact",
     "/join",

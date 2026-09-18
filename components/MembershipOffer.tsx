@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { AddressBlock } from "@/components/AddressBlock";
-import { lockedPriceLine, site } from "@/lib/site";
+import { offerPriceLine, site } from "@/lib/site";
 
-type OfferVariant = "hero" | "page";
+type OfferVariant = "hero" | "page" | "band";
 
 export function MembershipOffer({
   variant,
@@ -14,24 +13,33 @@ export function MembershipOffer({
   const Heading = headingLevel;
   const { offer } = site;
   const isHero = variant === "hero";
+  const isBand = variant === "band";
 
   return (
-    <div className={isHero ? undefined : "offer-band"}>
+    <div
+      className={
+        isHero ? undefined : isBand ? "promo-offer" : "offer-band"
+      }
+    >
       <p className={isHero ? "eyebrow eyebrow-light" : "eyebrow"}>
         {offer.eyebrow}
       </p>
       <Heading>{offer.headline}</Heading>
-      <p className={isHero ? "lede lede-light" : "lede"}>
-        {offer.sub} {lockedPriceLine()}
-      </p>
-      {isHero ? null : (
+      <p className={isHero ? "lede lede-light" : "lede"}>{offer.sub}</p>
+      {offer.secondary ? (
+        <p className={isHero ? undefined : "muted"}>{offer.secondary}</p>
+      ) : null}
+      {variant === "page" ? (
         <>
-          <p className="muted">
-            <AddressBlock inline />
-          </p>
+          <p className="muted">{offerPriceLine()}</p>
           <p className="muted">{offer.exclusion}</p>
         </>
-      )}
+      ) : null}
+      {isBand ? (
+        <p className="muted">
+          {offerPriceLine()}. {offer.exclusion}
+        </p>
+      ) : null}
       <div className="button-row">
         <a
           className={isHero ? "button button-inverse" : "button"}
@@ -39,8 +47,11 @@ export function MembershipOffer({
         >
           Call to join
         </a>
-        {isHero ? (
-          <Link className="button button-ghost" href="/pricing">
+        {isHero || isBand ? (
+          <Link
+            className={isHero ? "button button-ghost" : "button button-outline"}
+            href="/pricing"
+          >
             View pricing
           </Link>
         ) : (

@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AddressBlock } from "@/components/AddressBlock";
 import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { placeholders } from "@/lib/placeholders";
-import {
-  formatNapShort,
-  lockedPriceLine,
-  offerPriceLine,
-  site,
-} from "@/lib/site";
+import { formatNapShort, lockedPriceLine, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -22,90 +16,85 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <section className="hero">
+      <section className="hero hero-sparse">
         <PlaceholderMedia
           src={placeholders.hero}
           className="hero-media"
           sizes="100vw"
           preload
+          label={false}
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
-          <MembershipOffer variant="hero" />
-          <p className="hero-meta">
-            <AddressBlock inline />
-            <span aria-hidden="true"> · </span>
-            <Link href="/hours">See hours</Link>
-            <span aria-hidden="true"> · </span>
-            <a href={site.phoneHref}>{site.phoneDisplay}</a>
+          <p className="eyebrow eyebrow-light">Ajax Aspen</p>
+          <h1>Strength. Recovery. Longevity.</h1>
+          <p className="lede lede-light">
+            A focused gym. Members train {site.hours.access} daily — not 24/7.
           </p>
+          <div className="button-row">
+            <a className="button button-inverse" href={site.phoneHref}>
+              Call to join
+            </a>
+            <Link className="button button-ghost" href="/pricing">
+              View pricing
+            </Link>
+          </div>
         </div>
       </section>
 
       <section className="section">
-        <div className="container intro-grid">
-          <div>
-            <p className="eyebrow">What Ajax is</p>
-            <h2>Small enough to feel personal. Serious enough that your training compounds.</h2>
-          </div>
-          <div>
-            <p className="lede">
-              A premium gym at {formatNapShort()}. We train for strength,
-              longevity, and recovery — not a short-term spike, and not a
-              crowded afterthought.
-            </p>
-            <p className="muted">
-              Members use the floor on their own, {site.hours.access} daily,
-              365 days a year. Not 24/7. Not CrossFit. Not a
-              personal-training-only studio. Coaching is here if you want it.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-tint">
         <div className="container">
           <div className="card-grid feature-grid">
-            <article className="card feature-card">
+            <article className="card feature-card pillar-card">
               <PlaceholderMedia
                 src={placeholders.strength}
-                className="card-media"
-                sizes="(max-width: 720px) 100vw, 33vw"
+                className="card-media pillar-media"
+                sizes="(max-width: 900px) 100vw, 33vw"
+                label={false}
               />
               <div className="card-body">
                 <h3>Strength</h3>
-                <p>Progressive training built around how you actually live here.</p>
+                <p>A serious floor for progressive work.</p>
               </div>
             </article>
-            <article className="card feature-card">
+            <article className="card feature-card pillar-card">
               <PlaceholderMedia
                 src={placeholders.longevity}
-                className="card-media"
-                sizes="(max-width: 720px) 100vw, 33vw"
+                className="card-media pillar-media"
+                sizes="(max-width: 900px) 100vw, 33vw"
+                label={false}
               />
               <div className="card-body">
                 <h3>Longevity</h3>
                 <p>Training that still matters in twenty years.</p>
               </div>
             </article>
-            <article className="card feature-card">
+            <article className="card feature-card pillar-card">
               <PlaceholderMedia
                 src={placeholders.recovery}
-                className="card-media"
-                sizes="(max-width: 720px) 100vw, 33vw"
+                className="card-media pillar-media"
+                sizes="(max-width: 900px) 100vw, 33vw"
+                label={false}
               />
               <div className="card-body">
                 <h3>Recovery</h3>
-                <p>Space so hard work lands clean.</p>
+                <p>Private cold plunge and infrared sauna.</p>
+                <Link className="text-link" href="/recovery">
+                  See recovery
+                </Link>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <ReviewsSection />
+      <section className="promo-band">
+        <div className="container">
+          <MembershipOffer variant="band" headingLevel="h2" />
+        </div>
+      </section>
 
-      <section className="photo-band">
+      <section className="photo-band photo-band-tall">
         <PlaceholderMedia
           src={placeholders.pricing}
           className="photo-band-media"
@@ -115,42 +104,39 @@ export default function HomePage() {
         <div className="photo-band-shade" />
         <div className="container photo-band-inner">
           <p className="eyebrow eyebrow-light">Membership</p>
-          <h2>Simple pricing. Year-round floor.</h2>
-          <p>
-            {site.offer.headline}. {site.offer.sub} {offerPriceLine()}
-          </p>
-          <p>
-            {site.plans.monthly.detail} Week, two-week, and one-month passes
-            live on Pricing. Members train {site.hours.access}, every day of
-            the year. Not 24/7.
-          </p>
+          <h2>The floor, year-round.</h2>
+          <p>Monthly or annual. Same gym, every day of the year.</p>
           <Link className="button button-inverse" href="/pricing">
             View pricing
           </Link>
         </div>
       </section>
 
-      <section className="section">
+      <ReviewsSection />
+
+      <section className="section section-tint">
         <div className="container split visit-split">
           <PlaceholderMedia
             src={placeholders.visit}
             className="visit-media"
             sizes="(max-width: 720px) 100vw, 50vw"
+            label={false}
           />
           <div className="panel visit-panel">
-            <p className="eyebrow">Visit</p>
-            <h2>Come see the floor.</h2>
+            <p className="eyebrow">Join</p>
+            <h2>Call. Come in. Start.</h2>
             <p>
-              <AddressBlock />
+              Ready to train here? Call{" "}
+              <a href={site.phoneHref}>{site.phoneDisplay}</a> or write us.
             </p>
-            <p>
-              <a href={site.phoneHref}>{site.phoneDisplay}</a>
-              <span aria-hidden="true"> · </span>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
-            </p>
-            <Link className="button" href="/contact">
-              Contact us
-            </Link>
+            <div className="button-row">
+              <a className="button" href={site.phoneHref}>
+                Call to join
+              </a>
+              <Link className="button button-outline" href="/contact">
+                Contact us
+              </Link>
+            </div>
           </div>
         </div>
       </section>

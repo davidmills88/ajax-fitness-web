@@ -117,12 +117,17 @@ a:hover {
 
 .hero {
   position: relative;
-  min-height: min(88vh, 48rem);
+  min-height: min(92vh, 54rem);
   display: flex;
   align-items: flex-end;
   padding: 8rem 0 4.5rem;
   color: #fff;
   background: linear-gradient(180deg, var(--hero-start) 0%, var(--hero-end) 100%);
+}
+
+.hero-sparse {
+  min-height: min(96vh, 58rem);
+  padding: 10rem 0 5.5rem;
 }
 
 .hero-media,
@@ -133,13 +138,13 @@ a:hover {
 
 .hero-shade {
   background:
-    linear-gradient(180deg, rgba(10, 10, 10, 0.08) 0%, rgba(10, 10, 10, 0.28) 42%, rgba(10, 10, 10, 0.78) 100%);
+    linear-gradient(180deg, rgba(10, 10, 10, 0.04) 0%, rgba(10, 10, 10, 0.18) 48%, rgba(10, 10, 10, 0.74) 100%);
 }
 
 .hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 42rem;
+  max-width: 38rem;
 }
 
 .lede {
@@ -387,6 +392,26 @@ a:hover {
   margin: 1.2rem 0 0;
 }
 
+.promo-band {
+  padding: 5.5rem 0;
+  background: var(--paper-raised);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.promo-offer {
+  max-width: 38rem;
+}
+
+.promo-offer h2 {
+  font-size: clamp(2.15rem, 5vw, 3.5rem);
+  margin-bottom: 0.85rem;
+}
+
+.promo-offer .button-row {
+  margin: 1.4rem 0 0;
+}
+
 .trainer-notes {
   list-style: none;
   display: grid;
@@ -565,7 +590,7 @@ a:hover {
   display: none;
   width: 100%;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: 0.45rem;
   padding-bottom: 1.1rem;
 }
 
@@ -751,11 +776,11 @@ a:focus-visible {
 
 .media-frame img {
   object-fit: cover;
-  filter: saturate(0.62) contrast(1.04);
+  filter: saturate(0.86) contrast(1.03);
 }
 
 .hero-media img {
-  filter: saturate(0.35) contrast(1.06) brightness(1.08);
+  filter: saturate(0.8) contrast(1.04) brightness(1.02);
 }
 
 .hero-media,
@@ -778,6 +803,23 @@ a:focus-visible {
 .aside-media,
 .page-aside-media {
   aspect-ratio: 1;
+}
+
+.pillar-media {
+  aspect-ratio: 3 / 4;
+}
+
+.pillar-card .card-body {
+  padding: 1.35rem 0.15rem 0.2rem;
+}
+
+.pillar-card {
+  border: 0;
+  background: transparent;
+}
+
+.pillar-card p {
+  margin-bottom: 0.55rem;
 }
 
 .visit-media {
@@ -803,12 +845,17 @@ a:focus-visible {
 
 .photo-band {
   position: relative;
-  min-height: 24rem;
+  min-height: 28rem;
   display: flex;
   align-items: center;
   padding: 5.5rem 0;
   color: #fff;
   background: linear-gradient(180deg, var(--hero-start), var(--hero-end));
+}
+
+.photo-band-tall {
+  min-height: min(42rem, 72vh);
+  padding: 8rem 0;
 }
 
 .photo-band-media,
@@ -856,7 +903,6 @@ a:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .feature-grid,
   .footer-grid,
   .clarify-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -878,7 +924,7 @@ a:focus-visible {
     align-items: center;
     width: auto;
     padding: 0;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 
   .footer-grid {
@@ -889,11 +935,30 @@ a:focus-visible {
     padding: 9.5rem 0 5.5rem;
   }
 
+  .hero-sparse {
+    padding: 11rem 0 6.5rem;
+  }
+
   .section {
-    padding: 6rem 0;
+    padding: 6.5rem 0;
+  }
+
+  .promo-band {
+    padding: 6.5rem 0;
   }
 
   .page-hero {
     padding-top: 4.2rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.85rem;
   }
 }
