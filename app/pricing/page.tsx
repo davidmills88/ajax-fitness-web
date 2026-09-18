@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AddressBlock } from "@/components/AddressBlock";
 import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
 import {
-  formatNapShort,
   lockedPriceLine,
   membershipPlans,
   site,
@@ -15,7 +13,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: `${site.offer.headline}. ${formatNapShort()}. ${lockedPriceLine()}. Member access ${site.hours.access} daily, 365 days a year — not 24/7. Call ${site.phoneDisplay} to join.`,
+  description: `${site.offer.headline}. Ajax Fitness in Aspen. ${lockedPriceLine()}. Member access ${site.hours.access} daily, 365 days a year — not 24/7. Call ${site.phoneDisplay} to join.`,
 };
 
 function PlanCard({ plan }: { plan: Plan }) {
@@ -55,7 +53,7 @@ export default function PricingPage() {
             <p className="eyebrow">Pricing</p>
             <h2>Membership & temporary passes</h2>
             <p className="lede">
-              {formatNapShort()}. {lockedPriceLine()}.
+              {lockedPriceLine()}.
             </p>
             <p className="muted">
               Simple pricing. No clutter. Built for Aspen training that sticks.
@@ -114,9 +112,6 @@ export default function PricingPage() {
           <div className="panel visit-panel">
             <p className="eyebrow">Visit</p>
             <h2>See the gym before you commit.</h2>
-            <p>
-              <AddressBlock />
-            </p>
             <p>
               Member access {site.hours.access} daily. Not 24/7.
             </p>

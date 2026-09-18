@@ -3,7 +3,7 @@ export const site = {
   domain: "ajaxfitness.com",
   tagline: "Strength, recovery, and longevity in Aspen",
   description:
-    "Ajax Fitness is Aspen’s premium gym at 100 Obermeyer Place, Unit 105, Aspen, CO. Members train 6:00 AM–9:00 PM daily, 365 days a year — not 24/7.",
+    "Ajax Fitness is Aspen’s premium gym. Members train 6:00 AM–9:00 PM daily, 365 days a year — not 24/7.",
   phoneDisplay: "(970) 670-8974",
   phoneHref: "tel:+19706708974",
   email: "hello@ajaxgym.com",

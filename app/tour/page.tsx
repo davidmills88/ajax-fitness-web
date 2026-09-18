@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AddressBlock } from "@/components/AddressBlock";
 import { TourForm } from "@/components/TourForm";
 import { site } from "@/lib/site";
 
@@ -33,7 +32,8 @@ export default function TourPage() {
           <div className="panel">
             <p className="eyebrow">Find us</p>
             <p>
-              <AddressBlock />
+              Ajax Fitness in Aspen.{" "}
+              <Link href="/contact">Address on Contact</Link>.
             </p>
             <p className="muted">
               Member access {site.hours.access} daily. Not 24/7.

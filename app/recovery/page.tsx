@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AddressBlock } from "@/components/AddressBlock";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
-import { formatNapShort, site } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
     absolute: "Recovery | cold plunge & sauna at Ajax Fitness Aspen",
   },
-  description: `Private cold plunge and infrared sauna at Ajax Fitness, ${formatNapShort()}. Open during member access ${site.hours.access} daily — not 24/7. Call ${site.phoneDisplay}.`,
+  description: `Private cold plunge and infrared sauna at Ajax Fitness in Aspen. Open during member access ${site.hours.access} daily — not 24/7. Call ${site.phoneDisplay}.`,
 };
 
 export default function RecoveryPage() {
@@ -32,9 +31,7 @@ export default function RecoveryPage() {
             Available during member access {site.hours.access} daily, 365 days
             a year. Not 24/7.
           </p>
-          <p className="muted">
-            Same hours as the floor. {formatNapShort()}.
-          </p>
+          <p className="muted">Same hours as the floor. In Aspen.</p>
           <div className="button-row">
             <a className="button" href={site.phoneHref}>
               Call to join
@@ -79,7 +76,7 @@ export default function RecoveryPage() {
               <div>
                 <dt>Location</dt>
                 <dd>
-                  <AddressBlock inline />
+                  Aspen. <Link href="/contact">See Contact</Link>
                 </dd>
               </div>
             </dl>
