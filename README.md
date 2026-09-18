@@ -6,6 +6,7 @@ Premium Aspen gym site for [ajaxfitness.com](https://ajaxfitness.com). Code-owne
 
 - `/` — Home
 - `/hours` — Member access 6:00 AM–9:00 PM daily, 365 days a year — not 24/7
+- `/recovery` — Private cold plunge and infrared sauna during member hours
 - `/pricing` — Membership $229 / $2100 · Temporary: Day $49 · Week $150 · 2-week $225 · 1-month $295
 - `/personal-training` — Service page; Roman Garcia, Erin Young, and Alie James named with longer bios at the bottom only
 - `/contact` — Lead form → `POST /api/contact` (GHL stub)

@@ -151,6 +151,7 @@ export function formatNapShort() {
 export const nav = [
   { href: "/", label: "Home" },
   { href: "/hours", label: "Hours" },
+  { href: "/recovery", label: "Recovery" },
   { href: "/pricing", label: "Pricing" },
   { href: "/personal-training", label: "Personal Training" },
   { href: "/contact", label: "Contact" },

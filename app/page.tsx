@@ -102,15 +102,21 @@ export default function HomePage() {
               </div>
             </article>
             <article className="card feature-card">
-              <PlaceholderMedia
-                src={placeholders.recovery}
-                className="card-media"
-                sizes="(max-width: 720px) 100vw, 33vw"
-              />
-              <div className="card-body">
-                <h3>Recovery</h3>
-                <p>Space so hard work lands clean.</p>
-              </div>
+              <Link href="/recovery" className="feature-card-link">
+                <PlaceholderMedia
+                  src={placeholders.recovery}
+                  className="card-media"
+                  sizes="(max-width: 720px) 100vw, 33vw"
+                />
+                <div className="card-body">
+                  <h3>Recovery</h3>
+                  <p>
+                    Private cold plunge and infrared sauna — a quiet room so
+                    hard work lands clean.
+                  </p>
+                  <span className="text-link">Explore recovery</span>
+                </div>
+              </Link>
             </article>
           </div>
         </div>
