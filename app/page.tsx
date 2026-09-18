@@ -155,9 +155,7 @@ export default function HomePage() {
             {site.plans.twoWeek.price}. 1-month {site.plans.oneMonth.price}.
             Same floor. Same hours.
           </p>
-          <Link className="button button-inverse" href="/pricing">
-            View pricing
-          </Link>
+          <CallToJoin inverse />
         </div>
       </section>
 
