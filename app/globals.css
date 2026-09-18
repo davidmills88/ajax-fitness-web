@@ -137,9 +137,33 @@ a:hover {
 }
 
 .hero-canvas h1 {
-  max-width: 11ch;
+  max-width: 13ch;
   font-weight: 500;
   letter-spacing: -0.045em;
+}
+
+.hero-life {
+  display: block;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.cta-block .button-row {
+  margin-bottom: 0.55rem;
+}
+
+.cta-note {
+  margin: 0 0 0.4rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.cta-note-light {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.value-stack {
+  padding-top: 4.2rem;
+  padding-bottom: 4.2rem;
 }
 
 .hero-media,

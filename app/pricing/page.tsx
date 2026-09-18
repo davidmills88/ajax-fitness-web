@@ -102,7 +102,7 @@ export default function PricingPage() {
           <p className="center-note">
             Questions? <a href={site.phoneHref}>{site.phoneDisplay}</a>
             <span aria-hidden="true"> · </span>
-            <Link href="/contact">Contact us to get started</Link>
+            <Link href="/contact">Contact us</Link>
           </p>
         </div>
       </section>

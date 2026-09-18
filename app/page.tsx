@@ -27,11 +27,18 @@ export default function HomePage() {
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
-          <h1>Stay strong for the mountain.</h1>
+          <h1>
+            Stay strong for the mountain.
+            <span className="hero-life">And for life.</span>
+          </h1>
           <p className="lede lede-light">
-            Strength, recovery, and longevity. {site.hours.access} daily.
+            Strength, recovery, and longevity in Aspen. {site.hours.access}{" "}
+            daily.
           </p>
-          <CallToJoin inverse quietSecondary />
+          <p className="hero-proof">
+            {site.reviews.rating}★ · {site.reviews.count} {site.reviews.label}
+          </p>
+          <CallToJoin inverse quietSecondary note />
         </div>
       </section>
 
@@ -43,6 +50,52 @@ export default function HomePage() {
             Not a hotel gym.
           </h2>
           <p>Open. Equipped. Quiet enough to work.</p>
+        </div>
+      </section>
+
+      <section className="section value-stack">
+        <div className="container">
+          <div className="card-grid feature-grid">
+            <article className="feature-card pillar-card">
+              <PlaceholderMedia
+                src={placeholders.strength}
+                className="card-media pillar-media"
+                sizes="(max-width: 900px) 100vw, 33vw"
+                label={false}
+              />
+              <div className="card-body">
+                <h3>Train</h3>
+                <p>A serious floor for progressive work. Most weights in Aspen.</p>
+              </div>
+            </article>
+            <Link
+              href="/recovery"
+              className="feature-card pillar-card pillar-link"
+            >
+              <PlaceholderMedia
+                src={placeholders.recovery}
+                className="card-media pillar-media"
+                sizes="(max-width: 900px) 100vw, 33vw"
+                label={false}
+              />
+              <div className="card-body">
+                <h3>Recover</h3>
+                <p>Private cold plunge and infrared sauna.</p>
+              </div>
+            </Link>
+            <article className="feature-card pillar-card">
+              <PlaceholderMedia
+                src={placeholders.longevity}
+                className="card-media pillar-media"
+                sizes="(max-width: 900px) 100vw, 33vw"
+                label={false}
+              />
+              <div className="card-body">
+                <h3>Longevity</h3>
+                <p>Training that still matters in twenty years.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -69,52 +122,6 @@ export default function HomePage() {
         />
       </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="card-grid feature-grid">
-            <article className="feature-card pillar-card">
-              <PlaceholderMedia
-                src={placeholders.strength}
-                className="card-media pillar-media"
-                sizes="(max-width: 900px) 100vw, 33vw"
-                label={false}
-              />
-              <div className="card-body">
-                <h3>Strength</h3>
-                <p>A serious floor for progressive work.</p>
-              </div>
-            </article>
-            <article className="feature-card pillar-card">
-              <PlaceholderMedia
-                src={placeholders.longevity}
-                className="card-media pillar-media"
-                sizes="(max-width: 900px) 100vw, 33vw"
-                label={false}
-              />
-              <div className="card-body">
-                <h3>Longevity</h3>
-                <p>Training that still matters in twenty years.</p>
-              </div>
-            </article>
-            <Link
-              href="/recovery"
-              className="feature-card pillar-card pillar-link"
-            >
-              <PlaceholderMedia
-                src={placeholders.recovery}
-                className="card-media pillar-media"
-                sizes="(max-width: 900px) 100vw, 33vw"
-                label={false}
-              />
-              <div className="card-body">
-                <h3>Recovery</h3>
-                <p>Private cold plunge and infrared sauna.</p>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <section className="section section-tint">
         <div className="container split editorial-plan">
           <div>
@@ -133,7 +140,7 @@ export default function HomePage() {
                 Start. Train {site.hours.access} daily. Not 24/7.
               </li>
             </ol>
-            <CallToJoin />
+            <CallToJoin note />
           </div>
           <PlaceholderMedia
             src={placeholders.visit}
@@ -176,7 +183,7 @@ export default function HomePage() {
           <p>
             {site.phoneDisplay}. Members train {site.hours.access} daily.
           </p>
-          <CallToJoin inverse secondary="contact" quietSecondary />
+          <CallToJoin inverse secondary="contact" quietSecondary note />
         </div>
       </section>
     </>
