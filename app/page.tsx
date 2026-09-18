@@ -152,7 +152,7 @@ export default function HomePage() {
       <section className="section">
         <div className="container split visit-split">
           <PlaceholderMedia
-            src={placeholders.floor}
+            src={placeholders.visit}
             className="visit-media"
             sizes="(max-width: 720px) 100vw, 50vw"
           />

@@ -36,7 +36,7 @@ export default function ContactPage() {
             />
           </div>
           <PlaceholderMedia
-            src={placeholders.visit}
+            src={placeholders.contact}
             className="aside-media"
             sizes="(max-width: 720px) 100vw, 40vw"
           />
