@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <section className="hero hero-sparse">
+      <section className="hero hero-canvas">
         <PlaceholderMedia
           src={placeholders.hero}
           className="hero-media"
@@ -27,41 +27,52 @@ export default function HomePage() {
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
-          <p className="eyebrow eyebrow-light">Ajax Aspen</p>
           <h1>Stay strong for the mountain.</h1>
           <p className="lede lede-light">
-            Strength, recovery, and longevity. Members train{" "}
-            {site.hours.access} daily — not 24/7.
+            Strength, recovery, and longevity. {site.hours.access} daily.
           </p>
-          <p
-            className="hero-proof"
-            aria-label={`${site.reviews.rating} out of 5 from ${site.reviews.count} ${site.reviews.label}`}
-          >
-            {site.reviews.rating} ★ · {site.reviews.count} {site.reviews.label}
-          </p>
-          <CallToJoin inverse />
-          <p className="hero-meta">Call during the day. We pick up.</p>
+          <CallToJoin inverse quietSecondary />
         </div>
       </section>
 
-      <section className="section section-ink">
-        <div className="container split ink-split">
-          <div>
-            <p className="eyebrow eyebrow-light">Why Ajax</p>
-            <h2>Hotel floors and class mills don’t compound.</h2>
-          </div>
-          <p className="lede lede-light">
-            Aspen doesn’t need another crowded rec center. It needs a serious
-            floor — open, equipped, and quiet enough to work. Stay capable for
-            the mountain. And for the next twenty years.
-          </p>
+      <section className="section-ink ink-pause">
+        <div className="container ink-pause-inner">
+          <h2>
+            A serious floor.
+            <br />
+            Not a hotel gym.
+          </h2>
+          <p>Open. Equipped. Quiet enough to work.</p>
         </div>
+      </section>
+
+      <section className="editorial-split">
+        <div className="editorial-split-copy">
+          <h2>
+            The floor,
+            <br />
+            year-round.
+          </h2>
+          <p>
+            Monthly or annual. Same gym, every day of the year. Members train{" "}
+            {site.hours.access} — not 24/7.
+          </p>
+          <Link className="button button-ghost" href="/pricing">
+            View pricing
+          </Link>
+        </div>
+        <PlaceholderMedia
+          src={placeholders.pricing}
+          className="editorial-split-media"
+          sizes="(max-width: 900px) 100vw, 58vw"
+          label={false}
+        />
       </section>
 
       <section className="section">
         <div className="container">
           <div className="card-grid feature-grid">
-            <article className="card feature-card pillar-card">
+            <article className="feature-card pillar-card">
               <PlaceholderMedia
                 src={placeholders.strength}
                 className="card-media pillar-media"
@@ -73,7 +84,7 @@ export default function HomePage() {
                 <p>A serious floor for progressive work.</p>
               </div>
             </article>
-            <article className="card feature-card pillar-card">
+            <article className="feature-card pillar-card">
               <PlaceholderMedia
                 src={placeholders.longevity}
                 className="card-media pillar-media"
@@ -85,7 +96,10 @@ export default function HomePage() {
                 <p>Training that still matters in twenty years.</p>
               </div>
             </article>
-            <Link href="/recovery" className="card feature-card pillar-card pillar-link">
+            <Link
+              href="/recovery"
+              className="feature-card pillar-card pillar-link"
+            >
               <PlaceholderMedia
                 src={placeholders.recovery}
                 className="card-media pillar-media"
@@ -102,9 +116,8 @@ export default function HomePage() {
       </section>
 
       <section className="section section-tint">
-        <div className="container split">
+        <div className="container split editorial-plan">
           <div>
-            <p className="eyebrow">How to join</p>
             <h2>Call us. Walk through. Join.</h2>
             <ol className="step-list">
               <li>
@@ -123,8 +136,8 @@ export default function HomePage() {
             <CallToJoin />
           </div>
           <PlaceholderMedia
-            src={placeholders.pricing}
-            className="visit-media"
+            src={placeholders.visit}
+            className="visit-media plan-media"
             sizes="(max-width: 720px) 100vw, 50vw"
             label={false}
           />
@@ -148,26 +161,22 @@ export default function HomePage() {
         />
         <div className="photo-band-shade" />
         <div className="container photo-band-inner">
-          <p className="eyebrow eyebrow-light">Visiting</p>
           <h2>In Aspen for a week?</h2>
           <p>
             Day {site.plans.day.price}. Week {site.plans.week.price}. 2-week{" "}
             {site.plans.twoWeek.price}. 1-month {site.plans.oneMonth.price}.
-            Same floor. Same hours.
           </p>
-          <CallToJoin inverse />
+          <CallToJoin inverse quietSecondary />
         </div>
       </section>
 
-      <section className="section">
-        <div className="container narrow final-cta">
-          <p className="eyebrow">Join</p>
+      <section className="section-ink ink-pause ink-close">
+        <div className="container ink-pause-inner">
           <h2>Call. Come in. Start.</h2>
-          <p className="lede">
-            Ready to train here? Call {site.phoneDisplay}. View pricing if you
-            want the numbers first.
+          <p>
+            {site.phoneDisplay}. Members train {site.hours.access} daily.
           </p>
-          <CallToJoin secondary="contact" />
+          <CallToJoin inverse secondary="contact" quietSecondary />
         </div>
       </section>
     </>

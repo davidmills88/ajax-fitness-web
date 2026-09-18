@@ -65,7 +65,7 @@ h3,
 }
 
 h1 {
-  font-size: clamp(2.6rem, 7vw, 4.6rem);
+  font-size: clamp(2.8rem, 8vw, 6.4rem);
   margin: 0.15rem 0 1.1rem;
 }
 
@@ -130,6 +130,18 @@ a:hover {
   padding: 10rem 0 5.5rem;
 }
 
+.hero-canvas {
+  min-height: 100vh;
+  align-items: flex-end;
+  padding: 11rem 0 5.5rem;
+}
+
+.hero-canvas h1 {
+  max-width: 11ch;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
 .hero-media,
 .hero-shade {
   position: absolute;
@@ -138,13 +150,13 @@ a:hover {
 
 .hero-shade {
   background:
-    linear-gradient(180deg, rgba(10, 10, 10, 0.04) 0%, rgba(10, 10, 10, 0.18) 48%, rgba(10, 10, 10, 0.74) 100%);
+    linear-gradient(180deg, rgba(10, 10, 10, 0.22) 0%, rgba(10, 10, 10, 0.08) 38%, rgba(10, 10, 10, 0.7) 100%);
 }
 
 .hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 38rem;
+  max-width: 44rem;
 }
 
 .lede {
@@ -273,6 +285,63 @@ a:hover {
 
 .section-ink h2 {
   color: #fff;
+}
+
+.ink-pause {
+  padding: 8.5rem 0;
+  text-align: left;
+}
+
+.ink-pause-inner {
+  max-width: 52rem;
+}
+
+.ink-pause h2 {
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  letter-spacing: -0.045em;
+  margin-bottom: 1.2rem;
+}
+
+.ink-pause p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.15rem;
+  max-width: 28rem;
+  margin-bottom: 0;
+}
+
+.ink-close .button-row {
+  margin: 2rem 0 0;
+}
+
+.editorial-split {
+  display: grid;
+  min-height: min(78vh, 46rem);
+  background: #111;
+  color: #fff;
+}
+
+.editorial-split-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4.5rem 1.6rem;
+  max-width: 36rem;
+}
+
+.editorial-split-copy h2 {
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  letter-spacing: -0.045em;
+}
+
+.editorial-split-copy p {
+  color: rgba(255, 255, 255, 0.74);
+  max-width: 26rem;
+}
+
+.editorial-split-media,
+.media-frame.editorial-split-media {
+  min-height: 28rem;
+  height: 100%;
 }
 
 .ink-split {
@@ -588,6 +657,20 @@ a:hover {
 .text-link {
   font-weight: 500;
   letter-spacing: 0.04em;
+  align-self: center;
+}
+
+.text-link-light {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  align-self: center;
+}
+
+.text-link-light:hover {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .site-header {
@@ -596,6 +679,46 @@ a:hover {
   z-index: 20;
   background: var(--paper);
   border-bottom: 1px solid var(--ink);
+}
+
+.site-header-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.site-header-overlay .wordmark,
+.site-header-overlay .nav-link,
+.site-header-overlay .nav-phone {
+  color: #fff;
+}
+
+.site-header-overlay .wordmark:hover,
+.site-header-overlay .nav-link:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.site-header-overlay .nav-link.is-active {
+  box-shadow: inset 0 -1px 0 #fff;
+}
+
+.site-header-overlay .nav-toggle {
+  border-color: #fff;
+  color: #fff;
+}
+
+.site-header-overlay .button-compact {
+  background: #fff;
+  border-color: #fff;
+  color: var(--ink);
+}
+
+.site-header-overlay .site-nav.is-open {
+  background: rgba(10, 10, 10, 0.92);
+  margin: 0 -1.25rem;
+  padding: 1rem 1.25rem 1.2rem;
 }
 
 .header-inner {
@@ -852,7 +975,7 @@ a:focus-visible {
 }
 
 .pillar-card .card-body {
-  padding: 1.35rem 0.15rem 0.2rem;
+  padding: 1.15rem 0 0.2rem;
 }
 
 .pillar-card {
@@ -867,6 +990,11 @@ a:focus-visible {
 .visit-media {
   min-height: 22rem;
   aspect-ratio: 4 / 3;
+}
+
+.plan-media {
+  min-height: 28rem;
+  aspect-ratio: 3 / 4;
 }
 
 .media-badge {
@@ -914,6 +1042,10 @@ a:focus-visible {
   position: relative;
   z-index: 1;
   max-width: 34rem;
+}
+
+.photo-band-inner h2 {
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
 }
 
 .photo-band-inner .button {
@@ -981,6 +1113,20 @@ a:focus-visible {
     padding: 11rem 0 6.5rem;
   }
 
+  .hero-canvas {
+    padding: 12rem 0 7rem;
+  }
+
+  .ink-pause {
+    padding: 10.5rem 0;
+  }
+
+  .site-header-overlay .site-nav.is-open {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+  }
+
   .section {
     padding: 6.5rem 0;
   }
@@ -1002,5 +1148,17 @@ a:focus-visible {
   .feature-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.85rem;
+  }
+
+  .editorial-split {
+    grid-template-columns: minmax(20rem, 0.85fr) minmax(0, 1.15fr);
+  }
+
+  .editorial-split-copy {
+    padding: 5.5rem 4.5rem;
+  }
+
+  .editorial-split-media {
+    min-height: 100%;
   }
 }

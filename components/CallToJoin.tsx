@@ -4,11 +4,19 @@ import { site } from "@/lib/site";
 export function CallToJoin({
   inverse = false,
   secondary = "pricing",
+  quietSecondary = false,
 }: {
   inverse?: boolean;
   secondary?: "pricing" | "contact" | "none";
+  quietSecondary?: boolean;
 }) {
-  const secondaryClass = inverse ? "button button-ghost" : "button button-outline";
+  const secondaryClass = quietSecondary
+    ? inverse
+      ? "text-link-light"
+      : "text-link"
+    : inverse
+      ? "button button-ghost"
+      : "button button-outline";
 
   return (
     <div className="button-row">
