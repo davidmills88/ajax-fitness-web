@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AddressBlock } from "@/components/AddressBlock";
 import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { placeholders } from "@/lib/placeholders";
 import {
-  formatNapShort,
   lockedPriceLine,
   offerPriceLine,
   site,
@@ -16,7 +14,7 @@ export const metadata: Metadata = {
   title: {
     absolute: "Ajax Fitness | Aspen, CO",
   },
-  description: `${site.offer.headline}. ${formatNapShort()}. Member access ${site.hours.access} daily, 365 days a year — not 24/7. ${lockedPriceLine()}. Call ${site.phoneDisplay}.`,
+  description: `${site.offer.headline}. Ajax Fitness in Aspen. Member access ${site.hours.access} daily, 365 days a year — not 24/7. ${lockedPriceLine()}. Call ${site.phoneDisplay}.`,
 };
 
 export default function HomePage() {
@@ -31,10 +29,21 @@ export default function HomePage() {
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
-          <MembershipOffer variant="hero" />
+          <p className="eyebrow eyebrow-light">Aspen</p>
+          <h1>Strength training for life in Aspen</h1>
+          <p className="lede lede-light">
+            A focused gym for people who want to stay strong, move well, and
+            recover properly — in and out of season.
+          </p>
+          <div className="button-row">
+            <a className="button button-inverse" href={site.phoneHref}>
+              Call to join
+            </a>
+            <Link className="button button-ghost" href="/pricing">
+              View pricing
+            </Link>
+          </div>
           <p className="hero-meta">
-            <AddressBlock inline />
-            <span aria-hidden="true"> · </span>
             <Link href="/hours">See hours</Link>
             <span aria-hidden="true"> · </span>
             <a href={site.phoneHref}>{site.phoneDisplay}</a>
@@ -50,7 +59,7 @@ export default function HomePage() {
           </div>
           <div>
             <p className="lede">
-              A premium gym at {formatNapShort()}. We train for strength,
+              A premium gym in Aspen. We train for strength,
               longevity, and recovery — not a short-term spike, and not a
               crowded afterthought.
             </p>
@@ -89,17 +98,29 @@ export default function HomePage() {
               </div>
             </article>
             <article className="card feature-card">
-              <PlaceholderMedia
-                src={placeholders.recovery}
-                className="card-media"
-                sizes="(max-width: 720px) 100vw, 33vw"
-              />
-              <div className="card-body">
-                <h3>Recovery</h3>
-                <p>Space so hard work lands clean.</p>
-              </div>
+              <Link href="/recovery" className="feature-card-link">
+                <PlaceholderMedia
+                  src={placeholders.recovery}
+                  className="card-media"
+                  sizes="(max-width: 720px) 100vw, 33vw"
+                />
+                <div className="card-body">
+                  <h3>Recovery</h3>
+                  <p>
+                    Private cold plunge and infrared sauna — a quiet room so
+                    hard work lands clean.
+                  </p>
+                  <span className="text-link">Explore recovery</span>
+                </div>
+              </Link>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <MembershipOffer variant="page" headingLevel="h2" />
         </div>
       </section>
 
@@ -107,7 +128,7 @@ export default function HomePage() {
 
       <section className="photo-band">
         <PlaceholderMedia
-          src={placeholders.pricing}
+          src={placeholders.photoBand}
           className="photo-band-media"
           sizes="100vw"
           label={false}
@@ -140,9 +161,6 @@ export default function HomePage() {
           <div className="panel visit-panel">
             <p className="eyebrow">Visit</p>
             <h2>Come see the floor.</h2>
-            <p>
-              <AddressBlock />
-            </p>
             <p>
               <a href={site.phoneHref}>{site.phoneDisplay}</a>
               <span aria-hidden="true"> · </span>

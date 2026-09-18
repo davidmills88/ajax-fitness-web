@@ -6,6 +6,7 @@ Premium Aspen gym site for [ajaxfitness.com](https://ajaxfitness.com). Code-owne
 
 - `/` — Home
 - `/hours` — Member access 6:00 AM–9:00 PM daily, 365 days a year — not 24/7
+- `/recovery` — Private cold plunge and infrared sauna during member hours
 - `/pricing` — Membership $229 / $2100 · Temporary: Day $49 · Week $150 · 2-week $225 · 1-month $295
 - `/personal-training` — Service page; Roman Garcia, Erin Young, and Alie James named with longer bios at the bottom only
 - `/contact` — Lead form → `POST /api/contact` (GHL stub)
@@ -50,6 +51,6 @@ Do not invent or commit secrets.
 
 - Light editorial theme: off-white grounds (`#F6F5F2`), near-black type and CTAs (`#111`), dark cinematic hero bands. Fonts: Inter Tight + Inter. Quiet luxury, Equinox-adjacent — not the WordPress blue/peach palette.
 - Voice is premium, confident, and warm — not gym-bro, not discount-y.
-- Home, hours, pricing, contact, join, and tour use local `/public/placeholders` photos until Ajax gym photography is ready.
+- Local `/public/placeholders` gym photos are unique per slot (v3.1: v2 aisle hero and Precor visit, v3 copy/offer placement). Rejected v1 shots stay unwired in `/public/images/alts/`.
 - `/join` and `/tour` are placeholders for the future Wellyx-out / Stripe path.
 - Locked Phase 1 copy: [Mac build copy](https://docs.google.com/document/d/1LQOIBeNFVQfcooal0SRu6C5nr9OPagHseZmWahmvU28/edit).

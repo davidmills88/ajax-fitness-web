@@ -3,12 +3,12 @@ import Link from "next/link";
 import { CallToJoin } from "@/components/CallToJoin";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
-import { formatNapShort, site } from "@/lib/site";
+import { site } from "@/lib/site";
 import { trainers } from "@/lib/trainers";
 
 export const metadata: Metadata = {
   title: "Personal training",
-  description: `Personal training at Ajax Fitness, ${formatNapShort()}. Strength, longevity, and performance — written for Aspen seasons. Call ${site.phoneDisplay} to join.`,
+  description: `Personal training at Ajax Fitness in Aspen. Strength, longevity, and performance — written for Aspen seasons. Call ${site.phoneDisplay} to join.`,
 };
 
 export default function PersonalTrainingPage() {
@@ -16,7 +16,7 @@ export default function PersonalTrainingPage() {
     <>
       <section className="hero">
         <PlaceholderMedia
-          src={placeholders.strength}
+          src={placeholders.training}
           className="hero-media"
           sizes="100vw"
           preload
@@ -136,7 +136,7 @@ export default function PersonalTrainingPage() {
 
       <section className="photo-band">
         <PlaceholderMedia
-          src={placeholders.recovery}
+          src={placeholders.trainingBand}
           className="photo-band-media"
           sizes="100vw"
           label={false}

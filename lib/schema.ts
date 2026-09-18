@@ -1,3 +1,4 @@
+import { placeholders } from "@/lib/placeholders";
 import {
   formatFullAddress,
   formatStreetAddress,
@@ -14,7 +15,7 @@ export function localBusinessJsonLd() {
     url: `https://${site.domain}`,
     telephone: site.phoneHref.replace("tel:", ""),
     email: site.email,
-    image: `https://${site.domain}${placeholdersPath()}`,
+    image: `https://${site.domain}${placeholders.hero}`,
     address: {
       "@type": "PostalAddress",
       streetAddress: formatStreetAddress(),
@@ -57,6 +58,3 @@ export function localBusinessJsonLd() {
   };
 }
 
-function placeholdersPath() {
-  return "/placeholders/hero-training.jpg";
-}

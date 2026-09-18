@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AddressBlock } from "@/components/AddressBlock";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
-import { formatNapShort, site } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Hours",
-  description: `Ajax Fitness at ${formatNapShort()} is open ${site.hours.access} daily, 365 days a year. Not 24/7. Front desk hours may differ.`,
+  description: `Ajax Fitness in Aspen is open ${site.hours.access} daily, 365 days a year. Not 24/7. Front desk hours may differ.`,
 };
 
 export default function HoursPage() {
@@ -18,8 +17,8 @@ export default function HoursPage() {
           <p className="eyebrow">Member access</p>
           <h1>Gym hours</h1>
           <p className="lede">
-            {formatNapShort()}. Members train from 6:00 AM to 9:00 PM, every
-            day — 365 days a year.
+            Members train from 6:00 AM to 9:00 PM, every day — 365 days a
+            year. In Aspen. Not 24/7.
           </p>
           <p className="callout">
             Ajax Fitness is not open 24 hours. Access is 6:00 AM–9:00 PM
@@ -36,7 +35,7 @@ export default function HoursPage() {
         </div>
         <div className="visit-stack">
           <PlaceholderMedia
-            src={placeholders.hero}
+            src={placeholders.hours}
             className="aside-media"
             sizes="(max-width: 720px) 100vw, 50vw"
           />
@@ -58,7 +57,7 @@ export default function HoursPage() {
               <div>
                 <dt>Location</dt>
                 <dd>
-                  <AddressBlock inline />
+                  Aspen. <Link href="/contact">See Contact</Link>
                 </dd>
               </div>
             </dl>
