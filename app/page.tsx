@@ -105,19 +105,19 @@ export default function HomePage() {
         <div className="container split">
           <div>
             <p className="eyebrow">How to join</p>
-            <h2>Call. See the floor. Start.</h2>
+            <h2>Call us. Walk through. Join.</h2>
             <ol className="step-list">
               <li>
-                <strong>Call</strong>
-                {site.phoneDisplay}. Tell us Monthly, Annual, or a pass.
+                <strong>Call us</strong>
+                {site.phoneDisplay}. We’ll point you to membership or a pass.
               </li>
               <li>
-                <strong>See the floor</strong>
-                Come during gym hours. Decide if the room fits.
+                <strong>Come for a walkthrough</strong>
+                See the floor during gym hours and decide if it fits.
               </li>
               <li>
-                <strong>Start</strong>
-                Join. Train {site.hours.access} daily. Not 24/7.
+                <strong>Join membership or pass</strong>
+                Start. Train {site.hours.access} daily. Not 24/7.
               </li>
             </ol>
             <CallToJoin />
