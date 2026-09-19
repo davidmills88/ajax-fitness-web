@@ -27,10 +27,9 @@ export default function ContactPage() {
         </div>
         <aside className="visit-stack">
           <PlaceholderMedia
-            src={placeholders.visit}
+            src={placeholders.strengthAlt}
             className="aside-media"
             sizes="(max-width: 720px) 100vw, 40vw"
-            label={false}
           />
           <div className="map-frame">
             <iframe

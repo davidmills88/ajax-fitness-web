@@ -110,10 +110,9 @@ export default function PricingPage() {
       <section className="section section-tint">
         <div className="container split visit-split">
           <PlaceholderMedia
-            src={placeholders.pricing}
+            src={placeholders.pricingSpacious}
             className="visit-media"
             sizes="(max-width: 720px) 100vw, 50vw"
-            label={false}
           />
           <div className="panel visit-panel">
             <p className="eyebrow">Visit</p>

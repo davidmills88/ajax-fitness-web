@@ -23,7 +23,6 @@ export default function HomePage() {
           className="hero-media"
           sizes="100vw"
           preload
-          label={false}
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
@@ -61,7 +60,6 @@ export default function HomePage() {
                 src={placeholders.strength}
                 className="card-media pillar-media"
                 sizes="(max-width: 900px) 100vw, 33vw"
-                label={false}
               />
               <div className="card-body">
                 <h3>Train</h3>
@@ -76,7 +74,6 @@ export default function HomePage() {
                 src={placeholders.recovery}
                 className="card-media pillar-media"
                 sizes="(max-width: 900px) 100vw, 33vw"
-                label={false}
               />
               <div className="card-body">
                 <h3>Recover</h3>
@@ -88,7 +85,6 @@ export default function HomePage() {
                 src={placeholders.longevity}
                 className="card-media pillar-media"
                 sizes="(max-width: 900px) 100vw, 33vw"
-                label={false}
               />
               <div className="card-body">
                 <h3>Longevity</h3>
@@ -118,7 +114,6 @@ export default function HomePage() {
           src={placeholders.pricing}
           className="editorial-split-media"
           sizes="(max-width: 900px) 100vw, 58vw"
-          label={false}
         />
       </section>
 
@@ -146,7 +141,6 @@ export default function HomePage() {
             src={placeholders.visit}
             className="visit-media plan-media"
             sizes="(max-width: 720px) 100vw, 50vw"
-            label={false}
           />
         </div>
       </section>
@@ -160,12 +154,11 @@ export default function HomePage() {
       <ReviewsSection />
 
       <section className="photo-band photo-band-tall">
-        <PlaceholderMedia
-          src={placeholders.visit}
-          className="photo-band-media"
-          sizes="100vw"
-          label={false}
-        />
+          <PlaceholderMedia
+            src={placeholders.photoBand}
+            className="photo-band-media"
+            sizes="100vw"
+          />
         <div className="photo-band-shade" />
         <div className="container photo-band-inner">
           <h2>In Aspen for a week?</h2>

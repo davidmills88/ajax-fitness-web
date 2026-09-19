@@ -14,11 +14,10 @@ export default function HoursPage() {
     <>
       <section className="hero hero-sparse">
         <PlaceholderMedia
-          src={placeholders.hero}
+          src={placeholders.hours}
           className="hero-media"
           sizes="100vw"
           preload
-          label={false}
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
@@ -53,12 +52,6 @@ export default function HoursPage() {
             </p>
           </div>
           <div className="visit-stack">
-            <PlaceholderMedia
-              src={placeholders.strength}
-              className="aside-media"
-              sizes="(max-width: 720px) 100vw, 50vw"
-              label={false}
-            />
             <aside className="panel hours-card">
               <p className="eyebrow">At a glance</p>
               <dl>

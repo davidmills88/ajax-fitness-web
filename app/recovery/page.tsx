@@ -18,7 +18,6 @@ export default function RecoveryPage() {
           className="hero-media"
           sizes="100vw"
           preload
-          label={false}
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
@@ -71,16 +70,8 @@ export default function RecoveryPage() {
         </div>
       </section>
 
-      <section className="photo-band">
-        <PlaceholderMedia
-          src={placeholders.visit}
-          className="photo-band-media"
-          sizes="100vw"
-          label={false}
-        />
-        <div className="photo-band-shade" />
-        <div className="container photo-band-inner">
-          <p className="eyebrow eyebrow-light">Membership</p>
+      <section className="section-ink ink-pause ink-close">
+        <div className="container ink-pause-inner">
           <h2>See it in person.</h2>
           <p>
             Call {site.phoneDisplay} to join, or ask about a tour. Recovery is

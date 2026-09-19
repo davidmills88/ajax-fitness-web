@@ -16,11 +16,10 @@ export default function PersonalTrainingPage() {
     <>
       <section className="hero">
         <PlaceholderMedia
-          src={placeholders.strength}
+          src={placeholders.strengthPortrait}
           className="hero-media"
           sizes="100vw"
           preload
-          label={false}
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
@@ -98,10 +97,9 @@ export default function PersonalTrainingPage() {
       <section className="section">
         <div className="container split">
           <PlaceholderMedia
-            src={placeholders.longevity}
+            src={placeholders.longevityAlt}
             className="visit-media"
             sizes="(max-width: 720px) 100vw, 50vw"
-            label={false}
           />
           <div>
             <p className="eyebrow">Who it’s for</p>
@@ -143,10 +141,9 @@ export default function PersonalTrainingPage() {
 
       <section className="photo-band">
         <PlaceholderMedia
-          src={placeholders.recovery}
+          src={placeholders.ptExtra}
           className="photo-band-media"
           sizes="100vw"
-          label={false}
         />
         <div className="photo-band-shade" />
         <div className="container photo-band-inner">
