@@ -10,7 +10,11 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="site-header">
+    <header
+      className={
+        pathname === "/" ? "site-header site-header-overlay" : "site-header"
+      }
+    >
       <div className="container header-inner">
         <Link href="/" className="wordmark" onClick={() => setOpen(false)}>
           Ajax Fitness
@@ -44,16 +48,13 @@ export function Header() {
               </Link>
             );
           })}
-          <a className="nav-phone" href={site.phoneHref}>
-            {site.phoneDisplay}
-          </a>
-          <Link
+          <a
             className="button button-compact"
-            href="/pricing"
+            href={site.phoneHref}
             onClick={() => setOpen(false)}
           >
-            Membership
-          </Link>
+            Call {site.phoneDisplay}
+          </a>
         </nav>
       </div>
     </header>

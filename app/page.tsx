@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AddressBlock } from "@/components/AddressBlock";
+import { CallToJoin } from "@/components/CallToJoin";
 import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { placeholders } from "@/lib/placeholders";
-import {
-  formatNapShort,
-  lockedPriceLine,
-  offerPriceLine,
-  site,
-} from "@/lib/site";
+import { formatNapShort, lockedPriceLine, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +17,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <section className="hero">
+      <section className="hero hero-canvas">
         <PlaceholderMedia
           src={placeholders.hero}
           className="hero-media"
@@ -31,127 +26,157 @@ export default function HomePage() {
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
-          <MembershipOffer variant="hero" />
-          <p className="hero-meta">
-            <AddressBlock inline />
-            <span aria-hidden="true"> · </span>
-            <Link href="/hours">See hours</Link>
-            <span aria-hidden="true"> · </span>
-            <a href={site.phoneHref}>{site.phoneDisplay}</a>
+          <h1>
+            Stay strong for the mountain.
+            <span className="hero-life">And for life.</span>
+          </h1>
+          <p className="lede lede-light">
+            Strength, recovery, and longevity in Aspen. {site.hours.access}{" "}
+            daily.
           </p>
+          <p className="hero-proof">
+            {site.reviews.rating}★ · {site.reviews.count} {site.reviews.label}
+          </p>
+          <CallToJoin inverse quietSecondary note />
         </div>
       </section>
 
-      <section className="section">
-        <div className="container intro-grid">
-          <div>
-            <p className="eyebrow">What Ajax is</p>
-            <h2>Small enough to feel personal. Serious enough that your training compounds.</h2>
-          </div>
-          <div>
-            <p className="lede">
-              A premium gym at {formatNapShort()}. We train for strength,
-              longevity, and recovery — not a short-term spike, and not a
-              crowded afterthought.
-            </p>
-            <p className="muted">
-              Members use the floor on their own, {site.hours.access} daily,
-              365 days a year. Not 24/7. Not CrossFit. Not a
-              personal-training-only studio. Coaching is here if you want it.
-            </p>
-          </div>
+      <section className="section-ink ink-pause">
+        <div className="container ink-pause-inner">
+          <h2>
+            A serious floor.
+            <br />
+            Not a hotel gym.
+          </h2>
+          <p>Open. Equipped. Quiet enough to work.</p>
         </div>
       </section>
 
-      <section className="section section-tint">
+      <section className="section value-stack">
         <div className="container">
           <div className="card-grid feature-grid">
-            <article className="card feature-card">
+            <article className="feature-card pillar-card">
               <PlaceholderMedia
                 src={placeholders.strength}
-                className="card-media"
-                sizes="(max-width: 720px) 100vw, 33vw"
+                className="card-media pillar-media"
+                sizes="(max-width: 900px) 100vw, 33vw"
               />
               <div className="card-body">
-                <h3>Strength</h3>
-                <p>Progressive training built around how you actually live here.</p>
+                <h3>Train</h3>
+                <p>A serious floor for progressive work. Most weights in Aspen.</p>
               </div>
             </article>
-            <article className="card feature-card">
+            <Link
+              href="/recovery"
+              className="feature-card pillar-card pillar-link"
+            >
+              <PlaceholderMedia
+                src={placeholders.recovery}
+                className="card-media pillar-media"
+                sizes="(max-width: 900px) 100vw, 33vw"
+              />
+              <div className="card-body">
+                <h3>Recover</h3>
+                <p>Private cold plunge and infrared sauna.</p>
+              </div>
+            </Link>
+            <article className="feature-card pillar-card">
               <PlaceholderMedia
                 src={placeholders.longevity}
-                className="card-media"
-                sizes="(max-width: 720px) 100vw, 33vw"
+                className="card-media pillar-media"
+                sizes="(max-width: 900px) 100vw, 33vw"
               />
               <div className="card-body">
                 <h3>Longevity</h3>
                 <p>Training that still matters in twenty years.</p>
               </div>
             </article>
-            <article className="card feature-card">
-              <PlaceholderMedia
-                src={placeholders.recovery}
-                className="card-media"
-                sizes="(max-width: 720px) 100vw, 33vw"
-              />
-              <div className="card-body">
-                <h3>Recovery</h3>
-                <p>Space so hard work lands clean.</p>
-              </div>
-            </article>
           </div>
+        </div>
+      </section>
+
+      <section className="editorial-split">
+        <div className="editorial-split-copy">
+          <h2>
+            The floor,
+            <br />
+            year-round.
+          </h2>
+          <p>
+            Monthly or annual. Same gym, every day of the year. Members train{" "}
+            {site.hours.access} — not 24/7.
+          </p>
+          <Link className="button button-ghost" href="/pricing">
+            View pricing
+          </Link>
+        </div>
+        <PlaceholderMedia
+          src={placeholders.pricing}
+          className="editorial-split-media"
+          sizes="(max-width: 900px) 100vw, 58vw"
+        />
+      </section>
+
+      <section className="section section-tint">
+        <div className="container split editorial-plan">
+          <div>
+            <h2>Call us. Walk through. Join.</h2>
+            <ol className="step-list">
+              <li>
+                <strong>Call us</strong>
+                {site.phoneDisplay}. We’ll point you to membership or a pass.
+              </li>
+              <li>
+                <strong>Come for a walkthrough</strong>
+                See the floor during gym hours and decide if it fits.
+              </li>
+              <li>
+                <strong>Join membership or pass</strong>
+                Start. Train {site.hours.access} daily. Not 24/7.
+              </li>
+            </ol>
+            <CallToJoin note />
+          </div>
+          <PlaceholderMedia
+            src={placeholders.visit}
+            className="visit-media plan-media"
+            sizes="(max-width: 720px) 100vw, 50vw"
+          />
+        </div>
+      </section>
+
+      <section className="promo-band">
+        <div className="container">
+          <MembershipOffer variant="band" headingLevel="h2" />
         </div>
       </section>
 
       <ReviewsSection />
 
-      <section className="photo-band">
-        <PlaceholderMedia
-          src={placeholders.pricing}
-          className="photo-band-media"
-          sizes="100vw"
-          label={false}
-        />
+      <section className="photo-band photo-band-tall">
+          <PlaceholderMedia
+            src={placeholders.photoBand}
+            className="photo-band-media"
+            sizes="100vw"
+          />
         <div className="photo-band-shade" />
         <div className="container photo-band-inner">
-          <p className="eyebrow eyebrow-light">Membership</p>
-          <h2>Simple pricing. Year-round floor.</h2>
+          <h2>In Aspen for a week?</h2>
           <p>
-            {site.offer.headline}. {site.offer.sub} {offerPriceLine()}
+            Day {site.plans.day.price}. Week {site.plans.week.price}. 2-week{" "}
+            {site.plans.twoWeek.price}. 1-month {site.plans.oneMonth.price}.
           </p>
-          <p>
-            {site.plans.monthly.detail} Week, two-week, and one-month passes
-            live on Pricing. Members train {site.hours.access}, every day of
-            the year. Not 24/7.
-          </p>
-          <Link className="button button-inverse" href="/pricing">
-            View pricing
-          </Link>
+          <CallToJoin inverse quietSecondary />
         </div>
       </section>
 
-      <section className="section">
-        <div className="container split visit-split">
-          <PlaceholderMedia
-            src={placeholders.visit}
-            className="visit-media"
-            sizes="(max-width: 720px) 100vw, 50vw"
-          />
-          <div className="panel visit-panel">
-            <p className="eyebrow">Visit</p>
-            <h2>Come see the floor.</h2>
-            <p>
-              <AddressBlock />
-            </p>
-            <p>
-              <a href={site.phoneHref}>{site.phoneDisplay}</a>
-              <span aria-hidden="true"> · </span>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
-            </p>
-            <Link className="button" href="/contact">
-              Contact us
-            </Link>
-          </div>
+      <section className="section-ink ink-pause ink-close">
+        <div className="container ink-pause-inner">
+          <h2>Call. Come in. Start.</h2>
+          <p>
+            {site.phoneDisplay}. Members train {site.hours.access} daily.
+          </p>
+          <CallToJoin inverse secondary="contact" quietSecondary note />
         </div>
       </section>
     </>

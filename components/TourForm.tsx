@@ -92,8 +92,9 @@ export function TourForm() {
         {status === "submitting" ? "Sending…" : "Request a tour"}
       </button>
       <p className="muted">
-        This is a Phase 1 stub. We’ll wire scheduling when membership checkout
-        moves off Wellyx.
+        Tour requests are a first-pass form. Call{" "}
+        <a href={site.phoneHref}>{site.phoneDisplay}</a> if you want a time
+        confirmed today.
       </p>
     </form>
   );

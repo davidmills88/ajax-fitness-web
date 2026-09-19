@@ -18,15 +18,19 @@ export default function ContactPage() {
       <div className="container split">
         <div>
           <p className="eyebrow">Get in touch</p>
-          <h1>Contact Ajax Fitness</h1>
+          <h1>Contact</h1>
           <p className="lede">
-            Tell us what you’re looking for — membership, a temporary pass, a
-            tour, or coaching with Roman, Erin, or Alie. We’ll follow up from
-            this inbox.
+            Membership, a temporary pass, a tour, or coaching. Write us here —
+            or call {site.phoneDisplay}.
           </p>
           <ContactForm />
         </div>
         <aside className="visit-stack">
+          <PlaceholderMedia
+            src={placeholders.strengthAlt}
+            className="aside-media"
+            sizes="(max-width: 720px) 100vw, 40vw"
+          />
           <div className="map-frame">
             <iframe
               title={`Map to Ajax Fitness at ${formatFullAddress()}`}
@@ -35,11 +39,6 @@ export default function ContactPage() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-          <PlaceholderMedia
-            src={placeholders.visit}
-            className="aside-media"
-            sizes="(max-width: 720px) 100vw, 40vw"
-          />
           <div className="panel">
             <p className="eyebrow">Ajax Fitness</p>
             <p>

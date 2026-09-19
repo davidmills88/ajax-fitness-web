@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { JoinCheckout } from "@/components/JoinCheckout";
-import { PlaceholderMedia } from "@/components/PlaceholderMedia";
-import { placeholders } from "@/lib/placeholders";
 import { allPlanIds, site, type PlanId } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Join",
   description:
-    "Choose an Ajax Fitness plan. Online checkout is coming; call (970) 670-8974 to join today.",
+    "Choose an Ajax Fitness plan. Online join is coming soon; call (970) 670-8974 to join today.",
 };
 
 const plans = new Set<PlanId>(allPlanIds);
@@ -29,8 +27,8 @@ export default async function JoinPage({
           <p className="eyebrow">Join Ajax Fitness</p>
           <h1>Choose a plan</h1>
           <p className="lede">
-            Online checkout is a placeholder until we move off Wellyx. To join
-            now, call <a href={site.phoneHref}>{site.phoneDisplay}</a>.
+            Online join is coming soon. To join now, call{" "}
+            <a href={site.phoneHref}>{site.phoneDisplay}</a>.
           </p>
           <JoinCheckout initialPlan={initialPlan} />
           <p>
@@ -38,11 +36,6 @@ export default async function JoinPage({
             <Link href="/tour">book a tour</Link>.
           </p>
         </div>
-        <PlaceholderMedia
-          src={placeholders.strength}
-          className="page-aside-media"
-          sizes="(max-width: 720px) 100vw, 40vw"
-        />
       </div>
     </section>
   );

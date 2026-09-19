@@ -1,12 +1,11 @@
 import Image from "next/image";
-import { placeholderAlt } from "@/lib/placeholders";
+import { altForSrc } from "@/lib/placeholders";
 
 type PlaceholderMediaProps = {
   src: string;
   className?: string;
   sizes?: string;
   preload?: boolean;
-  label?: boolean;
   alt?: string;
 };
 
@@ -15,13 +14,17 @@ export function PlaceholderMedia({
   className,
   sizes = "(max-width: 720px) 100vw, 50vw",
   preload = false,
-  label = true,
-  alt = placeholderAlt,
+  alt,
 }: PlaceholderMediaProps) {
   return (
     <figure className={className ? `media-frame ${className}` : "media-frame"}>
-      <Image src={src} alt={alt} fill sizes={sizes} preload={preload} />
-      {label ? <figcaption className="media-badge">Placeholder photo</figcaption> : null}
+      <Image
+        src={src}
+        alt={alt ?? altForSrc(src)}
+        fill
+        sizes={sizes}
+        preload={preload}
+      />
     </figure>
   );
 }

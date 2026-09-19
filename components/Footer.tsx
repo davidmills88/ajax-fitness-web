@@ -36,6 +36,9 @@ export function Footer() {
             <Link href="/hours">Hours</Link>
           </p>
           <p>
+            <Link href="/recovery">Recovery</Link>
+          </p>
+          <p>
             <Link href="/personal-training">Personal training</Link>
           </p>
           <p>

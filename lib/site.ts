@@ -78,11 +78,29 @@ export const site = {
       detail: "One month of gym-hour access.",
     },
   },
-  offer: {
-    eyebrow: "With membership",
-    headline: "Free 6-week custom training program with membership",
-    sub: "Included with every membership signup.",
-    exclusion: "Not included with a day pass.",
+  /**
+   * Flip `activeOfferVariant` to restore the 6-week-only promo.
+   * This draft tests $0 initiation on Monthly / Annual signup.
+   */
+  activeOfferVariant: "zeroInitiation" as "sixWeek" | "zeroInitiation",
+  offerVariants: {
+    sixWeek: {
+      eyebrow: "With membership",
+      headline: "Free 6-week custom training program with membership",
+      sub: "Included with every membership signup.",
+      secondary: "",
+      exclusion: "Not included with a day pass.",
+    },
+    zeroInitiation: {
+      eyebrow: "Limited offer",
+      headline: "$0 initiation with membership signup",
+      sub: "Initiation is waived when you join Monthly or Annual — not with a day pass.",
+      secondary: "Also included: a free 6-week custom training program.",
+      exclusion: "Not included with day, week, or other temporary passes.",
+    },
+  },
+  get offer() {
+    return this.offerVariants[this.activeOfferVariant];
   },
   reviews: {
     rating: "4.9",
@@ -152,6 +170,7 @@ export const nav = [
   { href: "/", label: "Home" },
   { href: "/hours", label: "Hours" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/recovery", label: "Recovery" },
   { href: "/personal-training", label: "Personal Training" },
   { href: "/contact", label: "Contact" },
 ] as const;
