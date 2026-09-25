@@ -144,7 +144,7 @@ a:hover {
 
 .hero-life {
   display: block;
-  color: rgba(255, 255, 255, 0.58);
+  color: rgba(255, 255, 255, 0.74);
 }
 
 .cta-block .button-row {
@@ -174,7 +174,8 @@ a:hover {
 
 .hero-shade {
   background:
-    linear-gradient(180deg, rgba(10, 10, 10, 0.22) 0%, rgba(10, 10, 10, 0.08) 38%, rgba(10, 10, 10, 0.7) 100%);
+    linear-gradient(90deg, rgba(10, 10, 10, 0.55) 0%, rgba(10, 10, 10, 0.3) 50%, rgba(10, 10, 10, 0) 80%),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.4) 0%, rgba(10, 10, 10, 0.32) 38%, rgba(10, 10, 10, 0.78) 100%);
 }
 
 .hero-inner {
