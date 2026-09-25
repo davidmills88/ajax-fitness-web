@@ -4,7 +4,6 @@ import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
 import {
-  formatNapShort,
   lockedPriceLine,
   membershipPlans,
   site,
@@ -14,7 +13,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: `${site.offer.headline}. ${formatNapShort()}. ${lockedPriceLine()}. Member access ${site.hours.access} daily, 365 days a year — not 24/7. Call ${site.phoneDisplay} to join.`,
+  description: `${site.offer.headline}. Ajax Fitness in Aspen. ${lockedPriceLine()}. Member access ${site.hours.access} daily, 365 days a year — not 24/7. Call ${site.phoneDisplay} to join.`,
 };
 
 function PlanCard({ plan }: { plan: Plan }) {

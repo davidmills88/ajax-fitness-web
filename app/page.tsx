@@ -5,13 +5,13 @@ import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { placeholders } from "@/lib/placeholders";
-import { formatNapShort, lockedPriceLine, site } from "@/lib/site";
+import { lockedPriceLine, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
     absolute: "Ajax Fitness | Aspen, CO",
   },
-  description: `${site.offer.headline}. ${formatNapShort()}. Member access ${site.hours.access} daily, 365 days a year — not 24/7. ${lockedPriceLine()}. Call ${site.phoneDisplay}.`,
+  description: `${site.offer.headline}. Ajax Fitness in Aspen. Member access ${site.hours.access} daily, 365 days a year — not 24/7. ${lockedPriceLine()}. Call ${site.phoneDisplay}.`,
 };
 
 export default function HomePage() {
