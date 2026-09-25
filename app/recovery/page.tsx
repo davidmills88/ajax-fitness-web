@@ -74,7 +74,7 @@ export default function RecoveryPage() {
         <div className="container ink-pause-inner">
           <h2>See it in person.</h2>
           <p>
-            Call {site.phoneDisplay} to join, or ask about a tour. Recovery is
+            Call {site.phoneDisplay} to join, or come for a walkthrough. Recovery is
             included with membership — not sold as a medical service.
           </p>
           <div className="button-row">

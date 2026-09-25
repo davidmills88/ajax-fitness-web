@@ -33,7 +33,7 @@ export default async function JoinPage({
           <JoinCheckout initialPlan={initialPlan} />
           <p>
             Questions? <Link href="/contact">Contact us</Link> or{" "}
-            <Link href="/tour">book a tour</Link>.
+            <Link href="/tour">request a walkthrough</Link>.
           </p>
         </div>
       </div>

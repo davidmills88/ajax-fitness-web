@@ -117,9 +117,14 @@ export default function PricingPage() {
             <p className="eyebrow">Visit</p>
             <h2>See the gym before you commit.</h2>
             <p>Member access {site.hours.access} daily. Not 24/7.</p>
-            <Link className="button" href="/tour">
-              Book a tour
-            </Link>
+            <div className="button-row">
+              <a className="button" href={site.phoneHref}>
+                Call {site.phoneDisplay}
+              </a>
+              <Link className="text-link" href="/tour">
+                Request a walkthrough
+              </Link>
+            </div>
           </div>
         </div>
       </section>

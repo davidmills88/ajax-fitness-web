@@ -45,7 +45,7 @@ export function Footer() {
             <Link href="/join">Join</Link>
           </p>
           <p>
-            <Link href="/tour">Book a tour</Link>
+            <Link href="/tour">Request a walkthrough</Link>
           </p>
           <p>
             <Link href="/contact">Contact</Link>

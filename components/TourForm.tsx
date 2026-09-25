@@ -25,7 +25,7 @@ export function TourForm() {
       const json = (await res.json()) as { error?: string };
 
       if (!res.ok) {
-        throw new Error(json.error || "Please call us to book a tour.");
+        throw new Error(json.error || `Please call ${site.phoneDisplay} to set a time.`);
       }
 
       setStatus("success");
@@ -39,10 +39,10 @@ export function TourForm() {
   if (status === "success") {
     return (
       <div className="form-success" role="status">
-        <p className="eyebrow">Tour request received</p>
-        <h2>We’ll confirm a time shortly.</h2>
+        <p className="eyebrow">Walkthrough request received</p>
+        <h2>We’ll call you to confirm a time.</h2>
         <p className="muted">
-          Or call <a href={site.phoneHref}>{site.phoneDisplay}</a> to schedule
+          Or call <a href={site.phoneHref}>{site.phoneDisplay}</a> to set it
           now.
         </p>
       </div>
@@ -89,12 +89,11 @@ export function TourForm() {
         </p>
       ) : null}
       <button className="button" type="submit" disabled={status === "submitting"}>
-        {status === "submitting" ? "Sending…" : "Request a tour"}
+        {status === "submitting" ? "Sending…" : "Request a walkthrough"}
       </button>
       <p className="muted">
-        Tour requests are a first-pass form. Call{" "}
-        <a href={site.phoneHref}>{site.phoneDisplay}</a> if you want a time
-        confirmed today.
+        Walkthroughs happen during gym hours, {site.hours.access}. Want it
+        today? Call <a href={site.phoneHref}>{site.phoneDisplay}</a>.
       </p>
     </form>
   );

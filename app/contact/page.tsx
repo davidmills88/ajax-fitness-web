@@ -54,7 +54,7 @@ export default function ContactPage() {
               Hours: members {site.hours.access} daily (not 24/7)
             </p>
             <p>
-              <Link href="/tour">Prefer to book a tour?</Link>
+              <Link href="/tour">Prefer to request a walkthrough?</Link>
             </p>
           </div>
         </aside>
