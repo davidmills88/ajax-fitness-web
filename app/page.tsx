@@ -19,8 +19,8 @@ export default function HomePage() {
     <>
       <section className="hero hero-canvas">
         <PlaceholderMedia
-          src={placeholders.hero}
-          className="hero-media"
+          src={placeholders.strength}
+          className="hero-media hero-media-top"
           sizes="100vw"
           preload
         />
@@ -57,7 +57,7 @@ export default function HomePage() {
           <div className="card-grid feature-grid">
             <article className="feature-card pillar-card">
               <PlaceholderMedia
-                src={placeholders.strength}
+                src={placeholders.ptExtra}
                 className="card-media pillar-media"
                 sizes="(max-width: 900px) 100vw, 33vw"
               />

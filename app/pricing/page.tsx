@@ -40,9 +40,6 @@ function PlanCard({ plan }: { plan: Plan }) {
       <a className="button" href={site.phoneHref}>
         Call {site.phoneDisplay}
       </a>
-      <Link className="text-link" href={`/join?plan=${plan.id}`}>
-        Online join — coming soon
-      </Link>
     </article>
   );
 }
@@ -59,8 +56,7 @@ export default function PricingPage() {
             <h2>Membership & temporary passes</h2>
             <p className="lede">{lockedPriceLine()}.</p>
             <p className="muted">
-              Simple pricing. Call {site.phoneDisplay} to join. Online join is
-              coming soon.
+              Simple pricing. Call {site.phoneDisplay} to join.
               Member access {site.hours.access} daily, 365 days a year. Not
               24/7.
             </p>

@@ -22,7 +22,10 @@ export default function HoursPage() {
         <div className="hero-shade" />
         <div className="container hero-inner">
           <p className="eyebrow eyebrow-light">Member access</p>
-          <h1>6:00 AM–9:00 PM</h1>
+          <h1>
+            <span className="nowrap">6:00 AM–</span>
+            <span className="nowrap">9:00 PM</span>
+          </h1>
           <p className="lede lede-light">
             Every day of the year. The gym is not open 24 hours.
           </p>

@@ -142,6 +142,10 @@ a:hover {
   letter-spacing: -0.045em;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .hero-life {
   display: block;
   color: rgba(255, 255, 255, 0.74);
@@ -164,6 +168,22 @@ a:hover {
 .value-stack {
   padding-top: 4.2rem;
   padding-bottom: 4.2rem;
+}
+
+.hero-media.hero-media-face img {
+  object-position: 50% 18%;
+}
+
+/* Coached-press hero: keep the coach's face below the header on desktop,
+   the press itself on phones. */
+.hero-media.hero-media-top img {
+  object-position: 50% 0%;
+}
+
+@media (max-width: 720px) {
+  .hero-media.hero-media-top img {
+    object-position: 42% 0%;
+  }
 }
 
 .hero-media,
@@ -197,9 +217,9 @@ a:hover {
 
 .eyebrow {
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: 0.85rem;
 }
@@ -227,9 +247,9 @@ a:hover {
   color: #fff;
   text-decoration: none;
   font: inherit;
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -415,7 +435,7 @@ a:hover {
 .step-list li::before {
   content: counter(step, decimal-leading-zero);
   font-family: var(--font-heading), "Inter Tight", sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   letter-spacing: 0.16em;
   color: var(--muted);
 }
@@ -484,7 +504,7 @@ a:hover {
 
 .hours-card dt {
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -636,7 +656,7 @@ a:hover {
 
 .review-card figcaption {
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -690,7 +710,7 @@ a:hover {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   align-self: center;
 }
 
@@ -771,7 +791,7 @@ a:hover {
   border-radius: 0;
   padding: 0.4rem 0.8rem;
   font: inherit;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -793,7 +813,7 @@ a:hover {
   text-decoration: none;
   color: var(--ink);
   padding: 0.3rem 0;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -824,7 +844,7 @@ a:hover {
 
 .footer-label {
   color: var(--ink);
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 500;
@@ -910,7 +930,7 @@ a:focus-visible {
 
 .plan-picker-legend {
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -966,11 +986,6 @@ a:focus-visible {
 
 .media-frame img {
   object-fit: cover;
-  filter: saturate(0.86) contrast(1.03);
-}
-
-.hero-media img {
-  filter: saturate(0.8) contrast(1.04) brightness(1.02);
 }
 
 .hero-media,
