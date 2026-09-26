@@ -3,7 +3,7 @@ export const site = {
   domain: "ajaxfitness.com",
   tagline: "Strength, recovery, and longevity in Aspen",
   description:
-    "Ajax Fitness is Aspen’s premium gym. Members train 6:00 AM–9:00 PM daily, 365 days a year — not 24/7.",
+    "Ajax Fitness is a full gym in Aspen for strength, recovery, and longevity — open to members and visitors every day, 6:00 AM–9:00 PM.",
   phoneDisplay: "(970) 670-8974",
   phoneHref: "tel:+19706708974",
   email: "hello@ajaxgym.com",
@@ -43,7 +43,7 @@ export const site = {
       name: "Annual membership",
       price: "$2100",
       cadence: "/year",
-      detail: "Paid once. Year-round floor.",
+      detail: "Paid once. The best value if you’re here year-round.",
     },
     day: {
       id: "day" as const,
@@ -51,7 +51,7 @@ export const site = {
       name: "Day pass",
       price: "$49",
       cadence: "",
-      detail: "One day of gym-hour access.",
+      detail: "Full gym access for a day.",
     },
     week: {
       id: "week" as const,
@@ -59,7 +59,7 @@ export const site = {
       name: "Week pass",
       price: "$150",
       cadence: "",
-      detail: "One week of gym-hour access.",
+      detail: "Full gym access for seven days.",
     },
     twoWeek: {
       id: "twoWeek" as const,
@@ -67,7 +67,7 @@ export const site = {
       name: "2-week pass",
       price: "$225",
       cadence: "",
-      detail: "Two weeks of gym-hour access.",
+      detail: "Full gym access for two weeks.",
     },
     oneMonth: {
       id: "oneMonth" as const,
@@ -75,7 +75,7 @@ export const site = {
       name: "1-month pass",
       price: "$295",
       cadence: "",
-      detail: "One month of gym-hour access.",
+      detail: "Full gym access for a month.",
     },
   },
   /**
@@ -94,9 +94,9 @@ export const site = {
     zeroInitiation: {
       eyebrow: "Limited offer",
       headline: "$0 initiation with membership signup",
-      sub: "Initiation is waived when you join Monthly or Annual — not with a day pass.",
-      secondary: "Also included: a free 6-week custom training program.",
-      exclusion: "Not included with day, week, or other temporary passes.",
+      sub: "Join Monthly or Annual and we’ll waive the initiation fee.",
+      secondary: "You’ll also get a free 6-week training program, written for you by one of our coaches.",
+      exclusion: "Day, week, and month passes aren’t eligible.",
     },
   },
   get offer() {

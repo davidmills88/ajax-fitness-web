@@ -5,13 +5,13 @@ import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { placeholders } from "@/lib/placeholders";
-import { lockedPriceLine, site } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
     absolute: "Ajax Fitness | Aspen, CO",
   },
-  description: `${site.offer.headline}. Ajax Fitness in Aspen. Member access ${site.hours.access} daily, 365 days a year — not 24/7. ${lockedPriceLine()}. Call ${site.phoneDisplay}.`,
+  description: `A full gym in Aspen, open to everyone. Memberships and day, week, or month passes, one-to-one coaching, cold plunge and sauna. Open daily ${site.hours.access}.`,
 };
 
 export default function HomePage() {
@@ -31,8 +31,9 @@ export default function HomePage() {
             <span className="hero-life">And for life.</span>
           </h1>
           <p className="lede lede-light">
-            Strength, recovery, and longevity in Aspen. {site.hours.access}{" "}
-            daily.
+            A full gym in Aspen for anyone who wants to stay strong — locals
+            and visitors, first-timers and lifers. Open every day,{" "}
+            {site.hours.access}.
           </p>
           <p className="hero-proof">
             {site.reviews.rating}★ · {site.reviews.count} {site.reviews.label}
@@ -43,29 +44,59 @@ export default function HomePage() {
 
       <section className="section-ink ink-pause">
         <div className="container ink-pause-inner">
-          <h2>
-            A serious floor.
-            <br />
-            Not a hotel gym.
-          </h2>
-          <p>Open. Equipped. Quiet enough to work.</p>
+          <h2>Strength is the thing you keep.</h2>
+          <p>
+            It fades quietly, a little every year, until a ski day or a trail
+            tells you. A few hours a week here keeps it — wherever you’re
+            starting from.
+          </p>
         </div>
       </section>
 
       <section className="section value-stack">
         <div className="container">
+          <div className="intro-grid">
+            <div>
+              <p className="eyebrow">Train your way</p>
+              <h2>A real gym. Not a hotel gym.</h2>
+            </div>
+            <p className="lede">
+              Racks, free weights, cardio, and room to move. Most members train
+              on their own; some add a coach. Either way, it’s your gym.
+            </p>
+          </div>
           <div className="card-grid feature-grid">
             <article className="feature-card pillar-card">
+              <PlaceholderMedia
+                src={placeholders.visit}
+                className="card-media pillar-media"
+                sizes="(max-width: 900px) 100vw, 33vw"
+              />
+              <div className="card-body">
+                <h3>On your own</h3>
+                <p>
+                  Come in, do your workout, head out. Full access every day,{" "}
+                  {site.hours.access}.
+                </p>
+              </div>
+            </article>
+            <Link
+              href="/personal-training"
+              className="feature-card pillar-card pillar-link"
+            >
               <PlaceholderMedia
                 src={placeholders.ptExtra}
                 className="card-media pillar-media"
                 sizes="(max-width: 900px) 100vw, 33vw"
               />
               <div className="card-body">
-                <h3>Train</h3>
-                <p>A serious floor for progressive work. Most weights in Aspen.</p>
+                <h3>With a coach</h3>
+                <p>
+                  One-to-one training when you want a plan, a second set of
+                  eyes, or a push.
+                </p>
               </div>
-            </article>
+            </Link>
             <Link
               href="/recovery"
               className="feature-card pillar-card pillar-link"
@@ -77,41 +108,36 @@ export default function HomePage() {
               />
               <div className="card-body">
                 <h3>Recover</h3>
-                <p>Private cold plunge and infrared sauna.</p>
+                <p>
+                  Private cold plunge and infrared sauna, steps from where you
+                  train. Included with membership.
+                </p>
               </div>
             </Link>
-            <article className="feature-card pillar-card">
-              <PlaceholderMedia
-                src={placeholders.longevity}
-                className="card-media pillar-media"
-                sizes="(max-width: 900px) 100vw, 33vw"
-              />
-              <div className="card-body">
-                <h3>Longevity</h3>
-                <p>Training that still matters in twenty years.</p>
-              </div>
-            </article>
           </div>
         </div>
       </section>
 
       <section className="editorial-split">
         <div className="editorial-split-copy">
+          <p className="eyebrow eyebrow-light">Know where you stand</p>
           <h2>
-            The floor,
+            Measure it.
             <br />
-            year-round.
+            Then train it.
           </h2>
           <p>
-            Monthly or annual. Same gym, every day of the year. Members train{" "}
-            {site.hours.access} — not 24/7.
+            Our InBody scanner shows your muscle, fat, and water balance in
+            about a minute. The OxeFit XP1 measures your strength and power,
+            rep by rep. Check in every few months and see what’s actually
+            changing.
           </p>
-          <Link className="button button-ghost" href="/pricing">
-            View pricing
-          </Link>
+          <a className="button button-ghost" href={site.phoneHref}>
+            Call {site.phoneDisplay}
+          </a>
         </div>
         <PlaceholderMedia
-          src={placeholders.pricing}
+          src={placeholders.longevity}
           className="editorial-split-media"
           sizes="(max-width: 900px) 100vw, 58vw"
         />
@@ -124,21 +150,22 @@ export default function HomePage() {
             <ol className="step-list">
               <li>
                 <strong>Call us</strong>
-                {site.phoneDisplay}. We’ll point you to membership or a pass.
+                {site.phoneDisplay}. Tell us what you’re after and we’ll point
+                you to the right membership or pass.
               </li>
               <li>
                 <strong>Come for a walkthrough</strong>
-                See the floor during gym hours and decide if it fits.
+                See the gym, meet the team, and ask anything. No pressure.
               </li>
               <li>
-                <strong>Join membership or pass</strong>
-                Start. Train {site.hours.access} daily. Not 24/7.
+                <strong>Join, or grab a pass</strong>
+                Train on your own from day one. Add a coach whenever you want.
               </li>
             </ol>
             <CallToJoin note />
           </div>
           <PlaceholderMedia
-            src={placeholders.visit}
+            src={placeholders.pricingSpacious}
             className="visit-media plan-media"
             sizes="(max-width: 720px) 100vw, 50vw"
           />
@@ -163,8 +190,13 @@ export default function HomePage() {
         <div className="container photo-band-inner">
           <h2>In Aspen for a week?</h2>
           <p>
-            Day {site.plans.day.price}. Week {site.plans.week.price}. 2-week{" "}
-            {site.plans.twoWeek.price}. 1-month {site.plans.oneMonth.price}.
+            Keep your routine while you’re here. Full gym access by the day,
+            week, or month.
+          </p>
+          <p>
+            Day {site.plans.day.price} · Week {site.plans.week.price} · 2
+            weeks {site.plans.twoWeek.price} · 1 month{" "}
+            {site.plans.oneMonth.price}
           </p>
           <CallToJoin inverse quietSecondary />
         </div>
@@ -174,7 +206,7 @@ export default function HomePage() {
         <div className="container ink-pause-inner">
           <h2>Call. Come in. Start.</h2>
           <p>
-            {site.phoneDisplay}. Members train {site.hours.access} daily.
+            {site.phoneDisplay}. Open every day, {site.hours.access}.
           </p>
           <CallToJoin inverse secondary="contact" quietSecondary note />
         </div>

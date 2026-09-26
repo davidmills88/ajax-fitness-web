@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Recovery",
-  description: `Private cold plunge and infrared sauna at Ajax Fitness in Aspen. Amenities on the same floor as the work. Member access ${site.hours.access} daily — not 24/7. Call ${site.phoneDisplay}.`,
+  description: `Private cold plunge and infrared sauna at Ajax Fitness in Aspen, included with membership. Open daily ${site.hours.access}. Call ${site.phoneDisplay}.`,
 };
 
 export default function RecoveryPage() {
@@ -21,11 +21,11 @@ export default function RecoveryPage() {
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
-          <p className="eyebrow eyebrow-light">Amenities</p>
-          <h1>Recovery</h1>
+          <p className="eyebrow eyebrow-light">Recovery</p>
+          <h1>Cold, then heat.</h1>
           <p className="lede lede-light">
-            Private cold plunge and infrared sauna — on the same floor as the
-            work.
+            A private cold plunge and an infrared sauna, a few steps from where
+            you train. Included with membership.
           </p>
           <div className="button-row">
             <a className="button button-inverse" href={site.phoneHref}>
@@ -42,12 +42,13 @@ export default function RecoveryPage() {
         <div className="container">
           <div className="intro-grid">
             <div>
-              <p className="eyebrow">On the floor</p>
-              <h2>Space to come down after you train.</h2>
+              <p className="eyebrow">Recovery at Ajax</p>
+              <h2>Finish the session properly.</h2>
             </div>
             <p className="lede">
-              These are member amenities, not a clinic and not a spa menu. Use
-              them during gym hours — {site.hours.access} daily. Not 24/7.
+              Most people train hard and skip the part after. Here it’s built
+              in — no separate membership, open whenever the gym is,{" "}
+              {site.hours.access}.
             </p>
           </div>
 
@@ -55,15 +56,15 @@ export default function RecoveryPage() {
             <article className="card">
               <h3>Private cold plunge</h3>
               <p>
-                A private plunge after the session. Quiet, on-site, and part of
-                the gym — not a treatment.
+                A few minutes in cold water after a hard session or a long day
+                on the mountain. Private, so it’s just you.
               </p>
             </article>
             <article className="card">
               <h3>Infrared sauna</h3>
               <p>
-                Warm, still time before you head back out. An amenity on the
-                floor, nothing more.
+                Quiet, even heat. Sit, breathe, and let the day settle before
+                you head back out.
               </p>
             </article>
           </div>
@@ -74,8 +75,8 @@ export default function RecoveryPage() {
         <div className="container ink-pause-inner">
           <h2>See it in person.</h2>
           <p>
-            Call {site.phoneDisplay} to join, or come for a walkthrough. Recovery is
-            included with membership — not sold as a medical service.
+            Call {site.phoneDisplay} or come for a walkthrough. Cold plunge and
+            sauna are included with Monthly and Annual membership.
           </p>
           <div className="button-row">
             <a className="button button-inverse" href={site.phoneHref}>

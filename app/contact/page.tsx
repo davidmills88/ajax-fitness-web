@@ -9,7 +9,7 @@ import { formatFullAddress, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Ajax Fitness in Aspen about membership, a temporary pass, a tour, or optional coaching.",
+    "Contact Ajax Fitness in Aspen about membership, a visitor pass, personal training, or a walkthrough.",
 };
 
 export default function ContactPage() {
@@ -18,10 +18,10 @@ export default function ContactPage() {
       <div className="container split">
         <div>
           <p className="eyebrow">Get in touch</p>
-          <h1>Contact</h1>
+          <h1>Talk to us</h1>
           <p className="lede">
-            Membership, a temporary pass, a tour, or coaching. Write us here —
-            or call {site.phoneDisplay}.
+            Questions about membership, a visitor pass, coaching, or anything
+            else? Send a note, or call {site.phoneDisplay}.
           </p>
           <ContactForm />
         </div>
@@ -51,7 +51,7 @@ export default function ContactPage() {
               <a href={`mailto:${site.email}`}>{site.email}</a>
             </p>
             <p className="muted">
-              Hours: members {site.hours.access} daily (not 24/7)
+              Open every day, {site.hours.access}
             </p>
             <p>
               <Link href="/tour">Prefer to request a walkthrough?</Link>

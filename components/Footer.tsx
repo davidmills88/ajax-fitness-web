@@ -9,7 +9,7 @@ export function Footer() {
         <div>
           <p className="footer-brand">Ajax Fitness</p>
           <p className="muted">
-            A focused gym in Aspen for people who want to stay strong, move
+            A full gym in Aspen for anyone who wants to stay strong, move
             well, and recover properly.
           </p>
         </div>
@@ -27,8 +27,8 @@ export function Footer() {
         </div>
         <div>
           <p className="footer-label">Hours</p>
-          <p>Member access {site.hours.access}, 365 days a year.</p>
-          <p className="muted">Not 24/7. Desk hours may differ.</p>
+          <p>Open {site.hours.access}, 365 days a year.</p>
+          <p className="muted">Front desk hours may differ.</p>
         </div>
         <div>
           <p className="footer-label">More</p>

@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Hours",
-  description: `Ajax Fitness in Aspen is open ${site.hours.access} daily, 365 days a year. Not 24/7. Front desk hours may differ.`,
+  description: `Ajax Fitness in Aspen is open ${site.hours.access} every day, 365 days a year. Front desk hours may differ.`,
 };
 
 export default function HoursPage() {
@@ -27,7 +27,7 @@ export default function HoursPage() {
             <span className="nowrap">9:00 PM</span>
           </h1>
           <p className="lede lede-light">
-            Every day of the year. The gym is not open 24 hours.
+            Every day of the year.
           </p>
         </div>
       </section>
@@ -38,11 +38,10 @@ export default function HoursPage() {
             <p className="eyebrow">Hours</p>
             <h2>Train daily. Close at nine.</h2>
             <p className="lede">
-              Members use the floor from 6:00 AM to 9:00 PM, 365 days a year.
+              Come in any time from 6:00 AM to 9:00 PM, 365 days a year.
             </p>
             <p className="callout">
-              Ajax Fitness is not open 24 hours. Access is 6:00 AM–9:00 PM
-              daily. Not 24/7.
+              We’re not a 24/7 gym — doors close at 9:00 PM.
             </p>
             <p>
               Front desk hours vary; members can enter during open gym hours

@@ -4,7 +4,6 @@ import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
 import {
-  lockedPriceLine,
   membershipPlans,
   site,
   temporaryPasses,
@@ -13,7 +12,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: `${site.offer.headline}. Ajax Fitness in Aspen. ${lockedPriceLine()}. Member access ${site.hours.access} daily, 365 days a year — not 24/7. Call ${site.phoneDisplay} to join.`,
+  description: `Ajax Fitness pricing: Monthly ${site.plans.monthly.price}, Annual ${site.plans.annual.price}, Day ${site.plans.day.price}, Week ${site.plans.week.price}, 2 weeks ${site.plans.twoWeek.price}, 1 month ${site.plans.oneMonth.price}. ${site.offer.headline}. Open daily ${site.hours.access}.`,
 };
 
 function PlanCard({ plan }: { plan: Plan }) {
@@ -29,12 +28,11 @@ function PlanCard({ plan }: { plan: Plan }) {
       <p>{plan.detail}</p>
       {isTemporary ? (
         <p className="muted">
-          Same gym-hour access. Not 24/7. {site.offer.headline} applies to
-          membership only.
+          Open every day, {site.hours.access}.
         </p>
       ) : (
         <p className="muted">
-          Full member access {site.hours.access} daily. {site.offer.headline}.
+          Open every day, {site.hours.access}. {site.offer.headline}.
         </p>
       )}
       <a className="button" href={site.phoneHref}>
@@ -53,12 +51,13 @@ export default function PricingPage() {
 
           <div className="narrow">
             <p className="eyebrow">Pricing</p>
-            <h2>Membership & temporary passes</h2>
-            <p className="lede">{lockedPriceLine()}.</p>
+            <h2>Memberships and passes</h2>
+            <p className="lede">
+              Join for the year, or train with us by the day, week, or month.
+              Every option includes full gym access.
+            </p>
             <p className="muted">
-              Simple pricing. Call {site.phoneDisplay} to join.
-              Member access {site.hours.access} daily, 365 days a year. Not
-              24/7.
+              Call {site.phoneDisplay} to join.
             </p>
           </div>
 
@@ -67,8 +66,8 @@ export default function PricingPage() {
               <p className="eyebrow">Year-round</p>
               <h2>Membership</h2>
               <p className="muted">
-                {site.offer.headline}. Train on your own, {site.hours.access}{" "}
-                daily.
+                For locals and second-home owners. Cold plunge and sauna
+                included.
               </p>
             </div>
             <div className="card-grid membership-grid">
@@ -81,10 +80,10 @@ export default function PricingPage() {
           <div className="pricing-group">
             <div className="pricing-group-intro">
               <p className="eyebrow">Visiting</p>
-              <h2>Temporary passes</h2>
+              <h2>Passes</h2>
               <p className="muted">
-                A day, a week, or a month on the same floor. Same hours. Not
-                24/7. Initiation offer is for Monthly and Annual only.
+                In town for a few days or a season? Keep your routine with a
+                day, week, or month pass.
               </p>
             </div>
             <div className="card-grid temporary-grid">
@@ -112,7 +111,9 @@ export default function PricingPage() {
           <div className="panel visit-panel">
             <p className="eyebrow">Visit</p>
             <h2>See the gym before you commit.</h2>
-            <p>Member access {site.hours.access} daily. Not 24/7.</p>
+            <p>
+              Come in any day between 6 AM and 9 PM. We’ll show you around.
+            </p>
             <div className="button-row">
               <a className="button" href={site.phoneHref}>
                 Call {site.phoneDisplay}

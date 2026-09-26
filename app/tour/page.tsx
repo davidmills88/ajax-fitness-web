@@ -17,7 +17,7 @@ export default function TourPage() {
           <p className="eyebrow">Visit the gym</p>
           <h1>Come for a walkthrough</h1>
           <p className="lede">
-            See the floor, meet the team, and decide if Ajax fits. Fastest is a
+            See the gym, meet the team, and decide if Ajax fits. Fastest is a
             call: <a href={site.phoneHref}>{site.phoneDisplay}</a>. Or send a
             time below and we’ll call you back to confirm.
           </p>
@@ -35,7 +35,7 @@ export default function TourPage() {
               <Link href="/contact">Address on Contact</Link>.
             </p>
             <p className="muted">
-              Member access {site.hours.access} daily. Not 24/7.
+              Open every day, {site.hours.access}.
             </p>
           </div>
         </aside>
