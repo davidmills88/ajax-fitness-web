@@ -9,7 +9,7 @@ import { formatFullAddress, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Ajax Fitness in Aspen about membership, a temporary pass, a tour, or optional coaching.",
+    "Contact Ajax Fitness in Aspen about membership, a visitor pass, personal training, or a walkthrough.",
 };
 
 export default function ContactPage() {
@@ -18,15 +18,19 @@ export default function ContactPage() {
       <div className="container split">
         <div>
           <p className="eyebrow">Get in touch</p>
-          <h1>Contact Ajax Fitness</h1>
+          <h1>Talk to us</h1>
           <p className="lede">
-            Tell us what you’re looking for — membership, a temporary pass, a
-            tour, or coaching with Roman, Erin, or Alie. We’ll follow up from
-            this inbox.
+            Questions about membership, a visitor pass, coaching, or anything
+            else? Send a note, or call {site.phoneDisplay}.
           </p>
           <ContactForm />
         </div>
         <aside className="visit-stack">
+          <PlaceholderMedia
+            src={placeholders.strengthAlt}
+            className="aside-media"
+            sizes="(max-width: 720px) 100vw, 40vw"
+          />
           <div className="map-frame">
             <iframe
               title={`Map to Ajax Fitness at ${formatFullAddress()}`}
@@ -35,11 +39,6 @@ export default function ContactPage() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-          <PlaceholderMedia
-            src={placeholders.visit}
-            className="aside-media"
-            sizes="(max-width: 720px) 100vw, 40vw"
-          />
           <div className="panel">
             <p className="eyebrow">Ajax Fitness</p>
             <p>
@@ -52,10 +51,10 @@ export default function ContactPage() {
               <a href={`mailto:${site.email}`}>{site.email}</a>
             </p>
             <p className="muted">
-              Hours: members {site.hours.access} daily (not 24/7)
+              Open every day, {site.hours.access}
             </p>
             <p>
-              <Link href="/tour">Prefer to book a tour?</Link>
+              <Link href="/tour">Prefer to request a walkthrough?</Link>
             </p>
           </div>
         </aside>

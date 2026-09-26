@@ -58,5 +58,5 @@ export function localBusinessJsonLd() {
 }
 
 function placeholdersPath() {
-  return "/placeholders/hero-training.jpg";
+  return "/images/hero.jpg";
 }

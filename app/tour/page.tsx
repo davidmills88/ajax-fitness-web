@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AddressBlock } from "@/components/AddressBlock";
-import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { TourForm } from "@/components/TourForm";
-import { placeholders } from "@/lib/placeholders";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Book a tour",
+  title: "Request a walkthrough",
   description:
-    "Request a tour of Ajax Fitness in Aspen. Member access is 6:00 AM–9:00 PM daily.",
+    "Come for a walkthrough of Ajax Fitness in Aspen. See the floor during gym hours, 6:00 AM–9:00 PM daily. Call (970) 670-8974 or request a time.",
 };
 
 export default function TourPage() {
@@ -18,12 +15,11 @@ export default function TourPage() {
       <div className="container split">
         <div className="narrow">
           <p className="eyebrow">Visit the gym</p>
-          <h1>Book a tour</h1>
+          <h1>Come for a walkthrough</h1>
           <p className="lede">
-            Come see the floor, meet the team, and decide if Ajax is the right
-            fit. Scheduling is a Phase 1 stub — call{" "}
-            <a href={site.phoneHref}>{site.phoneDisplay}</a> if you want a time
-            confirmed today.
+            See the gym, meet the team, and decide if Ajax fits. Fastest is a
+            call: <a href={site.phoneHref}>{site.phoneDisplay}</a>. Or send a
+            time below and we’ll call you back to confirm.
           </p>
           <TourForm />
           <p>
@@ -32,18 +28,14 @@ export default function TourPage() {
           </p>
         </div>
         <aside className="visit-stack">
-          <PlaceholderMedia
-            src={placeholders.visit}
-            className="aside-media"
-            sizes="(max-width: 720px) 100vw, 40vw"
-          />
           <div className="panel">
             <p className="eyebrow">Find us</p>
             <p>
-              <AddressBlock />
+              Ajax Fitness in Aspen.{" "}
+              <Link href="/contact">Address on Contact</Link>.
             </p>
             <p className="muted">
-              Member access {site.hours.access} daily. Not 24/7.
+              Open every day, {site.hours.access}.
             </p>
           </div>
         </aside>

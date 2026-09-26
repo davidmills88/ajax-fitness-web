@@ -3,12 +3,12 @@ import Link from "next/link";
 import { CallToJoin } from "@/components/CallToJoin";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
-import { formatNapShort, site } from "@/lib/site";
+import { site } from "@/lib/site";
 import { trainers } from "@/lib/trainers";
 
 export const metadata: Metadata = {
   title: "Personal training",
-  description: `Personal training at Ajax Fitness, ${formatNapShort()}. Strength, longevity, and performance — written for Aspen seasons. Call ${site.phoneDisplay} to join.`,
+  description: `One-to-one personal training at Ajax Fitness in Aspen. Strength, longevity, and ski-season fitness, built around your year. Call ${site.phoneDisplay}.`,
 };
 
 export default function PersonalTrainingPage() {
@@ -16,18 +16,18 @@ export default function PersonalTrainingPage() {
     <>
       <section className="hero">
         <PlaceholderMedia
-          src={placeholders.strength}
-          className="hero-media"
+          src={placeholders.strengthPortrait}
+          className="hero-media hero-media-face"
           sizes="100vw"
           preload
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
           <p className="eyebrow eyebrow-light">Personal training</p>
-          <h1>A coach for the life you actually live here.</h1>
+          <h1>A coach for this life.</h1>
           <p className="lede lede-light">
-            Strength, longevity, recovery, and performance — written for Aspen
-            seasons, not a generic program. Someone in the work with you.
+            One-to-one coaching for strength, longevity, and the mountain —
+            written around how you actually live here.
           </p>
           <CallToJoin inverse />
         </div>
@@ -35,8 +35,8 @@ export default function PersonalTrainingPage() {
 
       <section className="section">
         <div className="container">
-          <p className="eyebrow">What it is</p>
-          <h2>One-to-one coaching on the same Aspen floor.</h2>
+          <p className="eyebrow">What you get</p>
+          <h2>Coaching that fits an Aspen year.</h2>
           <div className="card-grid feature-grid">
             <article className="card">
               <h3>A plan that fits this place</h3>
@@ -46,17 +46,17 @@ export default function PersonalTrainingPage() {
               </p>
             </article>
             <article className="card">
-              <h3>Someone who sees you</h3>
+              <h3>Someone in your corner</h3>
               <p>
-                Honest eyes on the bar, the calendar, and the week you actually
-                had. Accountability without the noise.
+                Your coach watches every rep, tracks your progress, and adjusts
+                when life gets in the way. You’ll never wonder what to do next.
               </p>
             </article>
             <article className="card">
-              <h3>Recovery that lets it land</h3>
+              <h3>Progress you can see</h3>
               <p>
-                Hard sessions only matter if the next one is possible. Your
-                coach keeps the load honest so strength compounds.
+                We check in with the InBody scanner and the OxeFit XP1, so your
+                plan is built on real numbers — and you can see them move.
               </p>
             </article>
           </div>
@@ -69,26 +69,34 @@ export default function PersonalTrainingPage() {
             <p className="eyebrow">How it works</p>
             <h2>A conversation, then the work.</h2>
             <p className="muted">
-              Packages are tailored after we talk. We don’t publish coaching
-              rates.
+              Every package is built around you, so we start with a
+              conversation. Call us and we’ll walk you through options and
+              pricing.
             </p>
           </div>
           <ol className="step-list">
             <li>
-              <strong>Consult</strong>
-              How you live, what you want, what the year looks like.
+              <strong>Talk</strong>
+              Tell us how you live, what you want, and what your year looks
+              like.
+            </li>
+            <li>
+              <strong>Measure</strong>
+              An InBody scan and an OxeFit strength check give us a starting
+              point.
             </li>
             <li>
               <strong>Plan</strong>
-              Your coach writes the work — strength, recovery, and the rest.
+              Your coach writes the program — strength, mobility, conditioning,
+              and recovery.
             </li>
             <li>
-              <strong>Sessions</strong>
-              Together on the floor. You leave knowing the next one.
+              <strong>Train</strong>
+              One-to-one sessions. You always leave knowing what’s next.
             </li>
             <li>
               <strong>Adjust</strong>
-              The season changes. The plan does too.
+              Ski season, travel, a quiet May — the plan changes with you.
             </li>
           </ol>
         </div>
@@ -96,25 +104,22 @@ export default function PersonalTrainingPage() {
 
       <section className="section">
         <div className="container split">
+          <PlaceholderMedia
+            src={placeholders.longevityAlt}
+            className="visit-media"
+            sizes="(max-width: 720px) 100vw, 50vw"
+          />
           <div>
             <p className="eyebrow">Who it’s for</p>
-            <h2>Members who want a coach — not a class.</h2>
+            <h2>Anyone who wants a plan.</h2>
             <p>
-              People who already take the floor seriously, and want a plan and
-              a pair of eyes so the years add up. Ski, ride, compete, or simply
-              stay capable in town — tell us. The coaching is still one-to-one.
+              Plenty of people at Ajax train on their own. Others work with a
+              coach year-round, or just for a season — getting ready for ski
+              season, coming back after time off, or starting fresh at sixty.
             </p>
             <p className="muted">
-              The gym is still yours {site.hours.access}. Coaching is extra, if
-              you want it.
-            </p>
-          </div>
-          <div className="panel">
-            <p className="eyebrow">Who it’s not</p>
-            <p>
-              If you want a packed class calendar or a gym that only works when
-              a trainer is booked, this isn’t that. If you want the floor and,
-              some weeks, a coach — we should talk.
+              However you use coaching, the whole gym is yours every day,{" "}
+              {site.hours.access}.
             </p>
           </div>
         </div>
@@ -127,27 +132,25 @@ export default function PersonalTrainingPage() {
             <h2>Stronger in the life you already have.</h2>
           </div>
           <p className="lede">
-            More useful on the mountain. Steadier in town. Capable in twenty
-            years. We won’t put words in other people’s mouths — come see the
-            floor and decide if the work fits.
+            More capable on the mountain. Steadier in town. Still strong in
+            twenty years.
           </p>
         </div>
       </section>
 
       <section className="photo-band">
         <PlaceholderMedia
-          src={placeholders.recovery}
+          src={placeholders.strengthAlt}
           className="photo-band-media"
           sizes="100vw"
-          label={false}
         />
         <div className="photo-band-shade" />
         <div className="container photo-band-inner">
           <p className="eyebrow eyebrow-light">Next</p>
           <h2>Talk through packages.</h2>
           <p>
-            Call {site.phoneDisplay} or write {site.email}. We’ll listen, then
-            outline a fit.
+            Call {site.phoneDisplay} or email {site.email}. We’ll listen first,
+            then suggest what fits.
           </p>
           <CallToJoin inverse />
           <p>
@@ -159,7 +162,11 @@ export default function PersonalTrainingPage() {
       <section className="section">
         <div className="container narrow">
           <p className="eyebrow">The trainers</p>
-          <h2>Who you’ll work with.</h2>
+          <h2>Your coaches.</h2>
+          <p className="lede">
+            Every Ajax coach works one-to-one and builds your plan around your
+            season.
+          </p>
           <ul className="trainer-notes">
             {trainers.map((trainer) => (
               <li key={trainer.name}>

@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AddressBlock } from "@/components/AddressBlock";
 import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { placeholders } from "@/lib/placeholders";
 import {
-  formatNapShort,
-  lockedPriceLine,
   membershipPlans,
   site,
   temporaryPasses,
@@ -15,7 +12,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: `${site.offer.headline}. ${formatNapShort()}. ${lockedPriceLine()}. Member access ${site.hours.access} daily, 365 days a year — not 24/7. Call ${site.phoneDisplay} to join.`,
+  description: `Ajax Fitness pricing: Monthly ${site.plans.monthly.price}, Annual ${site.plans.annual.price}, Day ${site.plans.day.price}, Week ${site.plans.week.price}, 2 weeks ${site.plans.twoWeek.price}, 1 month ${site.plans.oneMonth.price}. ${site.offer.headline}. Open daily ${site.hours.access}.`,
 };
 
 function PlanCard({ plan }: { plan: Plan }) {
@@ -30,16 +27,17 @@ function PlanCard({ plan }: { plan: Plan }) {
       </p>
       <p>{plan.detail}</p>
       {isTemporary ? (
-        <p className="muted">Same gym-hour access. Not 24/7.</p>
+        <p className="muted">
+          Open every day, {site.hours.access}.
+        </p>
       ) : (
-        <p className="muted">Full member access {site.hours.access} daily.</p>
+        <p className="muted">
+          Open every day, {site.hours.access}. {site.offer.headline}.
+        </p>
       )}
       <a className="button" href={site.phoneHref}>
-        Call to join
+        Call {site.phoneDisplay}
       </a>
-      <Link className="text-link" href={`/join?plan=${plan.id}`}>
-        Start online (coming soon)
-      </Link>
     </article>
   );
 }
@@ -53,14 +51,13 @@ export default function PricingPage() {
 
           <div className="narrow">
             <p className="eyebrow">Pricing</p>
-            <h2>Membership & temporary passes</h2>
+            <h2>Memberships and passes</h2>
             <p className="lede">
-              {formatNapShort()}. {lockedPriceLine()}.
+              Join for the year, or train with us by the day, week, or month.
+              Every option includes full gym access.
             </p>
             <p className="muted">
-              Simple pricing. No clutter. Built for Aspen training that sticks.
-              Member access {site.hours.access} daily, 365 days a year. Not
-              24/7.
+              Call {site.phoneDisplay} to join.
             </p>
           </div>
 
@@ -69,8 +66,8 @@ export default function PricingPage() {
               <p className="eyebrow">Year-round</p>
               <h2>Membership</h2>
               <p className="muted">
-                The floor, year-round. Train on your own, {site.hours.access}{" "}
-                daily.
+                For locals and second-home owners. Cold plunge and sauna
+                included.
               </p>
             </div>
             <div className="card-grid membership-grid">
@@ -83,10 +80,10 @@ export default function PricingPage() {
           <div className="pricing-group">
             <div className="pricing-group-intro">
               <p className="eyebrow">Visiting</p>
-              <h2>Temporary passes</h2>
+              <h2>Passes</h2>
               <p className="muted">
-                A day, a week, or a month on the same floor. Same hours. Not
-                24/7.
+                In town for a few days or a season? Keep your routine with a
+                day, week, or month pass.
               </p>
             </div>
             <div className="card-grid temporary-grid">
@@ -99,7 +96,7 @@ export default function PricingPage() {
           <p className="center-note">
             Questions? <a href={site.phoneHref}>{site.phoneDisplay}</a>
             <span aria-hidden="true"> · </span>
-            <Link href="/contact">Contact us to get started</Link>
+            <Link href="/contact">Contact us</Link>
           </p>
         </div>
       </section>
@@ -107,7 +104,7 @@ export default function PricingPage() {
       <section className="section section-tint">
         <div className="container split visit-split">
           <PlaceholderMedia
-            src={placeholders.pricing}
+            src={placeholders.pricingSpacious}
             className="visit-media"
             sizes="(max-width: 720px) 100vw, 50vw"
           />
@@ -115,14 +112,16 @@ export default function PricingPage() {
             <p className="eyebrow">Visit</p>
             <h2>See the gym before you commit.</h2>
             <p>
-              <AddressBlock />
+              Come in any day between 6 AM and 9 PM. We’ll show you around.
             </p>
-            <p>
-              Member access {site.hours.access} daily. Not 24/7.
-            </p>
-            <Link className="button" href="/tour">
-              Book a tour
-            </Link>
+            <div className="button-row">
+              <a className="button" href={site.phoneHref}>
+                Call {site.phoneDisplay}
+              </a>
+              <Link className="text-link" href="/tour">
+                Request a walkthrough
+              </Link>
+            </div>
           </div>
         </div>
       </section>

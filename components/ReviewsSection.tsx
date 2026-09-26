@@ -8,7 +8,7 @@ export function ReviewsSection() {
       <div className="container">
         <div className="reviews-intro">
           <p className="eyebrow">{reviews.label}</p>
-          <h2 id="reviews-heading">The floor, in their words.</h2>
+          <h2 id="reviews-heading">What members say.</h2>
           <p
             className="reviews-aggregate"
             aria-label={`${reviews.rating} out of 5 from ${reviews.count} ${reviews.label}`}

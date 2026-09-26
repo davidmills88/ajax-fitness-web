@@ -1,157 +1,214 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AddressBlock } from "@/components/AddressBlock";
+import { CallToJoin } from "@/components/CallToJoin";
 import { MembershipOffer } from "@/components/MembershipOffer";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { placeholders } from "@/lib/placeholders";
-import {
-  formatNapShort,
-  lockedPriceLine,
-  offerPriceLine,
-  site,
-} from "@/lib/site";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
     absolute: "Ajax Fitness | Aspen, CO",
   },
-  description: `${site.offer.headline}. ${formatNapShort()}. Member access ${site.hours.access} daily, 365 days a year — not 24/7. ${lockedPriceLine()}. Call ${site.phoneDisplay}.`,
+  description: `A full gym in Aspen, open to everyone. Memberships and day, week, or month passes, one-to-one coaching, cold plunge and sauna. Open daily ${site.hours.access}.`,
 };
 
 export default function HomePage() {
   return (
     <>
-      <section className="hero">
+      <section className="hero hero-canvas">
         <PlaceholderMedia
-          src={placeholders.hero}
-          className="hero-media"
+          src={placeholders.strength}
+          className="hero-media hero-media-top"
           sizes="100vw"
           preload
         />
         <div className="hero-shade" />
         <div className="container hero-inner">
-          <MembershipOffer variant="hero" />
-          <p className="hero-meta">
-            <AddressBlock inline />
-            <span aria-hidden="true"> · </span>
-            <Link href="/hours">See hours</Link>
-            <span aria-hidden="true"> · </span>
-            <a href={site.phoneHref}>{site.phoneDisplay}</a>
+          <h1>
+            Stay strong for the mountain.
+            <span className="hero-life">And for life.</span>
+          </h1>
+          <p className="lede lede-light">
+            A full gym in Aspen for anyone who wants to stay strong — locals
+            and visitors, first-timers and lifers. Open every day,{" "}
+            {site.hours.access}.
+          </p>
+          <p className="hero-proof">
+            {site.reviews.rating}★ · {site.reviews.count} {site.reviews.label}
+          </p>
+          <CallToJoin inverse quietSecondary note />
+        </div>
+      </section>
+
+      <section className="section-ink ink-pause">
+        <div className="container ink-pause-inner">
+          <h2>Strength is the thing you keep.</h2>
+          <p>
+            It fades quietly, a little every year, until a ski day or a trail
+            tells you. A few hours a week here keeps it — wherever you’re
+            starting from.
           </p>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container intro-grid">
-          <div>
-            <p className="eyebrow">What Ajax is</p>
-            <h2>Small enough to feel personal. Serious enough that your training compounds.</h2>
-          </div>
-          <div>
+      <section className="section value-stack">
+        <div className="container">
+          <div className="intro-grid">
+            <div>
+              <p className="eyebrow">Train your way</p>
+              <h2>A real gym. Not a hotel gym.</h2>
+            </div>
             <p className="lede">
-              A premium gym at {formatNapShort()}. We train for strength,
-              longevity, and recovery — not a short-term spike, and not a
-              crowded afterthought.
+              Racks, free weights, cardio, and room to move. Most members train
+              on their own; some add a coach. Either way, it’s your gym.
             </p>
-            <p className="muted">
-              Members use the floor on their own, {site.hours.access} daily,
-              365 days a year. Not 24/7. Not CrossFit. Not a
-              personal-training-only studio. Coaching is here if you want it.
-            </p>
+          </div>
+          <div className="card-grid feature-grid">
+            <article className="feature-card pillar-card">
+              <PlaceholderMedia
+                src={placeholders.visit}
+                className="card-media pillar-media"
+                sizes="(max-width: 900px) 100vw, 33vw"
+              />
+              <div className="card-body">
+                <h3>On your own</h3>
+                <p>
+                  Come in, do your workout, head out. Full access every day,{" "}
+                  {site.hours.access}.
+                </p>
+              </div>
+            </article>
+            <Link
+              href="/personal-training"
+              className="feature-card pillar-card pillar-link"
+            >
+              <PlaceholderMedia
+                src={placeholders.ptExtra}
+                className="card-media pillar-media"
+                sizes="(max-width: 900px) 100vw, 33vw"
+              />
+              <div className="card-body">
+                <h3>With a coach</h3>
+                <p>
+                  One-to-one training when you want a plan, a second set of
+                  eyes, or a push.
+                </p>
+              </div>
+            </Link>
+            <Link
+              href="/recovery"
+              className="feature-card pillar-card pillar-link"
+            >
+              <PlaceholderMedia
+                src={placeholders.recovery}
+                className="card-media pillar-media"
+                sizes="(max-width: 900px) 100vw, 33vw"
+              />
+              <div className="card-body">
+                <h3>Recover</h3>
+                <p>
+                  Private cold plunge and infrared sauna, steps from where you
+                  train. Included with membership.
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
 
+      <section className="editorial-split">
+        <div className="editorial-split-copy">
+          <p className="eyebrow eyebrow-light">Know where you stand</p>
+          <h2>
+            Measure it.
+            <br />
+            Then train it.
+          </h2>
+          <p>
+            Our InBody scanner shows your muscle, fat, and water balance in
+            about a minute. The OxeFit XP1 measures your strength and power,
+            rep by rep. Check in every few months and see what’s actually
+            changing.
+          </p>
+          <a className="button button-ghost" href={site.phoneHref}>
+            Call {site.phoneDisplay}
+          </a>
+        </div>
+        <PlaceholderMedia
+          src={placeholders.longevity}
+          className="editorial-split-media"
+          sizes="(max-width: 900px) 100vw, 58vw"
+        />
+      </section>
+
       <section className="section section-tint">
-        <div className="container">
-          <div className="card-grid feature-grid">
-            <article className="card feature-card">
-              <PlaceholderMedia
-                src={placeholders.strength}
-                className="card-media"
-                sizes="(max-width: 720px) 100vw, 33vw"
-              />
-              <div className="card-body">
-                <h3>Strength</h3>
-                <p>Progressive training built around how you actually live here.</p>
-              </div>
-            </article>
-            <article className="card feature-card">
-              <PlaceholderMedia
-                src={placeholders.longevity}
-                className="card-media"
-                sizes="(max-width: 720px) 100vw, 33vw"
-              />
-              <div className="card-body">
-                <h3>Longevity</h3>
-                <p>Training that still matters in twenty years.</p>
-              </div>
-            </article>
-            <article className="card feature-card">
-              <PlaceholderMedia
-                src={placeholders.recovery}
-                className="card-media"
-                sizes="(max-width: 720px) 100vw, 33vw"
-              />
-              <div className="card-body">
-                <h3>Recovery</h3>
-                <p>Space so hard work lands clean.</p>
-              </div>
-            </article>
+        <div className="container split editorial-plan">
+          <div>
+            <h2>Call us. Walk through. Join.</h2>
+            <ol className="step-list">
+              <li>
+                <strong>Call us</strong>
+                {site.phoneDisplay}. Tell us what you’re after and we’ll point
+                you to the right membership or pass.
+              </li>
+              <li>
+                <strong>Come for a walkthrough</strong>
+                See the gym, meet the team, and ask anything. No pressure.
+              </li>
+              <li>
+                <strong>Join, or grab a pass</strong>
+                Train on your own from day one. Add a coach whenever you want.
+              </li>
+            </ol>
+            <CallToJoin note />
           </div>
+          <PlaceholderMedia
+            src={placeholders.pricingSpacious}
+            className="visit-media plan-media"
+            sizes="(max-width: 720px) 100vw, 50vw"
+          />
+        </div>
+      </section>
+
+      <section className="promo-band">
+        <div className="container">
+          <MembershipOffer variant="band" headingLevel="h2" />
         </div>
       </section>
 
       <ReviewsSection />
 
-      <section className="photo-band">
-        <PlaceholderMedia
-          src={placeholders.pricing}
-          className="photo-band-media"
-          sizes="100vw"
-          label={false}
-        />
+      <section className="photo-band photo-band-tall">
+          <PlaceholderMedia
+            src={placeholders.photoBand}
+            className="photo-band-media"
+            sizes="100vw"
+          />
         <div className="photo-band-shade" />
         <div className="container photo-band-inner">
-          <p className="eyebrow eyebrow-light">Membership</p>
-          <h2>Simple pricing. Year-round floor.</h2>
+          <h2>In Aspen for a week?</h2>
           <p>
-            {site.offer.headline}. {site.offer.sub} {offerPriceLine()}
+            Keep your routine while you’re here. Full gym access by the day,
+            week, or month.
           </p>
           <p>
-            {site.plans.monthly.detail} Week, two-week, and one-month passes
-            live on Pricing. Members train {site.hours.access}, every day of
-            the year. Not 24/7.
+            Day {site.plans.day.price} · Week {site.plans.week.price} · 2
+            weeks {site.plans.twoWeek.price} · 1 month{" "}
+            {site.plans.oneMonth.price}
           </p>
-          <Link className="button button-inverse" href="/pricing">
-            View pricing
-          </Link>
+          <CallToJoin inverse quietSecondary />
         </div>
       </section>
 
-      <section className="section">
-        <div className="container split visit-split">
-          <PlaceholderMedia
-            src={placeholders.visit}
-            className="visit-media"
-            sizes="(max-width: 720px) 100vw, 50vw"
-          />
-          <div className="panel visit-panel">
-            <p className="eyebrow">Visit</p>
-            <h2>Come see the floor.</h2>
-            <p>
-              <AddressBlock />
-            </p>
-            <p>
-              <a href={site.phoneHref}>{site.phoneDisplay}</a>
-              <span aria-hidden="true"> · </span>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
-            </p>
-            <Link className="button" href="/contact">
-              Contact us
-            </Link>
-          </div>
+      <section className="section-ink ink-pause ink-close">
+        <div className="container ink-pause-inner">
+          <h2>Call. Come in. Start.</h2>
+          <p>
+            {site.phoneDisplay}. Open every day, {site.hours.access}.
+          </p>
+          <CallToJoin inverse secondary="contact" quietSecondary note />
         </div>
       </section>
     </>
