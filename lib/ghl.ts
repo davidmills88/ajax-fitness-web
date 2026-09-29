@@ -7,7 +7,23 @@ export type ContactPayload = {
   phone: string;
   interest: string;
   message: string;
+  source?: string;
+  tags?: string[];
 };
+
+const DEFAULT_SOURCE = "ajaxfitness.com contact form";
+
+function leadSource(payload: ContactPayload) {
+  return payload.source?.trim() || DEFAULT_SOURCE;
+}
+
+function leadTags(payload: ContactPayload) {
+  if (payload.tags && payload.tags.length > 0) return payload.tags;
+  return [
+    "website-contact",
+    payload.interest.toLowerCase().replace(/\s+/g, "-"),
+  ];
+}
 
 const GHL_CONTACTS_URL = "https://services.leadconnectorhq.com/contacts/upsert";
 const GHL_VERSION = "2021-07-28";
@@ -32,7 +48,10 @@ export async function forwardContactToGhl(payload: ContactPayload) {
       body: JSON.stringify({
         locationId,
         ...payload,
-        source: "ajaxfitness.com contact form",
+        source: leadSource(payload),
+        ...(payload.tags && payload.tags.length > 0
+          ? { tags: payload.tags }
+          : {}),
       }),
     });
 
@@ -60,8 +79,8 @@ export async function forwardContactToGhl(payload: ContactPayload) {
       lastName: payload.lastName,
       email: payload.email,
       phone: payload.phone,
-      source: "ajaxfitness.com contact form",
-      tags: ["website-contact", payload.interest.toLowerCase().replace(/\s+/g, "-")],
+      source: leadSource(payload),
+      tags: leadTags(payload),
       notes,
     }),
   });
