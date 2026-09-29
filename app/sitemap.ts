@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/join",
     "/tour",
+    "/ski-prep-pt",
   ];
 
   return paths.map((path) => ({
