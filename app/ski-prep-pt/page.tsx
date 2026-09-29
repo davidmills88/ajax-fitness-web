@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
+const gymPhotos = {
+  strengthFloor: "/images/strength-floor.jpg",
+  strengthAisle: "/images/strength-aisle.jpg",
+  precor: "/images/precor-cardio.jpg",
+  recovery: "/images/recovery-suite.jpg",
+} as const;
+
 const outline = [
   {
     label: "Weeks 1–2 · Baseline",
@@ -81,22 +88,40 @@ export default function SkiPrepPage() {
           <p className="eyebrow">Who it’s for</p>
           <h2>Pre-season skiers, and a cautious way back.</h2>
           <div className="card-grid">
-            <article className="card">
-              <h3>Before the season</h3>
-              <p>
-                You ski, and you want legs, trunk, and an engine that hold up
-                on long days. Eight weeks of one-to-one conditioning before the
-                mountain gets serious.
-              </p>
+            <article className="card feature-card">
+              <PlaceholderMedia
+                src={gymPhotos.strengthFloor}
+                className="ski-card-media"
+                label={false}
+                sizes="(max-width: 720px) 100vw, 50vw"
+                alt="Strength floor at Ajax Fitness, with a member pressing dumbbells and a coach spotting"
+              />
+              <div className="card-body">
+                <h3>Before the season</h3>
+                <p>
+                  You ski, and you want legs, trunk, and an engine that hold up
+                  on long days. Eight weeks of one-to-one conditioning before the
+                  mountain gets serious.
+                </p>
+              </div>
             </article>
-            <article className="card">
-              <h3>Coming back carefully</h3>
-              <p>
-                You have been off, or you are returning after an injury, and
-                you want to train at a pace that fits. Your coach uses that
-                history to set the load. The work is prep — not care for the
-                injury itself.
-              </p>
+            <article className="card feature-card">
+              <PlaceholderMedia
+                src={gymPhotos.strengthAisle}
+                className="ski-card-media"
+                label={false}
+                sizes="(max-width: 720px) 100vw, 50vw"
+                alt="Empty strength aisle at Ajax Fitness, with cable machines and racks toward the windows"
+              />
+              <div className="card-body">
+                <h3>Coming back carefully</h3>
+                <p>
+                  You have been off, or you are returning after an injury, and
+                  you want to train at a pace that fits. Your coach uses that
+                  history to set the load. The work is prep — not care for the
+                  injury itself.
+                </p>
+              </div>
             </article>
           </div>
           <p className="callout ski-callout">
@@ -129,6 +154,26 @@ export default function SkiPrepPage() {
               </li>
             ))}
           </ol>
+        </div>
+        <div
+          className="container ski-gallery"
+          role="group"
+          aria-label="Cardio floor and recovery room at Ajax Fitness"
+        >
+          <PlaceholderMedia
+            src={gymPhotos.precor}
+            className="ski-gallery-photo"
+            label={false}
+            sizes="(max-width: 720px) 100vw, 42vw"
+            alt="Member on a Precor treadmill by the windows at Ajax Fitness"
+          />
+          <PlaceholderMedia
+            src={gymPhotos.recovery}
+            className="ski-gallery-photo"
+            label={false}
+            sizes="(max-width: 720px) 100vw, 55vw"
+            alt="Cold plunge and infrared sauna in the Ajax recovery room"
+          />
         </div>
       </section>
 
